@@ -1,0 +1,292 @@
+A GROUP OF TECHIQUES AND CONVENTIONS THAT HELPS IN THE DEVELOPMENT OF REACT APPS
+destructuring props
+    have a copy of props and not change it accidently
+    It is a ES6 feature, it is used to extract properties from objects or values from arrays into distinct variables
+
+    Destructuring assignment popular because: it allows you to seperate Component specific props from Dom/platform specific attributes
+
+    let {name} = personObject
+    let [one, two] = arr
+
+    used alot in functional components 
+    function Greeting({name}) {
+        return <div>hi {name} </div>
+    }
+
+    collect remaining props into an object or array, called rest parameter syntax
+    let {name, ...allTheRest} = object
+    let [first, ...allTheOther] = arr
+
+
+
+JSX spread attributes ( spread syntax)
+    syntax to provide properties of an object as JSX attributes
+
+    function Greeting({name, ...AllOtherProps}) {
+        return <div {...AllOtherProps} >hi {name} </div>
+    }
+
+    makes component flexible, we can pass dom attributes
+    <Greeting name="jane" className="color-red" id="123" />
+
+    avoid forwarding non-dom props
+
+    
+
+
+
+
+Conditional rendering
+    we can not use if/else syntaxe in component declaration (inside jsx),
+    so we use ternary operator and short-circuit evaluation (which means logical operators will take precedance over other operators)
+    all values are truthy except: false, 0, -0, 0n, "", null, undefined, NaN.
+
+    short-circuit
+    {condition && <span> render when truthy </span>}
+    {consdition || <span> render when falsy </span>}
+
+    ternary
+    {condition ? (<span> render when truthy </span>) : (<span> render when falsy </span>)}
+
+
+
+children types
+    React can render children from most types.
+    In most cases it's either an array or a string.
+    <div>hello</div>
+    <div>["hello", <span>again</span>]</div>
+
+
+
+style component
+    avoid repition, because repition is prone to error. 
+    style maintenance. 
+    It isolates all concerns of style to a single component.
+
+    instead of <button type="button" class="btn btn-primary"></button>
+    use <PrimaryButton/> or <Btn primary/> 
+
+
+
+
+
+layout component
+    they rarely need to re-render, we can make sure of that using 
+    shouldComponentUpdate() {
+        return false
+    }
+    --or--
+    const Container = React.memo(
+    (props: HTMLProps<HTMLDivElement>) => (
+        <div style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+        }} {...props} />
+    ),
+    (prev, next) => true // <--- using this
+    )
+
+
+
+controlled input
+    <input type="text"/> change happens in DOM
+
+    --changes handled by react state---
+    benefits: real time validation, complete control over the input, access to form data
+    function App() {
+    const [v, setV] = useState("")
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {...}
+
+    return (
+        <input 
+        type="text" 
+        value={v}
+        onChange={handleChange} 
+        />
+    )
+    }
+
+
+========================================    
+
+Element
+    building block of react
+    what you want to see on the screen
+    immutable
+    often confused with components
+    const elm = <p>Hello</p>
+
+Component
+    small pieces of reusable ui that return a react element
+    it can return: other components, arrays, strings, numbers
+    const MyComponent = () => <p>Hello</p>
+
+
+Expressions
+    embed any valid js expression inside JSX using {}
+    JSX is also an expression, it can be used inside if statments, for loops
+    after compilation it becomes regular js function calls and evaluate to js objects
+
+Props
+    props allow outside customization of a component
+
+defaultProps
+    specify default props using ComponentName.defaultProps = { color: "red", primary: true }
+
+    i read it could be deprecated in the futur, so use this instead
+    type CProps = {
+        name?: string // <--optional props
+    }
+    const C = ({name = "sara"}: CProps) => <p>hello {name}! </p>
+
+    NOTE:------this doesnt work----
+        const C = (props: CProps = {name: "sara"}) => <p>hello {name}! </p>
+        why? because calling it like this <C /> this mean that react will call "C" function like this C({}) with empty props so there will be no name property in that empty props object 
+
+
+Merge destructured props with other values
+    order matters in JSX spred operator
+
+    <Component  className="btn" {...props} />
+    if we pass className from outside it will override the btn one
+
+    <Component  {...props} className="btn"  />
+    className will always be btn, cant be overriden
+
+    solution: destruct className from props and concatenate with existing className
+        use clsx or classnames package to handle that (edge cases like: empty object, null, undefined)
+
+Array as children
+    <ul>
+        {["first", "second"].map((item) => (
+            <li>{item}</li>
+        ))}
+    </ul>
+
+    equivlant to 
+    <ul> {[<li>first</li>, <li>second</li>]} </ul>
+
+
+Function as children -- not read yet
+    u cant pass function as children, meaning like this 
+        <Component> {foo} </Component> <-- not allowed
+        <Component> {foo()} </Component> <-- allowed
+
+    except this case, using render prop!
+    <Width> {() => console.log("hi")}</Width> // dont do this, dont leave a space after tag, TS will say children is not a function!!
+    <Width>{() => console.log("hi")}</Width> // do this
+
+
+Render prop (render callback) 
+(a callback that renders some JSX not a component, because it can take any number of params not just props)
+    when you pass a function as a child
+
+    const Container = (props) => props.children(500)
+
+    <Container>
+        {(value) => <div>value is {value} </div>}
+    </Container>  
+
+    <div>value is 500</div>
+
+    i prefer higher order components
+
+
+Children pass-through
+    You might create a component designed to apply context and render its children.
+
+    return <div>{children}</div> // extra div, style problems
+    return {children} // unhelpful errors
+
+    solution use React.Children 
+    return React.Children.only(children) // Makes sure there's only one child
+    return React.Children.toArray(children) // Turns children into an array
+
+    in short: if you want to deal with children in a better way use React.Children
+
+
+Proxy component
+    avoid repition, because repition is prone to error. 
+    instead of <button type="button"></button>
+    use const Button = (props) => <button type="button" {...props} ></button>
+
+
+Event switch
+    instead of 
+    handleClick(e) {}
+    handleMouseEnter(e) {}
+    <button  onClick={handleClick} onMouseEnter={handleMouseEnter} ></button>
+
+    use
+    handleEvent(e) {
+        switch(e.type) {
+            case "click": //code
+            case "mouseenter": //code
+            default console.log(`no handler for event type ${e.type}`)
+        }
+    }
+    <button  onClick={handleEvent} onMouseEnter={handleEvent} ></button>
+
+    or for simple components, u can call imported actions
+    <button  onClick={() => someImportedAction()} ></button>
+
+
+Container component
+    "A container does data fetching and then renders its corresponding sub-component. That’s it"
+    we can write different container for different app contexts
+
+    const CommentList = ({comments}) => (
+        <ul>
+            comments.map(comment => (
+                <li> {comment.body}--{comment.author} </li>
+            ))
+        </ul>
+    )
+
+    const CommentListContainer = () => {
+        const [comments, setComments] = useState([])
+        useEffect(() => {
+            axsio.get("url")
+            .then(res => setComments(res.data))
+            .catch(e => console.log(e))
+        })
+        return <CommentList comments={comments} />
+    }
+
+
+Higher-order component
+    A higher-order function is a function that takes and/or returns a function. It's not more complicated than that
+
+    If you're already using container components, Higher-order component are just generic containers, wrapped up in a function.
+
+    function HigherOrder(component) {
+
+        const Container = (props) => {
+        // some shared functionality here like logging, click handler ...
+            return <Component {...props} /> // <-- pass down props
+        }
+
+        return Container
+    }
+
+    // there are Two good examples, WithLoggerOnMount (useEffect), WithLoggerOnClick(override Clikc handler of ComposedComponent)
+
+State hoisting
+    if two components  need the same state
+    you need to lift state to a parent component which is an ancestor to both components that need the state
+    then use props to pass down what is needed
+
+
+
+anty pattern
+    Props in initial state 
+        because initial state is invoked only once when the component is first created
+
+    Indexes as key in list items 
+        because when you add/delete an item the indexes will change but list item hanst change
+        so react will preform unsufull rerenders
+
+    Spreading props on Dom elements
+        <div {...props} ></div> <--- warning, unknown prop on a div tag 

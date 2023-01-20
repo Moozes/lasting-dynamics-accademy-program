@@ -1,0 +1,25 @@
+Most relevant agile methodology where you can learn valuable practices are:
+
+- SCRUM
+- Kanban & Lean
+- TDD
+- OKRs ( Objectives and Key Results )
+- XP
+-shu ha ri 
+
+manifesto
+    https://agilemanifesto.org/
+    https://agilemanifesto.org/principles.html
+
+then it's important to go in depth into practices and understand what they are about, but a list of most of them to let you understand there is a whole world behind this:
+    https://thedigitalprojectmanager.com/agile-methodologies/
+    https://www.wrike.com/project-management-guide/
+
+and for each practice of those 4 investigate what they are and how to practice them:
+    SCRUM 
+        https://www.altexsoft.com/blog/business/25-scrum-process-best-practices-that-set-your-agile-workflow-for-efficiency/ ( please also search more on google )
+    while OKRs is here
+        https://www.whatmatters.com/faqs/okr-meaning-definition-example/#:~:text=The%20definition%20of%20%E2%80%9COKRs%E2%80%9D%20is,encourage%20engagement%20around%20measurable%20goals.
+        https://www.perdoo.com/okr-guide/   
+
+investigate the other 2 on your own

@@ -1,0 +1,233 @@
+- useState
+- useEffect
+- useMemo
+- useCallback
+- custom hooks
+then practice using material UI and react state with all of them.
+
+
+to really understand hooks, we need to know why they were introduced
+
+history
+    At the time had no way of writing native classes (which changed with ES6)
+    const ReposGrid = React.createClass({
+        getInitialState() {
+            return { repos: [], loading: false }
+        },
+        componentDidMount() {},
+        componentDidUpdate() {},
+        handleClick() {},
+        render(){...}
+    })
+    ----------------
+
+    after ES6
+    class ReposGrid extends React.component {
+        constructor(props) {
+            super(props) <---here
+
+            this.state = {repos: [], loading: false}
+            this.handleClick = this.handleClick.bind(this) <---here
+        }
+
+        componentDidMount() {}
+        componentDidUpdate() {}
+        handleClick() {}
+        render(){...}
+    }
+
+    problem: bad syntaxe, "this" problem
+    ----------------
+
+    "Class Fields" proposal
+    declare instance properties in the class body, no need for constructor
+    eleminate super(props), and bind problems (since we can use arrow function as methods)
+
+    ----------------
+    problems: 
+        duplicate logic in lifecycle methods
+        sharing non-visual logic (can be solved with HOCs and render props)
+            but both methods have some tradeoffs, logic hard to follow
+            applying multiple HOCs, gets complexe very quickly
+            you need to restructure your app to use them
+    
+    ----------------
+    Hooks were introduced
+            State - useState
+            Lifecycle methods - useEffect
+            Sharing non-visual logic (fetching comments) - custom hooks
+
+            improved code reuse, composition, and better defaults
+
+Hooks
+    functions that lets you use state and other features without writing a class
+    Completely optional
+    100% backwards-compatible
+    share stateful logic, without changing component hierarchy (unlike HOC and render prop)
+    put related effect together ( call useEffect multiple times)
+
+    state doesnt have to be an object
+    setSomeStateVariable doesnt merge like this.setState
+
+    useEffect = componentDidMount, componentDidUpdate, and componentWillUnmount
+
+Rules of hooks
+    Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
+    Only call Hooks from React function components or custom hooks
+
+
+API reference
+    useState
+        const [s, setS] = useState(initial)
+
+        setS(new)
+        setS(prev => prev+1)
+        doesnt merge, it replaces
+
+        lazy initial state
+            initial state will be disregarded after first render but it will always be calculated
+            so instead of useState(getInitialHundredItem())
+            use useState(() => getInitialHundredItem()) // this passed function will only be executued in 1st render
+
+        Batching of state updates
+            React may groupe multiple state updated into a single re-render
+
+    useEffect(function, [...dependencies]) returns a cleaner function 
+        escape hatch from react world to apply some side effect, like changing document title, logging, apis
+        runs after changes are commited to screen (painted)
+
+        cleaner runs before component leaves screen
+        the previous effect is cleaned up before executing the next effect
+            1st render effect
+
+            2nd render cleaner 
+                       effect
+
+            3rd render cleaner 
+                       effect
+
+            unmounting cleaner 
+                       component removed from screen
+
+        Timing of effect, 
+            useEffect after screen paint, but some updates are visual DOM related and they need to fire synchronously
+            for that useLayoutEffect
+
+        functions and dependencies array
+            problem: props and state will have a previous value in the scope of useEffect if you dont specify them as dependencies
+            count example: https://reactjs.org/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often
+            
+            problem: hard to track which props/state is used by a function 
+            solution: declare that function inside useEffect, and dependencies should be [props or state used inside that function] 
+
+            if function doesnt use props or state like () => console.log("hello")
+            it is safe to not put it in dependencies
+
+            problem: a function defined in the body of react component will change reference on each render, so putting it in dependencies will make useEffect run on each rerender
+            solution: wrap definition inside a useCallback and list its dependencies in useCallback array and pass function reference to useEffect array
+
+    useLayoutEffect
+        it fires synchronously, 
+        updates/events inside useLayoutEffect will be flushed synchronously before browser paint on screen
+        NOTE: prefer useEffect to not block visual updates 
+
+    useContext: takes Context Object returned by React.createContext
+        returns the value of the nearest provider up the component tree
+        and subscribes to its changes
+
+        useContext vs Redux
+            useContext: all the sub tree of a context rerenders on change
+            Redux: only subscribers rerender when change happens
+
+    useCallback(fn, [dependencies]) 
+        returnes a memoized callback
+        NOTE: equivelant to useMemo(() => fn, [dependencies])
+
+    useMemo(() => value, [dependencies])
+        returns a memoized value, used for expensive calculations
+        for example: 
+            const a = the-sum-of-100-state-variables
+            // this will get re-calculated on every re-render caused by state/props change even if it is not needed in the calculation
+            solution: const a = useMeme(() => the-sum-of-100-state-variables, [100-state-variables])
+        NOTE: right you code to work without use memo, then integrate it 
+
+    useRef(intialValue): return a mutable object whos current preperty hold initialValue
+        this reference will be the same for the --whole life time-- of the component
+        can be used to access DOM impiratively
+        or hold setInterval reference in useEffect, so it can be cleared in an event handles not just useEffect return function
+        NOTE: change to current dont cause rerenders
+        Another use case: 
+            model needs to open after we click a button 5 times, 
+            we store a counter in a useRef better than a state variable, because it doesnt cause rerender
+    
+
+    useDebugValue(value, [format function])
+        display a label of custom hooks in dev tools
+        good for shared libraries 
+
+    useId()
+        returns a unique ids
+        dont use them as keys
+        use them for: htmlFor={id} and id={id}
+        if u need multiple: 
+            htmlFor={id+"-name"} and id={id+"-name"}
+            htmlFor={id+"-age"} and id={id+"-age"}
+        cant be selected by css because it contains ":" (same for querySelector)
+
+    useReducer(reducer, iintialState)
+        manage complexe state that involves multiple subvalues
+        you can pass dispatch down instead of multiple callbacks
+
+        type State = {count: number}
+        type Action = {type: string; payload?: any}
+        const initialState : State = {count: 0}
+        function reducer( state: State, action: Action,) {
+        switch(action.type) {
+            case "inc": return {count: state.count + 1}
+            case "dec": return {count: state.count - 1}
+            default: throw new Error("Action type doesnt exist")
+        }
+        }
+        const Counter = () => {
+        const [state, dispatch] = useReducer(reducer, initialState)
+        return (
+            <>
+            <h1> {state.count} </h1>
+            <button onClick={() => dispatch({type: "inc"})} >+</button>
+            <button onClick={() => dispatch({type: "dec"})} >-</button>
+            </>
+        )
+        }
+
+    useImperativeHandle(ref, () => object with exposd methods)
+        used to customise exposed ref
+        a parent want to access a child's input, but we only want to expose that child's input focus method, not the whole DOM input
+
+        parent
+            define ref
+
+            someHandlerFunction() {
+                ref.focusChildInput()
+            }
+
+            return child
+
+        forwardred(Child)
+            defines localRef
+            useImperativeHandle(parent ref, () => ({
+                focusChildInput: localRef.current.focus()
+            }))
+            return input ref={localRef}
+
+    useDeferedValue(value)
+        1st render : will return the initial value
+        2nd render : will have same value as first render, untill 2nd value is ready
+            so it deferes updating a UI untill needed value is ready
+
+    useTransition: 
+        mark certai state updates as a transition that doesnt block UI
+        for example: a user clicks tab2 but want to click tab1 again before rendering happens
+            in normal case: he cant untill render happens
+            in transition he can
+
+        

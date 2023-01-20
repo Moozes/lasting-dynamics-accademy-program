@@ -1,0 +1,24 @@
+AGILE
+    what are OPRs?
+        attain objectives 100% means that objective are too easy
+    what is velocity? related to SCRUM
+    what is EPIC? related to SCRUM
+    difference between EPIC, STORY and TASK
+
+REST API
+    what are safe methods?
+    what markup language used to communicate netween server and client: JSON and XML
+
+React patterns
+    inline style: bad for performance, style objects are recreated on every rerender, takes memory, syntaxe gets big real fast
+
+ASYNC/AWAIT
+    micro/macro task queue: what do you understand about these two, the BTS os async/await
+        priority order of execution
+        https://javascript.info/event-loop
+
+PROMISES
+    what doest promise.all() method do
+
+SPA vs MPA
+    what is downside of MPA?

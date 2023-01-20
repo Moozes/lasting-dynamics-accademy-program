@@ -1,0 +1,115 @@
+REpresentational State Transfer (REST)
+    architecture style for designing loosely coupled applications over the network, that is often used in the development of web services.
+
+6 Principles of REST (guiding/constraint)
+    Uniform Interface: to simplify the overall system
+        Identification of resources: 
+            uniquely identify each resource with URIs (/users, /accounts/{id})
+        Manipulation of resources through representations:  
+            The resources should have uniform representations (JSON, XML)
+        Self-descriptive messages: 
+            data + metadata (like body + headers) (JSON body + POST method === create new resource)
+        Hypermedia as the engine of application state(HATEOAS) 
+            JSON+HAL ( Hypermedia API Language ) (example below)
+            it is like a web page with links to possible actions
+    Client-Server
+        separation of concerns, client and server evolve independently, UI -- storage 
+    Stateless
+        request from client need to have all necessery info to handle it
+        client must store session state (like authentication)
+    Cacheable
+        response must say if it is cacheable or not, 
+    Layered System
+        UI is constrained to deal with the provided interface, it can not directly connect with the database
+        client shouldnt know if it is interacting with original server or an intermediary one
+    Code on Demand (Optional)
+        additional code provided by server like java applets or JS snippets
+
+Resource
+    any thing that we can name like an image, document, a person, a collection of resources
+
+Hypermedia
+    contains information + controls on how to process the media (like html)
+
+REST and HTTP are Not the Same
+    Roy Fielding never mentioned any implimentation directions, but today we use it alot with http protocole
+
+Naming REST resources
+    use nouns not verbs
+    use plural
+    use heirarchy to imply relationships /users/{id}/books
+    use query params to filter, sort and paginate big collections /users?firstname=moussa&age=20
+
+caching
+    Expires: Fri, 20 May 2016 19:20:49 GMT
+    --or--
+    Cache-Control: max-age=3600
+
+    ETag: "abcd1234567n34jv" to verify if cached values can still be used 
+    --or--
+    Last-Modified: Fri, 10 May 2016 09:17:49 GMT
+
+Compressing
+    request header
+    Accept-Encoding:  compress;q=0.5, gzip;q=1.0
+
+    response header
+    Content-Encoding:  gzip
+
+Content Negotiation
+    REST resources can have multiple presentations (JSON, XML)
+    Server-driven 
+        if server decides what to send: not used very often, bacause: too many clients, impossible to know prefered representation
+    Agent-driven 
+        request  Accept: application/json
+                 Accept: application/json,application/xml;q=0.9,*/*;q=0.8 (with priorities determined by "q")
+        response Content-Type: application/json
+
+(HATEOAS)
+    GET
+    /departments/10
+
+    response:
+    {
+        "departmentId": 10,
+        "departmentName": "Administration",
+        "locationId": 1700,
+        "managerId": 200,
+        "links": [
+            {
+                "href": "10/employees",
+                "rel": "employees",
+                "type" : "GET"
+            }
+        ]
+    }
+
+Idempotence
+    the result of applying an operation 10 times is the same as 1 time
+    GET, OPTIONS, HEAD, TRACE, PUT, DELETE Idempotant with some exceptions like for example (DELETE decrements a number)
+    POST non-Idempotant 
+    NOTE: as a best practise leave every non-Idempotant operation to POST
+
+Safe methods
+    read-only methods are safe thry dont alter the state of the server GET, OPTIONS, HEAD
+    good for prefetching without risk, web crawlers
+
+Versioning
+    if you are making groundbraking changes you may need to version your API
+    so existing consumers dont break, they can just 
+        modify URI http://api.example.com/v1
+        --or--
+        add header Accept-version: v1
+        --or
+        Accept: application/vnd.example.v1+json
+        Accept: application/vnd.example+json;version=1.0
+
+HTTP response codes
+    1xx information
+    2xx success (200 ok, 201 created, 204 no content)
+    3xx redirection
+    4xx client error (400 error, 401 unauthorized, 404 not found)
+    5xx server error
+
+
+

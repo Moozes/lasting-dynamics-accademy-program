@@ -1,0 +1,55 @@
+MVP: Minimum viable product
+Problem
+    90% startups fail in 1st year 42% because of lack of demand, 17% final product is to complicated
+    29% run out of cash
+    85% of product lauches fail because of poor market understanding
+
+Definition
+    A product with minimum features, (save money and time)
+    that will adress the problem for most of your target users (well enough to attract first customers)
+    and validate your market/product (provides feed back loop to better understand the market needs)
+
+Goals (why an MVP?)
+    test the assumptions while saving money and time
+    well enough to attract first customers
+    verify the value of the original idea  and provides feed back loop to better understand the market needs
+
+Steps
+    1-identify the idea (the problem you are solving)
+        why do i need the product? put your self in customers shoes, research the market needs
+    2-Aanalyze competitors
+        See if there is any competitors, how did they solve the problem, how can your product be unique compared to them
+    3-Define user flow (define features)
+        focus on pain points, and how to solve them, this will help you to list the potential features
+        design the app in a way that is convenient for users from starting the app untill the last process 
+    4-Prioritize features
+        Pareto principle: 80% of consequences come from 20% of causes
+        
+        identify key featues to include in first version
+
+        Prioritization matrix (x: Urgency, Y: impact)
+            high Urgency, high impact must include
+            low Urgency, low impact must not include
+
+        MoSCoW method
+            divide features to Must Haves, Should Haves, Could Haves and Won’t Haves
+    
+    5-Launch the MVP
+        develop and test product then launch it
+    6-Build-Measure-Learn phase
+        enter Build-Measure-Learn loop
+        where you get users feed back so you can decide to either pivot (change strategy) or advance with more features
+        and you can fit product to market
+
+Common mistakes
+    Focusing on a large target audience
+    Postponing to give the basic version in hands of users
+    Thinking that UX is not the part of an MVP
+    Including too many features in your first version
+    Not learning from your MVP
+
+Extras
+    Proof of concept (POC)
+    prototype
+    Minimum Lovable Product
+    Pareto principle: 80% of consequences come from 20% of causes
