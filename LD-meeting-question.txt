@@ -1,5 +1,5 @@
 AGILE
-    what are OPRs?
+    what are OPRs?OKRs
         attain objectives 100% means that objective are too easy
     what is velocity? related to SCRUM
     what is EPIC? related to SCRUM
