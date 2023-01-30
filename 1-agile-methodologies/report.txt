@@ -1,4 +1,5 @@
-
+last time she asked me
+    OKRs, KPI, how to measure OKR success
 - shu ha ri 
     manifesto
         https://agilemanifesto.org/
@@ -18,10 +19,11 @@
     investigate the other 2 on your own
 
 manifesto
-    Individuals and interactions over processes and tools
-    Working software over comprehensive documentation
-    Customer collaboration over contract negotiation
-    Responding to change over following a plan
+    4 values
+        Individuals and interactions over processes and tools
+        Working software over comprehensive documentation
+        Customer collaboration over contract negotiation
+        Responding to change over following a plan
 
     12 principles
         Our highest priority is to satisfy the customer through early and continuous delivery of valuable software
@@ -34,18 +36,23 @@ project managment
     there are alot of methodologies: team level, organization level, program level...etc
     there are IT specific and other that can be applied to IT/non-IT projects
 
+    **stages of project managment**
+        Initiating: The goal for this phase is to define the project.
+        Planning: This phase includes developing a roadmap for everyone to follow.
+        Executing & Monitoring: In this stage, the project team is built and deliverables are created. Project managers will monitor and measure project performance to ensure it stays on track.
+        Closing:The project is completed, a post mortem is held, and the project is transferred to another team who will maintain it.
 
 
-    begin with scrum, when change decreases migrate to kanban
+
 
 
 project managment methodologies
     sequential (water fall, critical path, and critical chain )
         all requirements are known from the begining 
         with very definite materials and stakeholder expectations
-        good for projects like building, construction, physical products
+        good for projects like buildings, construction, physical products
     
-    agile 
+    agile is good for
         incremental develompment, responds to change, versatile invironment, feedback driven, client inclusion
         (a sea of different implimentations of the 12 principles)
         **Scrum**
@@ -75,7 +82,7 @@ project managment methodologies
                 Testing (optional)
                 Product owner’s review (optional)
 
-            velocity chart: stories finished during a sprint compared to initial estimates
+            performance metric: velocity chart: stories finished during a sprint compared to initial estimates
 
 
 
@@ -93,7 +100,7 @@ project managment methodologies
 
             WIP limit: for example no more then 3 in doing
 
-            doesnt have specific roles like scrum, so it is easy to integrate into companies already has existing roles and responsibilities 
+            doesnt have specific roles like scrum, so it is easy to integrate into companies that already has existing roles and responsibilities 
 
             principles
                 initiate with the existing workflow
@@ -104,17 +111,17 @@ project managment methodologies
         **Lean**
             Lean agile is a development method that helps teams identify waste and refine processes.
 
-            Waste less time
+            dont waste time
             Reduce costs
             Improve work quality
 
 
             5 principles
-                Value what customer needs 
-                Value stream  visually maps each of the steps from start to finish + eliminate wasteful steps
-                Flow ensuring the remaining processes work as effectively and efficiently as possible, which means no delays, disruptions, or bottlenecks.
-                Pull  limiting inventory and work in progress (WIP) items by only producing enough to meet customer demand.
-                Perfection 
+                Value:         what customer needs 
+                Value stream:  visually maps each of the steps from start to finish + eliminate wasteful steps
+                Flow:          ensuring the remaining processes work as effectively and efficiently as possible, which means no delays, disruptions, or bottlenecks.
+                Pull:          limiting inventory and work in progress (WIP) items by only producing enough to meet customer demand.
+                Perfection: 
 
         **OKRs (Objectives and Key Results)**
             It is a collaborative goal-setting methodology used by teams and individuals to set challenging, ambitious goals with measurable results
@@ -122,7 +129,7 @@ project managment methodologies
             a popular goal management framework
 
             Objectives Where do I want to go?
-            KRs How do I know if I’m getting there?
+            KRs How do I know if I’m getting there? work as a guide for progress
             Initiatives What will I do to get there
 
             The OKR Formula
@@ -130,18 +137,18 @@ project managment methodologies
 
             help avoid fuzzy thinking
 
-            KS
+            KRs
                 specific and time-bound and aggressive yet realistic
 
             there is also initiatives
 
             
-            time: quarter (personal), annual (organizational)
+            time: quarterly (personal), annualy (organizational)
 
             extension of MBO (Management by Objectives)
 
 
-            3 types: Committed, Aspirational, or Learning
+            3 objective types: Committed, Aspirational, or Learning
 
             example 
                 Run a 10K in under 50 minutes by June.
@@ -202,7 +209,7 @@ Lean for minimum viable product, cost effective,
 
 FDD: in depth feature documentation
 
-user story: something a user wants, eg: i would like to be able to add/delete a user
+user story: something a user wants, eg: i would like to be able to add/delete an account
 
 WIP: work in progress
 
@@ -210,6 +217,16 @@ Epics:
     large user stories that cant fit into one sprint: they get divided into smaller user stories
     or they can be viewed as a category/goal for multiple user stories in the backlog
 
-Cycle time is the amount of time it takes for a unit of work to travel through the team’s workflow – from the moment work starts to the moment it ships.
+Cycle (for kanban) time is the amount of time it takes for a unit of work to travel through the team’s workflow – from the moment work starts to the moment it ships.
 
 scrum vs kanban https://www.atlassian.com/agile/kanban 
+    sprints (ie, 2 weeks)             Continuous flow
+    release At the end of each sprint if approved by the product owner	       	Continuous delivery or at the team's discretion
+    roles: Product owner, scrum master, development team       	No existing roles. Some teams enlist the help of an agile coach.
+    metrics: Velocity            Cycle time
+    Teams should strive to not make changes to the sprint    Change can happen at any time
+
+just in time
+    inventory managment system
+    we dont fill our inventory (todos in case of software development) untill we need materials
+    so it decreases inventory managment effors and cost which emproves production

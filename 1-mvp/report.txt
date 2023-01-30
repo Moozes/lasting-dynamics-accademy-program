@@ -1,7 +1,6 @@
 MVP: Minimum viable product
 Problem
     90% startups fail in 1st year 42% because of lack of demand, 17% final product is to complicated
-    29% run out of cash
     85% of product lauches fail because of poor market understanding
 
 Definition

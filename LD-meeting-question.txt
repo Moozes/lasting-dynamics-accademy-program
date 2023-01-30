@@ -7,18 +7,37 @@ AGILE
 
 REST API
     what are safe methods?
-    what markup language used to communicate netween server and client: JSON and XML
+    what are idompotent methods?
+    what markup language used to communicate netween server and client, answer: JSON and XML
+    what is OPTIONS method, and when it is fired?
+    what are main parts of a request: answer Method + head + optional body + http version
 
 React patterns
     inline style: bad for performance, style objects are recreated on every rerender, takes memory, syntaxe gets big real fast
 
 ASYNC/AWAIT
-    micro/macro task queue: what do you understand about these two, the BTS os async/await
+    micro/macro task queue: what do you understand about these two, the BTS of async/await
         priority order of execution
         https://javascript.info/event-loop
 
 PROMISES
     what doest promise.all() method do
+    explain what does .catch() .finaly() do
+    does chained promises have single .catch() or multiple 
+    how is "reject" related to .catch(): it pases reject value to catch callback??maybe
 
 SPA vs MPA
     what is downside of MPA?
+    what is server side rendering? is it mpa or spa
+
+
+context api
+    useContext
+    why use context
+
+
+ES6
+    default params
+
+Git branch feature
+    reset vs revert

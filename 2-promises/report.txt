@@ -1,0 +1,163 @@
+==============================================================================================
+what are prmises
+
+Promise
+    The Promise --object-- represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+3 states: 
+    pending
+    fulfilled, with a value
+    rejected, with a reason
+
+    settled means either fulfilled or rejected
+
+===============================================================================================
+Using promises
+    instead of passing callbacks to a function we ATTACH callback to a promise
+    ex: 
+        createAudioFileAsync(audioSettings).then(successCallback, failureCallback);
+        instead of 
+        createAudioFileAsync(audioSettings, successCallback, failureCallback)
+    NOTE: 
+        .catch(failureCallback) is short for .then(null, failureCallback)
+
+        defining a promise like this const p = new Promise((res, rej) => rej("rejected"))
+        and not attaching .catch to it will throw UnhandledPromiseRejection to console
+
+        you can think of .then and .catch as subscriptions to a promise
+
+        .catch() doesnt capture reject only, it also captures any thrown error (throw new Error("message"))
+
+Chaining: executing async operations back to back, to use previous results/or just need the order(u dont have to use previous result)
+
+    in old days: classic callback pyramid of doom
+        doSomething(function (result) {
+            doSomethingElse(result, function (newResult) {
+                doThirdThing(newResult, function (finalResult) {
+                console.log(`Got the final result: ${finalResult}`);
+                }, failureCallback);
+            }, failureCallback);
+        }, failureCallback);
+
+    using promises
+        each then return a new promise that we can attach callbacks to
+        doSomething()
+        .then(callback1)
+        .then(callback2)
+        ...etc
+    
+    NOTE: 
+        1-always return results from .then() so we can track previous promise settelement and get its result
+        2-always finalize chains with a .catch() to not get uncaught promise rejections
+        3-keep chaining flat (no nesting unless you want to limit scope of catch, see Nesting below)
+
+        in below example otherPromise is called FLOATING promise, chain is broken
+        below .thens() may fire before otherPromise .then() finishes
+            p.then(() => {
+                otherPromise.then(callback) // this is not returned
+            })
+            .then(res => console.log(res will be undefined)) // res undefined
+            .then(() => console.log(some global variable updated by otherPromise)) // this may fire before otherPromise's .then() finishes
+
+        these are non equivelant
+            // failureCallback will only catch p failure, 
+            // if successCallback returns a promise and that promise fails it will throw UnhandledPromiseRejection to console 
+            p
+            .then(successCallback, failureCallback) 
+
+            // on the other hand .catch here will catch p failure and successCallback failure (if successCallback returns a promise and that promise fails)
+            P
+            .then(successCallback)
+            .catch(failureCallback)
+
+
+Nesting
+    nesting helps to limit the scope of .catch()
+    if you want an element in the chain to fail silently
+    or you want to handle first rejection in a later catch, not the next catch, you need to nest the next catch so it does not swallow first rejection
+    or if you have a catch logic specific to an element in chain, and you dont want it to catch other rejections, nest it
+
+    p
+    .then(res => 
+        otherPromise
+        .then()
+        .catch() // will only catch otherPromise failure, and above then failure(if it returns a promise and that promise fails)
+    )
+    then()
+    .catch() // will catch p failure, and above then failure(if it returns a promise and that promise fails)
+
+
+composition, concurrency
+    there are 4 static methods 
+        Promise.all(), 
+            Wait for all promises to be fulfilled, or for any to be rejected.
+            Promise.all([p1,p2])
+            .then(([res1, res2]) => ...)
+            .catch(firstRejectionError => ...)
+            
+        Promise.allSettled(), 
+            Wait until all promises have settled (each may fulfill or reject).
+            returns a promise with an array [{status: "fulfilled", value: ""}, {status: "rejected", reason: ""}]
+            Promise.all([p1,p2])
+            .then(([res1, res2]) => ...)
+            
+        Promise.any(), 
+            as soon as one of the promises in the iterable fulfills, returns a single promise that fulfills with the value from that promise.
+            Promise.all([p1,p2])
+            .then((res => ...)
+            .catch(aggregatedError => ...)
+
+        Promise.race().
+            Wait until any of the promises is fulfilled or rejected.
+            Promise.all([p1,p2])
+            .then((firstRes => ...)
+            .catch(firstErr => ...)
+    
+    2 other static methods
+        Promise.reject()
+            Returns a new Promise object that is rejected with the given reason.
+        Promise.resolve()
+            Returns a new Promise object that is resolved with the given value
+            NOTE: if you dont something is a promise or not, wrap it with Promise.resolve() and attach then catch to it
+
+    Promise.prototype.finally()
+        The handler is called when the promise is settled, whether fulfilled or rejected.
+
+    it's always better to run promises concurrently so that they don't unnecessarily block each other unless one promise's execution depends on another's result.
+
+
+Event loop, microtasks, macrotasks
+    first of all js is single threaded, it can only execute one thing at a time
+    
+    Event loop is the way js handles task execution
+
+    there is 4 places 
+        call/execution/the stack
+            is where currently executing task exist
+        microtasks queue/PromisJobs
+            is where setteled promises are queued, in the order they setteled in
+            we can also use queueMicrotask() to queue some function there
+        macrotasks queue/task queue
+            is where all other tasks are queued,script, event handler, setTimeout callback (when setTimeout has reached time), setInterval..
+        web api (has its own thread)
+            when a promise is created it goes here in pending state, then when setteled it is queued to microtasks
+            when a setTimeout/setInterval is called it goes here untill it finishes (pending state), then when it is finished it is queued to macrotasks
+
+    the event loop at work
+        when ever a function is called a frame is pushed to execution stack
+        if that function calls another function another frame is pushed on top
+        when a function finishes execution its frame is popped
+        then next frame is popped
+        stack is empty
+
+        event loop checks microtasks 
+            if there is tasks they are executed one after the other
+            if those tasks create other microtasks, they are also run
+            untill microtasks queue is empty
+
+        event loop checks macrotasks
+            if there is tasks, one task is executed
+        
+        event loop checks microtasks
+
+        so in short microtasks queue is prioritized over macrotasks queue
