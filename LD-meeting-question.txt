@@ -1,3 +1,17 @@
+ES6
+    default params
+    
+PROMISES
+    what doest promise.all() method do
+    explain what does .catch() .finaly() do
+    does chained promises have single .catch() or multiple 
+    how is "reject" related to .catch(): it pases reject value to catch callback??maybe
+
+ASYNC/AWAIT
+    micro/macro task queue: what do you understand about these two, the BTS of async/await
+        priority order of execution
+        https://javascript.info/event-loop
+
 AGILE
     what are OPRs?OKRs
         attain objectives 100% means that objective are too easy
@@ -15,17 +29,6 @@ REST API
 React patterns
     inline style: bad for performance, style objects are recreated on every rerender, takes memory, syntaxe gets big real fast
 
-ASYNC/AWAIT
-    micro/macro task queue: what do you understand about these two, the BTS of async/await
-        priority order of execution
-        https://javascript.info/event-loop
-
-PROMISES
-    what doest promise.all() method do
-    explain what does .catch() .finaly() do
-    does chained promises have single .catch() or multiple 
-    how is "reject" related to .catch(): it pases reject value to catch callback??maybe
-
 SPA vs MPA
     what is downside of MPA?
     what is server side rendering? is it mpa or spa
@@ -36,8 +39,34 @@ context api
     why use context
 
 
-ES6
-    default params
 
 Git branch feature
     reset vs revert
+    git stash
+
+architectural patternt
+    client-server vs master-slave
+    master-slave
+        what is most inconvenient about it, if master falls down, the slaves stop working
+
+    is client-server a special case of master-slave, if yes who is client and who is server
+        master is server
+    
+    what do you know about peer to peer
+    peer to peer vs client-server
+        network stability, (cline-server) is more stable
+    
+    MVC
+        explain it, and each one M V C
+        where does ReactJS exist in this model (React is view)
+
+    what is pub-sub
+    pub-sub vs observer pattern
+
+
+async and sync communication
+    what is the best way, + example, 
+    solution:
+        affaf: the best way is to have balance between them, urgent => sync meeting, non urgent => async like email
+        depends are you working remotely or in colocation
+        email, messagin, video conference??

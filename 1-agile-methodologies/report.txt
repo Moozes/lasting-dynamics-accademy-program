@@ -37,10 +37,10 @@ project managment
     there are IT specific and other that can be applied to IT/non-IT projects
 
     **stages of project managment**
-        Initiating: The goal for this phase is to define the project.
-        Planning: This phase includes developing a roadmap for everyone to follow.
-        Executing & Monitoring: In this stage, the project team is built and deliverables are created. Project managers will monitor and measure project performance to ensure it stays on track.
-        Closing:The project is completed, a post mortem is held, and the project is transferred to another team who will maintain it.
+        *Initiating: The goal for this phase is to define the project.
+        *Planning: This phase includes developing a roadmap for everyone to follow.
+        *Executing & Monitoring: In this stage, the project team is built and deliverables are created. Project managers will monitor and measure project performance to ensure it stays on track.
+        *Closing:The project is completed, a post mortem is held, and the project is transferred to another team who will maintain it.
 
 
 
@@ -66,10 +66,10 @@ project managment methodologies
 
             Set workshops with stakeholders to form product backlog and product vision
             planning at beginning of each sprint, which stories to commit to during this sprint
-            daily meeting, done yesterday, what to do today, standup meeting => short meeting
-            Grooming 1 or 2 per week, modify stuff/remove/add items
+            daily meeting, to discuss done yesterday, what to do today, (standup meeting => short meeting)
+            Grooming meeting:  1 or 2 per week, modify stuff/remove/add items
             sprint demo show to stakeholders at end of each sprint
-            retrospective end of sprint: what went wrong and well to learn and enhance performance
+            retrospective end of sprint: what went wrong and well, to learn and enhance performance
 
             Don’t stretch/cut sprint time
 
@@ -98,7 +98,7 @@ project managment methodologies
                 doing
                 done
 
-            WIP limit: for example no more then 3 in doing
+            WIP (work in progress) limit: for example no more then 3 in doing
 
             doesnt have specific roles like scrum, so it is easy to integrate into companies that already has existing roles and responsibilities 
 
@@ -157,7 +157,7 @@ project managment methodologies
                 Increase mile speed by 5 seconds every week.
 
         **TDD**
-            a style of programming in which three activities are tightly related: 
+            a style of programming in which 3 activities are tightly related: 
             coding, 
             testing (in the form of writing unit tests) 
             and design (in the form of refactoring). 
@@ -169,7 +169,7 @@ project managment methodologies
                 refactor: eliminate repetition, and enhance code 
                 repeat
 
-            delay at the begining of a project but gives high quality code
+            senior devs say : you will meet delay at the begining of a project  when using TDD but ot gives high quality code
 
             since agile relays on constant feedback, well TDD  is built to offer such feedback early on. 
         
@@ -184,7 +184,7 @@ project managment methodologies
                 Courage
                 Respect
 
-            practices
+            practices (there are alot of them)
                 Sit Together
                 Informative Workspace
                 Pair Programming (2 at 1 machine)
@@ -199,6 +199,16 @@ project managment methodologies
                 The Tracker track necessary metrics of progress
                 The Coach (from outside with XP experience) help guide team
 
+        **Shu Ha Ri** 
+            is a Japanese martial art concept that is used to describe the stages of learning on the path to mastery
+
+            it is a good concept to integrate into agile practices, because as we all know agile has alot of learing inside of it
+
+            firstly: Shu – In this beginning stage the student follows the teachings of one master precisely.
+
+            secondly: Ha – At this point the student begins to branch out. With the basic practices working he now starts to learn the underlying principles and theory behind the technique, and learn from multiple masters
+
+            thridly: Ri – Now the student isn’t learning from other people, but from his own practice
 
 OKRS vs KPIs. key performance indicators
     They’re measures for change, whereas KPIs are measures of health and performance of existing processes.
@@ -230,3 +240,6 @@ just in time
     inventory managment system
     we dont fill our inventory (todos in case of software development) untill we need materials
     so it decreases inventory managment effors and cost which emproves production
+
+
+

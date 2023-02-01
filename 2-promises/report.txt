@@ -28,7 +28,7 @@ Using promises
 
         .catch() doesnt capture reject only, it also captures any thrown error (throw new Error("message"))
 
-Chaining: executing async operations back to back, to use previous results/or just need the order(u dont have to use previous result)
+Chaining: executing async operations back to back, to use previous results/or just to impose a need  order(u dont have to use previous result)
 
     in old days: classic callback pyramid of doom
         doSomething(function (result) {
@@ -74,8 +74,9 @@ Chaining: executing async operations back to back, to use previous results/or ju
 Nesting
     nesting helps to limit the scope of .catch()
     if you want an element in the chain to fail silently
-    or you want to handle first rejection in a later catch, not the next catch, you need to nest the next catch so it does not swallow first rejection
-    or if you have a catch logic specific to an element in chain, and you dont want it to catch other rejections, nest it
+    or if you have a catch logic specific to an element in chain, and you dont want it to catch other rejections, then you need to nest it
+
+    //or you want to handle first rejection in a later catch, not the next catch, you need to nest the next catch so it does not swallow first rejection
 
     p
     .then(res => 
@@ -85,6 +86,9 @@ Nesting
     )
     then()
     .catch() // will catch p failure, and above then failure(if it returns a promise and that promise fails)
+
+
+
 
 
 composition, concurrency
@@ -103,6 +107,7 @@ composition, concurrency
             
         Promise.any(), 
             as soon as one of the promises in the iterable fulfills, returns a single promise that fulfills with the value from that promise.
+            if they all fail catch will be invoked with an errors iterable
             Promise.all([p1,p2])
             .then((res => ...)
             .catch(aggregatedError => ...)
@@ -118,12 +123,15 @@ composition, concurrency
             Returns a new Promise object that is rejected with the given reason.
         Promise.resolve()
             Returns a new Promise object that is resolved with the given value
-            NOTE: if you dont something is a promise or not, wrap it with Promise.resolve() and attach then catch to it
+            NOTE: if you dont know something is a promise or not, wrap it with Promise.resolve() and attach then catch to it
 
     Promise.prototype.finally()
         The handler is called when the promise is settled, whether fulfilled or rejected.
 
     it's always better to run promises concurrently so that they don't unnecessarily block each other unless one promise's execution depends on another's result.
+
+
+
 
 
 Event loop, microtasks, macrotasks
@@ -140,13 +148,14 @@ Event loop, microtasks, macrotasks
         macrotasks queue/task queue
             is where all other tasks are queued,script, event handler, setTimeout callback (when setTimeout has reached time), setInterval..
         web api (has its own thread)
+            in short this is were async code goes for pending state
             when a promise is created it goes here in pending state, then when setteled it is queued to microtasks
             when a setTimeout/setInterval is called it goes here untill it finishes (pending state), then when it is finished it is queued to macrotasks
 
-    the event loop at work
+    the event loop at work scenario
         when ever a function is called a frame is pushed to execution stack
         if that function calls another function another frame is pushed on top
-        when a function finishes execution its frame is popped
+        when a function finishes execution its frame is popped out of the stack
         then next frame is popped
         stack is empty
 
@@ -157,7 +166,8 @@ Event loop, microtasks, macrotasks
 
         event loop checks macrotasks
             if there is tasks, one task is executed
+            execution stack is empty
         
-        event loop checks microtasks
+        event loop checks microtasks again and so on ...
 
-        so in short microtasks queue is prioritized over macrotasks queue
+        so in short microtasks queue is prioritized over macrotasks queue when execution stack is empty

@@ -1,19 +1,31 @@
-we can declare a function as async
-declaring a function with async makes it return a promise
-
-we can only use await inside a function declared with async
-await helps us wait for a promise to resolve
-awaiting a promise returns the resolved value
-rejection/errors can be catched using try/catch or .catch()???
-
-
 The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
 
 The purpose of async/await is to simplify the syntax necessary to consume promise-based APIs. 
 
+async
+    we can declare a function as async
+    declaring a function with async makes it return a promise
+
+await 
+    we can only use await inside a function declared with async
+    await helps us wait for a promise to resolve
+    awaiting a promise returns the resolved value
+
+errors
+    rejection/errors can be catched using try/catch 
+    or .catch() either inside the function, or attached to the async function from outside
+    NOTE: 
+        if we call asyncOperation() without await, this will throw UnhandledPromiseRejection
+        because the async function .catch will not handle this error
+
+
+
+
 Async functions always return a promise. If the return value of an async function is not explicitly a promise, it will be implicitly wrapped in a promise.
 
 Top-level code, up to and including the first await expression (if there is one), is run synchronously, all the rest is run asynchronously
+
+
 
 one extra benifit is that in a chain of async code you have access to all previous results
 as aposed to the .then syntax you only have access to previous promise result

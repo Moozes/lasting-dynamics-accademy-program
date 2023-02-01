@@ -1,0 +1,171 @@
+Emotion is a library to write css in js
+Both string and object styles are supported
+the biggest advantige is that it provides local css scope
+
+NOTE: 
+    source maps are used to show original code in browser debugger
+    instead of a bundel of code
+
+@emotion/css
+    this is framework agnostic
+
+but for react apps use: @emotion/react and @emotion/styled
+
+NOTE
+    tsConfig compilerOptions
+        "jsx": "react-jsx",
+        "jsxImportSource": "@emotion/react", // this will make components accept css prop
+    use this pragma in each file that uses emotion
+        /** @jsxImportSource @emotion/react */
+    what does css prop do?
+        it generates a className and give it to the element it is on
+        so when definning your cutom component they need to accept a className prop so we can use css prop on them
+        and dont forget to pass class name to child html elements so that className takes effect
+
+@emotion/react
+
+    import { css } from "@emotion/reat" // <---- this is only needed to handle string styles
+
+    string styles
+        <p
+            css={css`
+                color: red;
+                font-size: 12px
+            `}
+        ></p>
+        -------------------------------
+        <p
+            css={theme => css`
+                color: red;
+                font-size: ${theme.fontSize}
+            `}
+        ></p>
+        --------------outside component-----------------
+        const styles = css`
+                color: red;
+                font-size: 12px
+        `
+        <p css={styles} ></p>
+        -------------------------------
+        // here you will need to type theme for TS
+        const styles = theme => css`
+                color: red;
+                font-size: ${theme.fontSize}
+        `
+        <p css={styles} ></p>
+
+
+    object styles
+        <p
+            css={{
+                color: "red",
+                fontSize: 12px
+            }}
+        ></p> 
+        -------------------------------
+        <p
+            css={theme => ({
+                color: "red",
+                fontSize: theme.fontSize
+            })}
+        ></p>
+        -----------outside component--------------------
+        const styles = {
+            color: "red",
+            fontSize: 12px
+        }
+        <p css={styles} ></p>
+        -------------------------------
+        // here you will need to type theme for TS
+        const styles = theme => ({
+            color: "red",
+            fontSize: theme.fontSize
+        })
+        <p css={styles} ></p>
+
+    NOTE 
+        all of the above will generate <p className="es-123-he" ></p>, ie: it generates a class name
+
+    best practices
+        use native style prop to handle dynamic styles and styles that change alot, for performance
+        declaring styles outside, means that they are processed only once, not on every rerender
+
+
+@emotion/styled
+    used to define components with style attached to them
+    
+    NOTE
+        when using styled, emotion adds to props to the styled component (theme and as)
+        object styles are preferred because they are type checked
+
+    improt styled from "@emotion/styled"
+    string styles
+        const P = styled.p`
+            color: ${props => props.theme.color};
+            font-size: ${props => props.size};
+        `
+        <P/>
+
+    object styles
+        const P = styled.p({styles}, {props => ({styles})}, props => ({
+            color: props.theme.color
+        }))
+        -------style custom components--------
+        NOTE: 
+            you dont need to add ContainerProps to StyledContainerProps, it is automatic
+            syntax: styled(CustomComponent, {configOptions})({styles}, props => ({styles}),props => ({styles}), ...etc)
+            configOptions: you can define a function to forward props or not, 
+            isValidProp: provided by emotion returns true if prop is valid html attribute
+
+        type StyledContainerProps = {
+            primary?: boolean
+        }
+        const StyledContainer = styled(Container, {
+            shouldForwardProp: prop => prop !== "primary" // <-- dont pass primary prop to Container becuase it is only for style
+        })<StyledContainerProps>(props => ({
+            background: "blue",
+            color: props.primary ? "red" : "white",
+            "@media (min-width: 200px)": {
+                display: "flex"
+            },
+            "& .someSpan": {
+                color: "red",
+                "@media (min-width: 200px)": {
+                    color: "black"
+                }
+            }
+        }))
+
+nested selector: &
+    & .someSpan
+    header &: means if current element is inside a header element
+    & > p
+    ...etc
+
+media queries: like sass
+    @media (min-width: 200px) {
+        color: red
+    }
+
+    you can define a function that return a media querie string
+       const mq => (pixels: number) => `@media (min-width: ${pixels}px)`
+       const Elm = styled.h1(props => ({
+            color: "red",
+            [mq(200)]: {
+                color: "green"
+            }
+       }))
+
+       styled.h1`
+        color: red;
+        ${md[200]} {
+            color: green
+        }
+       `
+
+
+also checkout these if you need them
+    Global styles
+    cache provider: it is used to customize emotion behavior
+    labels: cutomize what label emotion adds to classNames
+    keyframes for animation: they have their own syntaxe

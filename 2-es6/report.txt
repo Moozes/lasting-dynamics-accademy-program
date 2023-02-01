@@ -8,6 +8,7 @@ ECMAScript 2017
 each year has additions, es6 is famous because there were major changes
 
 ES6
+    before let, const there used to be only function/global scopes
     The let keyword : 
         cannot be Redeclared.
         must be Declared before use.
@@ -29,7 +30,7 @@ ES6
         right hand assignement: 
             spread objects
             spread arrays
-        function definition: define infinite arguments for functions
+        function declaration: define infinite arguments for functions, (can be used as an array)
         function call: spread arrays when passing them to functions
     For/of (order matters) 
         iterable objects (set, map, array, nodeList)
@@ -50,7 +51,7 @@ ES6
     String.endsWith()
     Array.from(): we give it an array like object containing length property
     Array keys(): method returns an Array Iterator object with the keys of an array.
-    Array find(): dinf the first value that satisfyies the predicat passed as a callback
+    Array find(): find the first value that satisfyies the predicat passed as a callback
     Array findIndex()
     New Math Methods
         Math.trunc(): number without decimals 
@@ -80,21 +81,21 @@ ES6
             hoisted to top of block
             cant be used before declaration => let: referenceError, const: syntaxError
             the space between top of block and declaration place is called temporal dead zone
-                which means that the block knows about let and const variables but cant use them untill place of initilazation
+                which means that the block knows about let and const variables but cant use them untill the place of initilazation
     functions THIS problem
         arrowFunction 
             doesnt have its own "this", 
             "this" referes to the object that declared the function
-            meaning whom ever calls the function "this" will always refer to the declarer object
-            ex: class P declares function a, we pass a to button onClick callback, this will always refer to instance of P
+            meaning whom ever calls the function "this" will always refer to the object that declared it
+            ex: class P declares function a, we pass a to button onClick callback, "this" will always refer to instance of P
         normalFunction
-            "this" refers to whom called the function if there is non it defaults to window or undefined if we "use strict" mode
-            ex class P declares function a, we pass a to button onClick callback, this will  refer to button object
+            "this" refers to whom called the function if there is non it defaults to window (or undefined if we "use strict" mode)
+            ex class P declares function a, we pass a to button onClick callback, "this" will  refer to button object
                 to solve this we need to bind it to this
     closures
         they are created every time a function is created
         closure means that a function is enclosed with references to its surrounding state (lexical environment)
-        "stuff" outside of a function cant have access to what is inside, unless it if it is returned
+        "stuff" outside of a function cant have access to what is inside, unless if it is returned
 
         example: we want a counter function that encriments a counter variable, but also that variable need to be private (cant be change else where)
         solution: 
@@ -107,3 +108,9 @@ ES6
             }() // <---- self calling function, this self call will initialize counter to zero
             counter() // counter === 1
             counter() // counter === 2
+
+        NOTE: here we used (Immediately Invoked Function Expressions) or (self invoking function)
+        which are functions that gets invoked Immediately after definition
+
+        it can also be done like this , in the case of anonymous functions
+        (function() {})()
