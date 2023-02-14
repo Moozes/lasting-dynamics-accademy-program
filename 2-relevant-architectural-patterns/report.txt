@@ -1,0 +1,138 @@
+An architectural pattern
+     is a general, reusable solution to a commonly occurring problem in software architecture within a given context.
+
+     Architectural patterns are similar to software design pattern but have a broader scope.
+
+
+**repository**  
+    Repositories are classes or components that encapsulate the logic required to access data sources
+    
+    They centralize common data access functionality, providing better maintainability and decoupling the infrastructure or technology used to access databases from the domain model layer.
+    we allow business logic to access the data object without having knowledge of underlying data access architecture.
+    business login -- repository -- data source
+
+    benifits
+        Centralization of the data access logic makes code easier to maintain
+        Business and data access logic can be tested separately
+        Reduces duplication of code
+
+    ex: 
+        if i want my business code to be decoupled from data base access because my system uses multiple databases or multiple ORMs
+        so we create a repository(interface) that encapsulates that logic 
+
+
+**pipe filter**
+    This pattern can be used to structure systems which produce and process a stream of data. Each processing step is enclosed within a filter component. Data to be processed is passed through pipes. These pipes can be used for buffering or for synchronization purposes.
+
+    pros: divide big tasks into small filters, a small filter wont be hard to impliment 
+    cons: the pipe is bottlenecked with the slowest filter in the line, so if we have one small filter the whole line will be slowed because of that
+
+    ex: Compilers. The consecutive filters perform lexical analysis, parsing, semantic analysis, and code generation.
+        Unix Shell Scripts, the output of one script is passed as input to the next script using pipes
+
+**layered**
+    This pattern can be used to structure programs that can be decomposed into groups of subtasks, each of which is at a particular level of abstraction. Each layer provides services to the next higher layer.
+
+    4 layers typically
+        Presentation layer (also known as UI layer)
+        Application layer (also known as service layer)
+        Business logic layer (also known as domain layer)
+        Data access layer (also known as persistence layer)
+
+    ex: General desktop applications.
+        operating systems like linux
+        iso network layers (application ,presentation, session, physical ...etc)
+
+
+
+
+
+
+**client/server**
+    This pattern consists of two parties; a server and multiple clients. The server component will provide services to multiple client components. Clients request services from the server and the server provides relevant services to those clients. Furthermore, the server continues to listen to client requests.
+
+    ex: Online applications such as email, document sharing and banking.
+
+**peer-to-peer**
+    In this pattern, individual components are known as peers. Peers may function both as a client, requesting services from other peers, and as a server, providing services to other peers. A peer may act as a client or as a server or as both, and it can change its role dynamically with time.
+
+    ex: File-sharing networks, such as bittorrent which is highly associated with pirated stuff
+        Cryptocurrency-based products such as Bitcoin and Blockchain
+
+**client/server vs peer-to-peer**
+    c/s: more stable network
+        security handeled by server
+    ptp: each peer can act as server and client
+        security is handeled by each node
+        no guarentee of quality of service
+    
+
+**master-slave**
+    This pattern consists of two parties; master and slaves. The master component distributes the work among identical slave components, and computes a final result from the results which the slaves return.
+
+    ex: hardware control where one device controls multiple other devices
+        database replication
+
+**client/server vs master-slave**
+    master is served by multiple slaves
+        if master goes down execution stops
+    server serves multiple clients
+        if server goes down execution stops
+
+
+**model view controller**
+    This pattern, also known as MVC pattern, divides an interactive application in to 3 parts as,
+        model — contains the core functionality and data
+        view — displays the information to the user (more than one view may be defined)
+        controller — handles the input from the user
+    This is done to separate internal representations of information from the ways information is presented to, and accepted from, the user. It decouples components and allows efficient code reuse.
+
+    ex: Architecture for World Wide Web applications in major programming languages.
+        Web frameworks such as Django and Rails.
+
+
+
+
+
+
+**Event-bus pattern**
+    This pattern primarily deals with events and has 4 major components; event source, event listener, channel and event bus. Sources publish messages to particular channels on an event bus. Listeners subscribe to particular channels. Listeners are notified of messages that are published to a channel to which they have subscribed before.
+
+    ex: Android development
+        Notification services
+
+    
+**observable pattern** 
+    the observer pattern is a software design pattern in which an object, named the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+
+    It is often used for implementing distributed event-handling systems in event-driven software.
+
+    it represents A one-to-many dependency
+    it is nedded when An object can notify multiple other objects.
+
+    ex: angular users observable pattern to emit global events that can be accessed by subscriber components
+
+**pub-sub** 
+    In software architecture, publish–subscribe is a messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers, but instead categorize published messages into classes without knowledge of which subscribers, there may be. 
+
+    typically uses a broker in the middle to manage messages, which makes publishers/subscribers more decoupled
+
+    topic-based system
+        The publisher is responsible for defining the topics (logical channels)
+    content-based system
+        The subscriber is responsible for classifying the messages.
+
+**pub-sub vs observable**
+    In the Observer pattern, Observers are aware of the Subject, but Publish-Subscribe does not require Subjects and Observers to know about each other because they communicate through a central broker. In other words, Observer involves tight coupling to Subjects, but Publish-Subscribe involves loose coupling
+
+**broker**
+    This pattern is used to structure distributed systems with decoupled components. These components can interact with each other by remote service invocations. A broker component is responsible for the coordination of communication among components.
+    Servers publish their capabilities (services and characteristics) to a broker. Clients request a service from the broker, and the broker then redirects the client to a suitable service from its registry.
+    and the broker may add other functions such as filtering, security, prioritization of messages ...etc
+
+    ex: Message broker software "Apache ActiveMQ"
+
+Blackboard pattern
+Interpreter pattern
+    interpret languages to other languages like JS
+    compiled languages are faster

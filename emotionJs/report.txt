@@ -15,7 +15,7 @@ NOTE
     tsConfig compilerOptions
         "jsx": "react-jsx",
         "jsxImportSource": "@emotion/react", // this will make components accept css prop
-    use this pragma in each file that uses emotion
+    use this pragma in each file that uses @emotion/react ie: css prop
         /** @jsxImportSource @emotion/react */
     what does css prop do?
         it generates a className and give it to the element it is on
@@ -95,7 +95,7 @@ NOTE
     used to define components with style attached to them
     
     NOTE
-        when using styled, emotion adds to props to the styled component (theme and as)
+        when using styled, emotion adds  props to the styled component (theme and as)
         object styles are preferred because they are type checked
 
     improt styled from "@emotion/styled"
@@ -111,6 +111,7 @@ NOTE
             color: props.theme.color
         }))
         -------style custom components--------
+        your component needs to accept className prop, and you need to pass that prop to first html tag
         NOTE: 
             you dont need to add ContainerProps to StyledContainerProps, it is automatic
             syntax: styled(CustomComponent, {configOptions})({styles}, props => ({styles}),props => ({styles}), ...etc)

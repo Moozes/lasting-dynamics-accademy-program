@@ -1,0 +1,42 @@
+jest is used to test javascript code
+
+setup
+    JS----------------------------------
+    npm init -y // initialize a package
+    npm i jest --save-dev
+    in package.json
+        scripts: [
+            "test": "jest"
+        ] 
+    index.js // export normal code
+    index.test.js // import code and test it
+
+    TS----------------------------------
+    npm init -y // initialize a package
+    npm install --save-dev jest typescript ts-jest @types/jest
+    npx ts-jest config:init // create a config file needed by ts-jest for transpiling
+    in package.json
+        scripts: [
+            "test": "jest"
+        ]
+    index.ts // export normal code
+    index.test.ts // import code and test it
+
+    run test-----------------------------
+    npm test
+
+hello-word
+    export default hello() {
+        return "hello world"
+    }
+    ---
+    import hello from "./index"
+    test("returns hello world", () => {
+        expect(hello()).toBe("hello world")
+    })
+
+Matchers
+    exact equality
+        toBe(value) 
+    recursively checks every field of an object or array
+        toEqual(object or array)

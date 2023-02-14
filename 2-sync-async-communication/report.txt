@@ -1,0 +1,57 @@
+sync
+    it is a communication that happens in real time where both parties expect a response right away
+    ex: phone, meeting (physical, vertual), webinars
+
+async
+    is the oposit of synchronous communication, where both parties dont expect an immediate response
+    it allows people to take time before responding
+    ex: email, sms, instant messagin (slack), assigned tasks (trello)
+
+sync vs async
+    the main difference is in the response time between messages
+
+
+sync
+    pros
+        avoid misunderstanding and back-and-forth
+            misunderstanding is handeled right away
+        build personal relations with team members
+        quick response time for urgencies
+
+    cons
+        distracting
+        hard for different time zones (US, EUROPE)
+
+    use cases
+        one on one
+        quick update on something
+        retrospectives
+        hiring process
+
+async
+    main advantage: ability to respond at a time that works for you
+    props
+        more focus time
+            intereupting workers, will make them need more time to resume interupted work
+        time zone friendly
+            cant have every one live on your day work hours
+        flexible response time
+            some issues need time to come up with good solutions
+
+    cons
+        not suitable for urgent issues (by nature)
+            urgent issues need a quick response
+        possible miscommunication
+            by nature you cant convey all information especially imotions
+
+    use cases
+        task managment
+        focus intensive problem solving (to avoid distraction)
+        status update and reporting 
+        blockers warnings (dont wait some meeting to talk about blockers)
+
+
+
+what to use?
+    there is no companie that uses only one approach of communicatin
+    typically you need to find balance between the two, what works best for your company and teams

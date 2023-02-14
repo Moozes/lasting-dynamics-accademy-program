@@ -32,6 +32,9 @@ React patterns
 SPA vs MPA
     what is downside of MPA?
     what is server side rendering? is it mpa or spa
+    down side of spa
+        SEO
+        first load is long
 
 
 context api
@@ -42,7 +45,15 @@ context api
 
 Git branch feature
     reset vs revert
-    git stash
+    git stash asked twise
+    how to avoid conflicts
+        git rebase
+        communication
+        before creating a pull request, merge with main first 
+    fetch vs pull
+
+LD docs
+    who is supposed to review, and what is the review process
 
 architectural patternt
     client-server vs master-slave
@@ -68,5 +79,8 @@ async and sync communication
     what is the best way, + example, 
     solution:
         affaf: the best way is to have balance between them, urgent => sync meeting, non urgent => async like email
-        depends are you working remotely or in colocation
+        some student : depends are you working remotely or in colocation
         email, messagin, video conference??
+
+LD docs
+    refactoring code meaning
