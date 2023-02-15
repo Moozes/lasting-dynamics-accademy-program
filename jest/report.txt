@@ -1,6 +1,6 @@
 jest is used to test javascript code
 
-setup
+installing and running
     JS----------------------------------
     npm init -y // initialize a package
     npm i jest --save-dev
@@ -40,3 +40,115 @@ Matchers
         toBe(value) 
     recursively checks every field of an object or array
         toEqual(object or array)
+    toEqual ignores undefined, use 
+        toStrictEqual(obj or arr)
+    opposit matcher
+        not.toBe(0) 
+        NOTE: "not" is called a modifier
+    truthiness
+        toBeNull 
+        toBeUndefined 
+        toBeDefined 
+        toBeTruthy 
+        toBeFalsy 
+    numbers
+        toBeGreaterThan(3);
+        toBeGreaterThanOrEqual(3.5);
+        toBeLessThan(5);
+        toBeLessThanOrEqual(4.5);
+    floating numbers
+        toBeCloseTo(0.3) // to avoid rounding errors
+    regexp
+        toMatch(/stop/)
+    arrays and iterable
+        toContain()
+    exceptions
+        expect(() => foo()).toThrow()
+        expect(() => foo()).toThrow(Error)
+        expect(() => foo()).toThrow("exact error message")
+        expect(() => foo()).toThrow(/wrong email/)
+        NOTE: as you can see you need to be wraped inside a callback 
+
+    NOTE: there is also 
+        asymetric matchers
+        assertion count matchers
+        extend utilities
+
+
+Testin async code
+    1-returning and using .then and .catch
+        test("...", () => {
+            return fetchData().then(data => expect(data).toBe("this string"))
+        })
+    2-using async/await
+        test("...", async () => {
+            const data = await fetchData()
+            expect(data).toBe("this string")
+        })
+    3-using resolves/rejects
+        test("...", () => {
+            return expect(fetchData()).resolves.toBe("this string")
+        })
+    4-combine async/await with resolves/rejects
+        test("...", async () => {
+            await expect(fetchData()).resolves.toBe("this string")
+            
+        })
+    5-callbacks: check docs if interested
+    NOTE: 
+        you either return or await the async code or the test will run before async finishes
+        expect.assertions(x) use this to insure that x number of assertions where run
+
+Setup and Teardown
+    some times you need to prepare some stuff before tests and clean after tests
+
+    repeating setup
+        beforeEach(() => { // before every test
+            initializeCityDatabase();
+        });
+    
+        afterEach(() => { // after every test
+            clearCityDatabase();
+        });
+        NOTE: 
+            these two methods can also handle async
+            using return or async/await and resolves/rejects
+    
+    one-time setup
+        beforeAll(() => {
+            return initializeCityDatabase();
+        });
+
+        afterAll(() => {
+            return clearCityDatabase();
+        });
+
+    scoping
+        The top level before* and after* hooks apply to every test in a file. The hooks declared inside a describe block apply only to the tests within that describe block.
+
+        // Applies to all tests in this file
+        beforeEach(() => {...});
+        test('city database has Vienna', () => {...});
+        describe('matching cities to foods', () => {
+            // Applies only to tests in this describe block
+            beforeEach(() => {...});
+            test('San Juan <3 plantains', () => {...});
+        });
+
+Order of Execution
+    describe blocks are run before tests them selfs
+    ex: 
+        describe 1
+        describe 2
+        test 1
+        test 2
+
+    beforeEach/afterEach are called in the declaration order
+    Note: enclosed afterEach is called before outer afterEach
+
+Advise
+    if test passes when run alone and fails when run with other tests
+    temporarily add test.only(...) to that test to run it alone 
+    and try to clean shared state with beforeEach
+
+Mock Functions: check docs
