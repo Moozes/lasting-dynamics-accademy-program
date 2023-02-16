@@ -1,0 +1,48 @@
+Software develoment
+    follow a clean approach, object oriented or procedural structured programming
+    reusability, design patterns, decoupling, no side effects in functions (pure), readable code, meaningful variable names
+
+Code refactoring 
+    a developer should add code refactoring tasks on their own, when the workflow is not very bussy, 
+    code refactoring can be discussed in retrospectives, and they can get some time for them
+    it is usefull to keep the code base healthy and in a good shape
+    
+
+Smoke and sanity testing
+    the idea here is that whom ever develops a piece of code, is also responssible for testing that piece of code before it is passed on to another team-mate to add on to it
+    here we usually check for bugs and all involved modules
+    and it is good to take a 10min break between coding and testing and then opening a pull request
+
+Automated tests
+    developers are also responssible for adding Automated test to their code, 
+    there are 2 types of automated tests, integration and unit testing, 
+    integration testing is good to avoid Software regression
+    but unit tests are also good
+    you can either follow TDD by writing tests first 
+    or FDD (feature driven development) by adding tests at the end
+
+Code reviews
+    it is the process where an open Pull request is reviewed by a team-mate
+    all developers have to prioritise the code review, they should work on it 30-60 mins per day
+    all concerns should be left as a comment on the pull request and await for response
+    a task to be reviewed, should be in the ready-for-review column
+    then goes to error column even if there is no error?
+    after mergin it goes to merged column
+    use common sense and common ground to avoid arguing whether to merge or not
+
+Feature reviews
+    when code reviewing a pull request, it is also good to checkout to that branch and test the feature for about 5mins by hand
+
+MVP-oriented mindset
+    developers should keep in mind that
+    a feature, a problem or a task can always be deconstructed to smaller bits that will help us acheive the first version of the code without finishing the whole thing
+    after that, we can reach the final version by adding code
+    the good thing  here is that we have benifited from staring/testing/mergin the first versions
+
+CDT - continuous deconstruction of tasks
+    it is expected from a project manager or another team-mate to create tasks for you
+    it is your own duty to understand the requirement and ask questions
+    then satrt developing you first task while ADDING SUB TASKS that are discovered along the way
+    why sub tasks are good: because we usually want small PRs
+    marcro task can be divided into 20-30 subtasks
+    it is required to no have more than 10 file changes in a single PR
