@@ -46,3 +46,64 @@ CDT - continuous deconstruction of tasks
     why sub tasks are good: because we usually want small PRs
     marcro task can be divided into 20-30 subtasks
     it is required to no have more than 10 file changes in a single PR
+
+feature flag
+    purpose: always have a mergable dev branch to production branch
+    when creating new features, each step needs to be merged as often as possible to avoid conflicts and long going branchs
+    problem: unfinished features should not appear in production
+    solution: a feature flag that allow QA to only activate unfinished features in development not production
+
+    process
+        in task board we have macros (user stories)
+        they dont have their own PR
+        but their sub tasks do, each subtask should be merged directly to dev branch even if unfinished
+        2 rules
+            if disabled, App MUST work as before
+            if enabled, the new feature should be available
+    
+    feature flag naming
+        frontend feature flag name should contain: ".web."
+        long-term feature: obs.web.<name>
+        for feature development only: feat.web.<name>
+        <name> should be unique + a short description
+
+    development with flags, 2 approachs 
+
+    1-const enabled = useFeatureEnabled(‘feat.web.new-dialog’)
+
+    2-<FeatureFlag
+		name=”feat.web.new-dialog”
+		on={() => <NewDialog />}
+		off={() => <OldDialog />}
+	/>
+    NOTE:
+        component form preferred, hook only allowed when component form is not possible
+        when changing a component use only one feature flag, 
+
+
+Bugs priority in daily workflow
+    as a dev always look for bugs on the board
+    urgent: stop current task and handle it
+    high: handle before resuming new feature, (after current task)
+    medium: if your milestone is almost done finish it first, otherwise handle bug first
+    low: console warning, cosmetic issues, hadnle it after milestone is done
+
+Pull requests guidelines
+    when creating PRs
+        1-they should be named using the id of task from RR + its title
+        2-no more than 15 file changes in a single PR
+        if the dev estimates that a PR will have more than 15 file changes, it should be broken down to smaller tasks and follow reverse merge strategy
+        3-reverse merge strategy
+            develompent
+                task1 (PR will have more than 15 file changes)
+                    subtask1 (PR will have more than 15 file changes)
+                        subsubtask1
+            
+            task1 will be reviewed and merged first
+            then subtask1 will be reviewed and merged (target branch will be develoment by default),
+            then subsubtask1 will be reviewed and merged (target branch will be develoment by default)
+
+            benifit
+                better readability
+                easier code reviews, because small PR changes
+                devs can merge PRs even if their subsequent PRs have bugs
