@@ -1,8 +1,7 @@
 feature branch work flow
-    The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the main branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase. It also means the main branch will never contain broken code, which is a huge advantage for continuous integration environments.
+    the main idea is that all feature development should take place in its own branch, this will make it possible to work on features without effecting the main branch, and it means that the main branch will never have broken code
 
-    Encapsulating feature development also makes it possible to leverage pull requests, which are a way to initiate discussions around a branch. They give other developers the opportunity to sign off on a feature before it gets integrated into the official project. Or, if you get stuck in the middle of a feature, you can open a pull request asking for suggestions from your colleagues. The point is, pull requests make it incredibly easy for your team to comment on each other’s work.
-
+    and this work flow will help leverage PRs, wich are a way to talk about a branch and agree on its changes before merging it, in short pull request are a great way to have discussions between developpers
 
 git 
     version control system
@@ -15,7 +14,7 @@ repository
     A software repository is typically managed by source or version control, or repository managers. 
 
 git stash
-    tepraraly saves your current uncommited work, so you wan change context and work on something else
+    temporarely saves your current uncommited work, so you wan change context and work on something else
     for example: you can use git stash when an urgent task needs to be handled, but you current changes doesnt qualify for a commit yet, so you stash them and unstash them later so you can finish working on them
 
     git stash

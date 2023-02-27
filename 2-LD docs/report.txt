@@ -6,7 +6,7 @@ Code refactoring
     a developer should add code refactoring tasks on their own, when the workflow is not very bussy, 
     code refactoring can be discussed in retrospectives, and they can get some time for them
     it is usefull to keep the code base healthy and in a good shape
-    
+    example: remove repitions, extract repeated code into functions, improve readability, 
 
 Smoke and sanity testing
     the idea here is that whom ever develops a piece of code, is also responssible for testing that piece of code before it is passed on to another team-mate to add on to it
@@ -40,7 +40,7 @@ MVP-oriented mindset
     the good thing  here is that we have benifited from staring/testing/mergin the first versions
 
 CDT - continuous deconstruction of tasks
-    it is expected from a project manager or another team-mate to create tasks for you
+    it is not expected from a project manager or another team-mate to create tasks for you
     it is your own duty to understand the requirement and ask questions
     then satrt developing you first task while ADDING SUB TASKS that are discovered along the way
     why sub tasks are good: because we usually want small PRs
@@ -77,12 +77,12 @@ feature flag
 		off={() => <OldDialog />}
 	/>
     NOTE:
-        component form preferred, hook only allowed when component form is not possible
-        when changing a component use only one feature flag, 
+        1-component form preferred, hook only allowed when component form is not possible
+        2-when changing a component use only one feature flag, 
 
 
 Bugs priority in daily workflow
-    as a dev always look for bugs on the board
+    as a dev always look for bugs on the board, there are 4 priorities
     urgent: stop current task and handle it
     high: handle before resuming new feature, (after current task)
     medium: if your milestone is almost done finish it first, otherwise handle bug first
