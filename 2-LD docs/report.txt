@@ -25,6 +25,7 @@ Code reviews
     it is the process where an open Pull request is reviewed by a team-mate
     all developers have to prioritise the code review, they should work on it 30-60 mins per day
     all concerns should be left as a comment on the pull request and await for response
+
     a task to be reviewed, should be in the ready-for-review column
     then goes to error column even if there is no error?
     after mergin it goes to merged column
@@ -45,7 +46,7 @@ CDT - continuous deconstruction of tasks
     then satrt developing you first task while ADDING SUB TASKS that are discovered along the way
     why sub tasks are good: because we usually want small PRs
     marcro task can be divided into 20-30 subtasks
-    it is required to no have more than 10 file changes in a single PR
+    it is required to not have more than 10 file changes in a single PR
 
 feature flag
     purpose: always have a mergable dev branch to production branch
@@ -100,7 +101,7 @@ Pull requests guidelines
                         subsubtask1
             
             task1 will be reviewed and merged first
-            then subtask1 will be reviewed and merged (target branch will be develoment by default),
+            then subtask1 will be reviewed and merged (target branch will be development by default),
             then subsubtask1 will be reviewed and merged (target branch will be develoment by default)
 
             benifit
