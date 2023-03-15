@@ -1,32 +1,16 @@
-USE "REACT NATIVE CLI" NOT "EXPO"
-TRY TO USE A STYLING LIBRARY: NATIVE BASE
-
-
-
-
-fontfamilly not like figma?? 
-status bar bg color problem
-
-maybe add tests
-
-
-
-
-
-
-verb function names
-set up json server and make it public
-colors use variables
-folder names should be same as file names components
+change function names to verbs
+set up a json server to actually fetch data
+use variables for colors
+change folder names to match component names
 use navigation hook instead of props.navigation.navigate
-dont do style={style.container}
-always destrucure function params 
-use absolute imports: lokmane used something like this @src/component
+always destructure props 
+use absolute imports
 extract require image to a variable
+fix fontfamilly  
 
 extract header to a component
 use svgs, react-native-svg-transformer
-payment detail fetch by id
-fetch logic, hooks, axios
 add error messages in UI for fetching failures, (ex: json server is down)
-textoverflow in payment cards, im fetching strings like this "qlsjdl...", error is obvious in payment details screen
+textoverflow in payment cards
+
+added one test
