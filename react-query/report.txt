@@ -1,0 +1,154 @@
+overview
+    it makes fetching, caching, synchronizing and updating server state in your web applications very easy.
+
+installation
+    npm i @tanstack/react-query
+
+    //eslint plugin for for best practices
+    npm i -D @tanstack/eslint-plugin-query
+
+quick start
+    react query has 3 concepts: queries, mutations, query invalidation
+
+devtools
+    npm i @tanstack/react-query-devtools
+
+comparison: other libraries like react query
+    // these all help with fetching logic
+    SWR, Apollo Client, RTK-Query, React Router
+
+TypeScript
+    generally speaking, you dont have to define type annotaions
+
+    const { data } = useQuery({
+        //    ^? const data: number | undefined
+        queryKey: ['test'],
+        queryFn: () => Promise.resolve(5),
+    })
+
+    const { data } = useQuery({
+        //      ^? const data: string | undefined
+        queryKey: ['test'],
+        queryFn: () => Promise.resolve(5),
+        select: (data) => data.toString(),
+    })
+
+    queryFn need to have a well defined return type, because fetch and axios return any by default
+
+        const fetchGroups = (): Promise<Group[]> =>
+            axios.get('/groups').then((response) => response.data)
+
+        const { data } = useQuery({ queryKey: ['groups'], queryFn: fetchGroups })
+        //      ^? const data: Group[] | undefined
+
+    how to remove union?, check status flags at run time such as "isSuccess"
+        // data: number | undefined
+
+        if(isSuccess) {
+            //data: number
+        }
+
+    typing error: runtime check OR explicitly define types for data and error
+        const { error } = useQuery({ queryKey: ['groups'], queryFn: fetchGroups })
+        //      ^? const error: unknown
+
+        if (error instanceof Error) {
+            error
+            // ^? const error: Error
+        }
+
+        --OR--
+        const { error } = useQuery<Group[], Error>(['groups'], fetchGroups)
+        //      ^? const error: Error | null
+
+
+important defaults: 
+    //if you dont know defaults, it will be hard to debug and learn
+    //every default is customizable, either per query or globaly
+    1.Query instances via useQuery or useInfiniteQuery by default consider cached data as stale
+        Stale queries are refetched automatically: 
+            New instances of the query mount
+            The window is refocused (such as focusing between browser and dev tools)
+            The network is reconnected
+            The query is optionally configured with a refetch interval
+
+    2.Query results that have no more active instances of useQuery, useInfiniteQuery or query observers are labeled as "inactive" and remain in the cache in case they are used again at a later time.
+
+        By default, "inactive" queries are garbage collected after 5 minutes.
+
+    3.Queries that fail are silently retried 3 times, with exponential backoff delay before capturing and displaying an error to the UI.
+
+
+
+Queries 
+    every query has a unique KEY
+    a query can be used with any promise based function
+    if query changes server data, use mutations instead
+
+    useQuery hook
+        const result = useQuery({ queryKey: ['todos'], queryFn: fetchTodoList })
+
+        result contains all what you need
+        isLoading or status === 'loading'
+        isError or status === 'error'
+        isSuccess or status === 'success'
+        error - If the query is in an isError state
+        data - If the query is in an isSuccess state
+        fetchStatus === 'fetching' - The query is currently fetching
+        fetchStatus === 'paused' - The query wanted to fetch, but it is paused
+        fetchStatus === 'idle' - The query is not doing anything at the moment
+
+        PS: 
+            For most queries, it's usually sufficient to check for the isLoading state, then the isError state, then finally, assume that the data is available and render the successful state
+            TypeScript will also narrow the type of data correctly if you've checked for loading and error before accessing it.
+
+            status used for data flags, do we have data?
+            fetchStatus used for queryFn flags, is queryFn running
+
+
+
+Query Keys
+    each query needs a unique KEY, so the library can handle cache and other stuff
+    it is an array at the top level
+    can contain simple strings, or nested objects as long as it is serializable
+        useQuery({ queryKey: ['todos'], ... })
+        useQuery({ queryKey: ['something', 'special'], ... })
+        //to describe hierarchy, like url, or describe a filter
+        useQuery({ queryKey: ['todo', 5], ... })                   // like todos/5
+        useQuery({ queryKey: ['todo', 5, { preview: true }], ...}) // like todos/5?preview=true
+        useQuery({ queryKey: ['todos', { type: 'done' }], ... })   // like todos?type=done
+
+    these are equel keys, object keys order doesnt matter
+        useQuery({ queryKey: ['todos', { status, page }], ... })
+        useQuery({ queryKey: ['todos', { page, status }], ...})
+        useQuery({ queryKey: ['todos', { page, status, other: undefined }], ... })
+
+    these are not equal keys, array keys order matter
+        useQuery({ queryKey: ['todos', status, page], ... })
+        useQuery({ queryKey: ['todos', page, status], ...})
+        useQuery({ queryKey: ['todos', undefined, page, status], ...})
+
+    If your query function depends on a variable, include it in your query key
+        const result = useQuery({
+            queryKey: ['todos', todoId],
+            queryFn: () => fetchTodoById(todoId),
+        })
+
+
+
+Query Functions
+    can be literally any function that returns a promise. The promise that is returned should either resolve the data or throw an error.
+
+    Handling and Throwing Errors
+        for react query to detect an error the query function needs to throw an error or reject a promise
+        PS: fetch API doesnt throw error, need to be done manually
+
+    Query Function Variables
+        QueryFunctionContext is passes to each queryFn
+        it has 
+            queryKey: QueryKey
+            pageParam?: unknown //only for Infinite Queries
+            signal?: AbortSignal //Can be used for Query Cancellation
+            meta: Record<string, unknown> | undefined //an optional field you can fill with additional information about your query
+
+            example    queryFn: ({queryKey}) => {...}
