@@ -149,7 +149,7 @@ media queries: like sass
     }
 
     you can define a function that return a media querie string
-       const mq => (pixels: number) => `@media (min-width: ${pixels}px)`
+       const mq = (pixels: number) => `@media (min-width: ${pixels}px)`
        const Elm = styled.h1(props => ({
             color: "red",
             [mq(200)]: {

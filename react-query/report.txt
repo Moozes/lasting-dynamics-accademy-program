@@ -152,3 +152,166 @@ Query Functions
             meta: Record<string, unknown> | undefined //an optional field you can fill with additional information about your query
 
             example    queryFn: ({queryKey}) => {...}
+
+
+
+Network Mode
+    react query provides 3 network modes to determine how queries/mutations should work depending on whether you are online or offline
+    it can be configured per query/mutaion or globally
+
+    networkMode: 'online' | 'always' | 'offlineFirst', defaults to 'online'
+
+    online  
+        Queries and Mutations will not fire unless you have network connection
+        state will always be one of these (loading, error, success), ie: the last state before you were offline
+
+        so isLoading is not enough to show loading spinner, you need to check fetchStatus or isPaused with that
+
+        when you go offline retry will be paused also, untill online again
+
+    always
+        react query will ignore online/offline state, 
+        use if you deal with asyncStorage, or during development where you deal with Promise.resolve(5) instead of a real api call
+        query will never pause, because no network
+        retries will not pause, but may go to error
+        refetchOnReconnect defaults to false
+
+    offlineFirst
+        queryFn will run once, getting data from offline storage/cache
+        if there is cache miss, it will fail and pause retries
+        use for  offline-first PWA (progressive web applications)
+
+    PS: The TanStack Query Devtools will show Queries in a paused state if they would be fetching, but there is no network connection.
+
+
+
+
+Parallel Queries
+    Manual Parallel Queries
+        const usersQuery = useQuery({ queryKey: ['users'], queryFn: fetchUsers }) 
+        const teamsQuery = useQuery({ queryKey: ['teams'], queryFn: fetchTeams })
+        const projectsQuery = useQuery({ queryKey: ['projects'], queryFn: fetchProjects })
+
+        PS: When using React Query in suspense mode, this pattern of parallelism does not work
+
+
+    Dynamic Parallel Queries with useQueries
+        If the number of queries you need to execute is changing from render to render
+
+         const userQueries = useQueries({
+            queries: users.map((user) => {
+                return {
+                    queryKey: ['user', user.id],
+                    queryFn: () => fetchUserById(user.id),
+                }
+            }),
+        })
+
+
+
+
+Dependent Queries
+    it's as easy as using the enabled option to tell a query when it is ready to run
+    const { data: user } = useQuery({
+        queryKey: ['user', email],
+        queryFn: getUserByEmail,
+    })
+
+    const userId = user?.id
+
+    // Then get the user's projects
+    const result = useQuery({queryKey: ['projects', userId], queryFn: getProjectsByUser,
+        // The query will not execute until the userId exists
+        enabled: !!userId,
+    })
+
+
+
+Background Fetching Indicators
+    isLoading is enough to show first fetch, but you may wanna show an indication when refreshing data, for that you can use isFetching
+
+
+    Displaying Global Background Fetching Loading State
+        useIsFetching() // for global loading Indicator, to indicate that some part of the APP is fetching
+
+
+
+Window Focus Refetching
+    Disabling Globally
+        const queryClient = new QueryClient({
+            defaultOptions: {
+                queries: {
+                refetchOnWindowFocus: false, // default: true
+                },
+            },
+        })
+
+    Disabling Per-Query
+    useQuery({
+        queryKey: ['todos'],
+        queryFn: fetchTodos,
+        refetchOnWindowFocus: false,
+    })
+
+
+    Pitfalls & Caveats: these have some problems to handle
+        <input type="file" />
+        alert()
+
+
+
+Disabling/Pausing Queries
+    use enabled = false
+    if there is cached data isSuccess is true
+    if there no cached data isLoading true and fetchStatus === "idle"
+    no fetch on mount
+    no refetch
+    refetch can be used to manually fetch data like when clicking a button
+
+    PS: this is not the idiomatic way
+
+
+    Lazy Queries
+        enabled can also be used to enable/disable queries when state changes, like one a user enters a filter value
+
+        const [filter, setFilter] = React.useState('')
+
+        const { data } = useQuery({
+            queryKey: ['todos', filter],
+            queryFn: () => fetchTodos(filter),
+            // disabled as long as the filter is empty
+            enabled: !!filter
+        })
+
+
+    isInitialLoading
+        Lazy queries will be in status: 'loading' right from the start because loading means that there is no data yet. This is technically true, however, since we are not currently fetching any data (as the query is not enabled), it also means you likely cannot use this flag to show a loading spinner.
+
+        If you are using disabled or lazy queries, you can use the isInitialLoading flag instead. It's a derived flag that is computed from:
+        isLoading && isFetching
+        so it will only be true if the query is currently fetching for the first time.
+
+
+
+Query Retries
+    react query automatically retries failed queries 3 times with a delay between them
+    retry / retryDelay both can be configured globally or per query
+
+
+Paginated / Lagged Queries
+    to request paginated data just provide page information as query key, 
+    when ever the page changes => key changes => new query
+
+    to keep previous data while fetching new page data use "keepPreviousData: true"
+
+    useQuery({
+        queryKey: ['projects', page],
+        queryFn: () => fetchProjects(page),
+        keepPreviousData : true
+    })
+
+    and query return a usefull variable called isPreviousData to know of we are still in old data or new data arrived
+
+    keepPreviousData also works with useInfiniteQuery
+
+

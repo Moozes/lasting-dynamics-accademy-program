@@ -1,6 +1,6 @@
 major changes in v6.4, i 
 think they used a similar approach to angular routing, where you configure it using an array of abjects
-they also emulated old behaviors, navigating with forms where they prevent form defaults and capture request using route actions
+they also emulated old web development behaviors, navigating with forms where they prevent form defaults and capture request using route actions
 
 
 
