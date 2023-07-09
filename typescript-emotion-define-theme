@@ -1,0 +1,20 @@
+import { createTheme } from "@mui/material";
+import { Theme as MuiTheme } from "@mui/material";
+
+// customize your material theme
+declare module "@mui/material/styles" {
+    interface Theme {
+        color: {
+            main: string
+        }
+    }
+}
+
+// let emotion know your theme
+declare module '@emotion/react' {
+    export interface Theme extends MuiTheme {}
+}
+
+const theme = createTheme();
+
+export default theme;

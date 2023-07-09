@@ -1,0 +1,27 @@
+git workflow
+    pull main
+    create feature branch
+    work on it
+    push feature branch to create remote feature branch
+    keep working on it
+    push again to remote feature branch
+    finished?
+    create pull/merge request
+    wait for feed back
+    if accept good
+    if conflict
+        pull main
+        merge main into feature branch (and not the reverse)
+        push to remote feature branch
+        git host will automatically detect the ability of automatic merge
+        pull request merged and closed
+
+    Note: 
+        only pull main branch when resolving a conflict 
+        --or-- 
+        creating a new feature branch because you need your feature to be as close as possible to main 
+
+NOTE
+    merge request is equivlant to pull request (different git hosts use different names)
+        it is a way to create a discussion, get code review, comment...etc on the feature branch to merge before merging 
+        use this approach even if you are developing alone

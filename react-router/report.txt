@@ -21,8 +21,8 @@ create router
                         path:"contact/:id",
                         element: <Contact/>,
                         loader: contactLoader
-                    ]
-                }
+                    }
+                ]
             }
         ]
     },

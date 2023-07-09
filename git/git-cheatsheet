@@ -1,0 +1,171 @@
+git init
+git clone
+git status
+git log
+	--online
+	--stat: files and number of lines changed
+	--patch or -p: show actual changes made inside files
+	-w ignore white space
+	--graph --all: show all branchs together
+	--graph --all --oneline: show all branchs together with a clean reduced look
+
+git show SHA === git log -p SHA
+	--stat
+	-w ignore
+	git show: shows the latest commit
+git add <file1> <file2>..<fileN> 
+	(or) git add .
+git commit (will open the editor) 
+	(or) git commit -m "initial commit" 
+git diff
+git tag: display all tags
+	git tag -a v1.0: add anotated tag to latest commit + name + time + message
+	git tag  v1.1: add light weight tag
+	git tag -d v1.0: delete tag
+	git tag -a v1.0 a87984: add a tag to past commit 
+
+.gitignore
+	blank lines can be used for spacing
+	# - marks line as a comment
+	* - matches 0 or more characters
+	? - matches 1 character
+	[abc] - matches a, b, or c
+	** - matches nested directories - a/**/z matches
+		a/z
+		a/b/z
+		a/b/c/z
+
+	example: 
+		samples/*.jpg all jpg images in samples folder
+		*.png will also ignore name.PNG 
+
+branches:
+	master --> latest commit in branch
+	head --> header-fix --> latest commit in branch
+	head indicates the active branch that we are working on
+
+	git branch: display all branchs with and * infront of the active branch
+	git branch sidebar: creates the branch but stays on master
+	git branch sidebar-fix b49113f3e: will create a branch starting from that commit
+	git branch -d sidebar-fix: 
+		will delete the branch
+		you need to be on a different branch
+		you use this when you are done merging it with master and dont need it anymore
+		if there are commits not on other branchs git wont let you delete it, to force delete use: git branch -D sidebar
+	git branch footer master: create a footer branch based of master branch
+
+git checkout sidebar: makes active branch sidebar
+
+git checkout -b sidebar: creates sidebar and makes it active branch
+
+merging
+	git merge <name-of-branch-to-bring-in-the-current-active-branch>
+	2 types of merge
+		fast-forward: footer branch is ahead of master branch (footer has the same commits of master + others) the master pointer will just move forward
+		regular merge: 
+			combine divergant branchs
+			a commit is going to be made (when editor open for commit message just close it)
+
+merge conflict
+	when 2 branchs change the same lines of code
+	open editor, you will find these indicators
+		<<<<HEAD
+			content in active branch
+		|||| 234ab3
+			content in common ancestor
+		====
+			content in branch we are bringing in
+		>>>> name of branch we are bringing in
+	delete all lines of indicators and do what ever you like, leave a content, create a new content..
+	add
+	commit, close editor to keep default merge message
+
+
+undoing changes
+	git commit --amend
+		git commit --amend will allow you to change commit message of latest commit
+		--OR--
+		change files, 
+		stage
+		git commit --amend will commit them to latest commit and doesnt add a new commit
+	git revert SHA
+		will do the opposit of that commit
+		this will create a new commit
+		editor will open to give a commit message (close to keep default message)
+	git reset reference (HEAD^) or (HEAD^^)
+		move the HEAD and current branch pointer to the referenced commit
+		erase commits with the --hard flag
+		moves committed changes to the staging index with the --soft flag
+		unstages committed changes --mixed flag
+
+commit references
+	SHA, tag, branch, HEAD pointer
+	relative refs: using ^ and ~
+		HEAD^ or HEAD~1
+		HEAD^^ or HEAD~2
+		somtimes a commit has 2 ancestors (regular merges) to point to the second ancestor HEAD^^^2
+
+
+git checkout -- index.html: removes modifications in working directory (working directory will be clean)
+
+
+git push origin main: push to origin my main branch
+git pull origin main: 
+	pull from origin its main branch to my main branch (auto merge)
+	this works in fast forward merges
+
+
+git fetch origin main: 
+	pull from origin its main branch, and move origin/main pointer forward
+	no merging happens, you do it manualy and then push again
+
+fetch vs pull
+	use fetch when both origin and local repos has commits that the other one doesnt
+	so you need to fetch
+	preform regular merge (git merge origin/main)
+	then push back
+
+git shortlog: to see alphabetic list of others + nb of there commits + commit messages
+	-s to show just names and nb of commits
+	-n to order numeracally rather then alphabetically
+
+git log --author="Moussa khodja": filter by author
+
+git log --grep="bug fix": filter by commit message
+
+
+Forking
+	cloning another user's repo doesnt give you the right to push new changes to it
+	so you need to fork it (make an exact copy of it to your online git host)
+	forking is a git host thing not a git thing
+	now you can clone the forked repo and push new changes to it
+
+Before Contributing
+	read CONTRIBUTING.md
+	check issues to see if someone is already doing what you want to do
+		if yes: help them
+		if no: create a new issues, talk to maintainers, if they agree start working on your changes
+		use topic branchs, don't work directly on master or main
+		make a pull request (request the owner to accept you changes and merge them) (request owner to pull you changes)
+	
+
+NOTES
+	Extract a commit by the commit message
+		git log | grep -C4 '---the message---'
+		copy SHA
+		git show -w SHA
+
+	when you work on a new feature, and sleep without commiting
+		you wanna know what you did yeterday
+		run git diff
+		it ignores white space by default
+
+	A good commit message
+		a commit need to do one thing 
+		keep it short
+		do not explain: how, or why 
+		if you need to explain why, write the message then leave a blank line then write the explanation body
+		do not use and
+		explain: what
+		complete this "this commit will"
+
