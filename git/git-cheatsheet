@@ -2,7 +2,7 @@ git init
 git clone
 git status
 git log
-	--online
+	--oneline
 	--stat: files and number of lines changed
 	--patch or -p: show actual changes made inside files
 	-w ignore white space
@@ -40,7 +40,7 @@ git tag: display all tags
 		*.png will also ignore name.PNG 
 
 branches:
-	master --> latest commit in branch
+	         master --> latest commit in branch
 	head --> header-fix --> latest commit in branch
 	head indicates the active branch that we are working on
 
