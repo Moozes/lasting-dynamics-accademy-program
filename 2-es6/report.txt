@@ -23,11 +23,11 @@ ES6
         They must be defined before they are used.
         use const when defining them because a function expression is always a constant value.
     The ... Operator
-        left hand assignement
+        left hand assignement: rest
             destructure objects, 
                 NOTE: {[variable]: a} = obj // is a way to destructure a property using dynamically generated key name 
             destructure arrays
-        right hand assignement: 
+        right hand assignement: spread
             spread objects
             spread arrays
         function declaration: define infinite arguments for functions, (can be used as an array)
