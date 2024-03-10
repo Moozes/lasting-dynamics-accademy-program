@@ -91,7 +91,7 @@ Bugs priority in daily workflow
 
 Pull requests guidelines
     when creating PRs
-        1-they should be named using the id of task from RR + its title
+        1-they should be named using the id of task from roundrush + its title
         2-no more than 15 file changes in a single PR
         if the dev estimates that a PR will have more than 15 file changes, it should be broken down to smaller tasks and follow reverse merge strategy
         3-reverse merge strategy
