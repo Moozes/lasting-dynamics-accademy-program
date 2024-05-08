@@ -1,21 +1,20 @@
 General Editor Shortcuts
     Ctrl + P                       Open file 
-    or
-    Ctrl + E                       Open file 
+    Ctrl + P  >                    Command palette 
+    Ctrl + P  @                    Current File Symbol navigator (symbol: class, function, constant...etc) 
+    Ctrl + P  #                    Global Symbol navigator (symbol: class, function, constant...etc) 
+    Ctrl + Shift + .               Current File Symbol navigator (symbol: class, function, constant...etc) 
+    Ctrl + G                       Go to Line...
+
+    Ctrl + E                       Go to next problem (error, warning, issue) 
     Ctrl + Shift + P               Show Command Palette
     Ctrl + ù                       Toggle integrated terminal
     Ctrl + B                       Toggle sidebar visibility
     Ctrl + Shift + W               Close the current window/editor
     
 Navigation
-    Ctrl + P  >                 Command palette 
-    Ctrl + P  @                 Current File Symbol navigator (symbol: class, function, constant...etc) 
-    or
-    Ctrl + Shift + .            Current File Symbol navigator (symbol: class, function, constant...etc) 
-    Ctrl + Shift   #            Global Symbol navigator (symbol: class, function, constant...etc) 
-    Ctrl + G                    Go to Line...
-    Alt + Left / Alt + Right    Go back / forward
-    F12                         Go to definition
+    Alt + Left / Alt + Right       Go back / forward
+    F12                            Go to definition, reference (where it is used)
 
 Code Editing
     Ctrl + X                       Cut line (empty selection)
