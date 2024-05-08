@@ -1,9 +1,10 @@
 General Editor Shortcuts
     Ctrl + P                       Open file 
+    or
+    Ctrl + E                       Open file 
     Ctrl + Shift + P               Show Command Palette
     Ctrl + ù                       Toggle integrated terminal
     Ctrl + B                       Toggle sidebar visibility
-    Ctrl + Shift + N               Open a new window/instance
     Ctrl + Shift + W               Close the current window/editor
     
 Navigation
@@ -31,6 +32,7 @@ Code Selection & Manipulation
     Ctrl + Shift + L               Select all occurrences of the current selection
     Shift + Alt + Right            Expand selection
     Shift + Alt + Left             Shrink selection
+    Ctrl + Shift + *               Jump to enclosing brackets, (), [], or {}
 
 Multi-Cursor and Refactoring
     Alt + Click                    Insert cursor
