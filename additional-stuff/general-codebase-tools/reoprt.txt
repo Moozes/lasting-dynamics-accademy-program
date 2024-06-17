@@ -1,9 +1,12 @@
-@manypkg/cli:                          
+@manypkg/cli     
+    Manypkg is a linter for package.json files in Yarn, Bolt, Lerna, pnpm or Rush monorepos
+    so it just lints package.json, ie: it tells you if there is an error in a package.json file in a monorepo setup  
+    is a command-line tool that helps maintain consistent dependency versions across monorepos. It detects and resolves dependency mismatches, enforces version constraints, and ensures best practices for package management within monorepos.                  
 turborepo
     high-performance build system for JavaScript and TypeScript codebases 
     manages monorepos, TURBOREPO DOESNT WORK FOR SINGLE PROJECTS
     manages multi-project/multi-app setups and their dependencies                    
-vite:                                   
+vite                                  
     dev ecosystem: dev server, build, HMR, faster because of native ESM, main goal is speed and developer experience
     uses native tools, like esbuild (written in Go 100x faster than other tools)
     uses Rollup bundler, but pre-bundles with esbuild (fast, written in Go) bundler?? but not fully compatible with it
@@ -32,7 +35,7 @@ turborepo vs vite
 eslint:                                 
     linter, detects logic and pattern error, it can format code but not as good as prettier that is why they are used together
 prettier:                               
-    not a linter, but a code formatter
+    not a linter, but a code formatter, it can be integrated with eslint so it shows formatting errors in the output of eslint
 typescript:                             
     works like eslint, it checks code but not for logical errors, only for types, 
     that is why they are both called code checkers 
@@ -66,9 +69,10 @@ vite-plugin-eslint
     integrated eslint into vite, and provides real-time errors directly in vite's dev server                 
 vite-plugin-eslint vs vite-plugin-checker
     1st specifically integrates eslint into vite
-    2nd integrates eslint + other code checkers and provides a unified error overlay that displays all errors from all checkers                   
+    2nd integrates eslint + other code checkers and provides a unified error overlay that displays all errors from all checkers   
+        you can see the overlay in your browser                
 vite-tsconfig-paths       
-    vite plusing that allows you to use typescript paths mapping, defined in tsconfig.json
+    vite pluging that allows you to use typescript paths mapping, defined in tsconfig.json
     like: @features/users instead of src/features/users or ../../features/users ...etc     
 
 
@@ -82,6 +86,10 @@ Notions
         allow for using js modules, although they are supported in new browsers, but not production safe yet
         concats code into a final big index.js that can run on browsers
         possible final bundle splits using lazy loading and routing splits...etc
+    nextjs: 
+        doesnt need vite, it has its own development server and build tool built over webpack, which supports nextjs features 
+        like server side rendering, static site generation...etc
+        if you run create next app, you ll get eslint config, but it doesnt have prettier, check node modules for eslint-next-config to understand what it offers 
 
 Conclusion
     you can understand dependencies like this:
@@ -102,39 +110,3 @@ Conclusion
                              |                        | -----plug-to-----> 
                              |                                           | vite
                              |-----------------plug-to------------------->
-
-
-monorepo
-    "@manypkg/cli": "^0.20.0",
-    "eslint-config-custom": "*",
-    "prettier": "^2.8.8",
-    "turbo": "^1.8.1"
-
-    packages
-        ui==============================================
-            "eslint": "^8.34.0",
-            "typescript": "^4.9.3"
-
-        eslint==============================================
-            "eslint": "^8.34.0",
-            
-            "eslint-config-airbnb": "^19.0.4",
-            "eslint-config-airbnb-typescript": "^17.0.0",
-            "eslint-config-prettier": "^8.6.0",
-            "eslint-plugin-import": "^2.27.5",
-            "eslint-plugin-jsx-a11y": "^6.7.1",
-            "eslint-plugin-prettier": "^4.2.1",
-            "eslint-plugin-react": "^7.32.2",
-            "eslint-plugin-react-hooks": "^4.6.0",
-            "eslint-plugin-simple-import-sort": "^10.0.0"
-
-            "@typescript-eslint/eslint-plugin": "^5.52.0",
-            "@typescript-eslint/parser": "^5.52.0",
-
-    apps
-        client-panel==============================================
-            "@vitejs/plugin-react": "^3.1.0",   
-            "vite": "^4.1.1",
-            "vite-plugin-checker": "^0.5.5",
-            "vite-plugin-eslint": "^1.8.1",
-            "vite-tsconfig-paths": "^4.0.5",

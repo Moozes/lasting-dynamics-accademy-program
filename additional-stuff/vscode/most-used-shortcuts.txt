@@ -25,6 +25,8 @@ Code Editing
     Ctrl + Shift + K               Delete line
     Ctrl + Enter                   Insert line below
     Ctrl + Shift + Enter           Insert line above
+    Ctrl + l + e                   Select to end of line
+    Ctrl + l + s                   Select to start of line
 
 Code Selection & Manipulation
     Ctrl + D                       Select the next match of the current selection
