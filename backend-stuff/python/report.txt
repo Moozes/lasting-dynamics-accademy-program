@@ -1,6 +1,12 @@
 Learning python: only important stuff is mentioned
 
 
+============Check these when you have time============
+    file handling
+    python references in w3schools: string/list/dict/...methods in general
+    python function arguments pass by value / by reference
+    strings are lists but they dont have list methods?? like append and extend...
+
 ============notes and gotchas============
     5 + "hello" # throws an error
 
@@ -34,7 +40,7 @@ Learning python: only important stuff is mentioned
     you can nevenr have positionl args after kwargs
     foo(x = 2, 1,2) throws error
 
-
+    dont use == to compare object references, use identity operators (is, is not)
 
 ============collections============
     4 types of collections: list, tuple, set, dictionary
@@ -337,7 +343,8 @@ Learning python: only important stuff is mentioned
 ============modules============
     from module_name_x import foo
     import module_name_y as m_n_y
-    m_n_y.foo()
+    foo()
+    m_n_y.bar()
     m_n_y.someVariable
 
     dir(m_n_y) # returns a dict of all module functions and variables
@@ -349,7 +356,7 @@ Learning python: only important stuff is mentioned
     y = datetime.datetime(2020, 5, 17) # create date objects
     x = datetime.datetime.now()
     x.year
-    x/month
+    x.month
     x.strftime("%A") # to format dates
 
 ============math============
@@ -414,7 +421,3 @@ Learning python: only important stuff is mentioned
 ============user input============
     username = input("Enter username:")
     print("Username is: " + username)
-
-============I havnt checked============
-    file handling
-    python reference in w3schools
