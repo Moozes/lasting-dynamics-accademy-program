@@ -6,9 +6,15 @@ Learning python: only important stuff is mentioned
     python references in w3schools: string/list/dict/...methods in general
     python function arguments pass by value / by reference
     strings are lists but they dont have list methods?? like append and extend...
+    you need to memorize methods signatures
 
 ============notes and gotchas============
     5 + "hello" # throws an error
+
+    convert list to string
+        "".join(list)
+        " ".join(list) # using a seperator " " 
+        "_".join(list) # using a seperator "_" 
 
     variable scope
         global variable can be accessed inside any scope
@@ -35,7 +41,7 @@ Learning python: only important stuff is mentioned
     range(start, end, step)
 
     def foo(a, b)
-    foo(1) # throws error, requires 2 args, except if b has a default value
+    foo(1) # throws error unlike js, requires 2 args, except if b has a default value
 
     you can nevenr have positionl args after kwargs
     foo(x = 2, 1,2) throws error
@@ -58,6 +64,10 @@ Learning python: only important stuff is mentioned
         list3 = list1 + list2
         tuple3 = tuple1 + tuple2
     
+    substract
+        list3 = list1 - list2
+        tuple3 = tuple1 - tuple2
+
     multiply
         list1 = [1,2]
         tuple1 = [1,2]
@@ -69,10 +79,10 @@ Learning python: only important stuff is mentioned
     methods reference https://www.w3schools.com/python/python_lists_methods.asp
 
 
-    change a range x[1:3] = ["moussa", "omar"]
-    change second value with two new values x[1:2] = ["moussa", "omar"]
-    change second and third values with one value x[1:3] = ["moussa"]
-    x.insert(2, "moussa")
+    x[1:3] = ["moussa", "omar"] change a range 
+    x[1:2] = ["moussa", "omar"] change second value with two new values 
+    x[1:3] = ["moussa"]         change second and third values with one value 
+    x.insert(2, "moussa") # insert and pushed the rest to right
     x.append("apple")
     x.extend(["apple", "orange"]) # extend can add any iterable like tuples
     x.remove("banana") # remove by value, first occurence
@@ -90,6 +100,7 @@ Learning python: only important stuff is mentioned
 
     copying
         x = y.copy()
+        x = y[:]
         x = list(y)
 
     for elm in list:
@@ -171,7 +182,9 @@ Learning python: only important stuff is mentioned
         pass
 
     d.update({key: value, key2: value2}) # to add or modify, same as js object spread
-
+    d[key1] = value
+    d[key2] = value2
+    
     d.pop(key)
 
     d.popitem() remove last items
@@ -187,6 +200,22 @@ Learning python: only important stuff is mentioned
 
     d2 = d1.copy()
     d2 = dict(d1)
+
+    using dynamically generated key: (like js { `${x}`: value })
+    x = "key_name"
+    d.update({x: "hello"})
+
+    initialise a dict using a shorthand loop 
+        newDict = {k: sampleDict[k] for k in keys}
+
+
+    unpacking
+        d1 = {"name": "moussa"}
+        d2 = {"age": "27", "name": "omar"}
+        d3 = {**d1, **d2}
+
+        ** syntace is also used to unpack a dict to a kwarg to be passed to a function
+            foo(**d2) <=> foo(name="omar", age="27")
 
 ============types============
     casting: str(), int(), float()
@@ -206,6 +235,7 @@ Learning python: only important stuff is mentioned
 
 ============strings============
     methods reference https://www.w3schools.com/python/python_strings_methods.asp
+    all string methods return a new string
 
     strings are arrays
 
@@ -262,16 +292,17 @@ Learning python: only important stuff is mentioned
 
         print("A") if a > b else print("=") if a == b else print("B")
 
-    useless else statements, they will be executed either way except when using break
-    while cond:
-        pass
-    else:
-        pass
-    
-    for x in range(6):
-        print(x)
-    else:
-        print("Finally finished!")
+    loops else blocks, 
+        they will be executed when no break was used
+        while cond:
+            pass
+        else:
+            pass
+        
+        for x in range(6):
+            print(x)
+        else:
+            print("Finally finished!")
 
 ============functions============
     def foo(name="moussa") default value
@@ -299,6 +330,19 @@ Learning python: only important stuff is mentioned
     lambda
         x = lambda a : a + 10
         x = lambda a, b : a * b
+        x = lambda: "2"
+
+    unpacking a dictionary to kwargs when calling a function
+    def foo(name, age):
+        pass
+    d = {"name": "moussa", "age": "27"}
+    foo(**d) <=> foo(name="moussa", age="27") 
+    
+    return multiple values from a function
+    the returned value is a tuple (x, y)
+    def foo(x, y):
+        return x, y
+
 
 ============classes============
     class Person:
@@ -421,3 +465,14 @@ Learning python: only important stuff is mentioned
 ============user input============
     username = input("Enter username:")
     print("Username is: " + username)
+
+============Builtin functions============
+    filter
+        learn it
+    map
+        learn it
+    zip
+        l1 = [1,2]
+        l2 = ["a","b"]
+        zip(l1, l2) --> [(1, "a"), (2, "b")]
+        very usefull when looping multiple arrays together
