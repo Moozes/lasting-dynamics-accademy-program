@@ -346,7 +346,11 @@ Learning python: only important stuff is mentioned
 
 ============classes============
     class Person:
+        # static class variables, available in each instance object
+        color = "white"
+
         def __init__(self, name, age):
+            # instance variables, different for each instance
             self.name = name
             self.age = age
 
@@ -393,6 +397,46 @@ Learning python: only important stuff is mentioned
 
     dir(m_n_y) # returns a dict of all module functions and variables
 
+============regex https://www.w3schools.com/python/python_regex.asp============
+
+============package manager============
+    pip
+    package index pypi.org
+
+    pip install package_name
+    pip uninstall package_name
+    pip list
+
+============exceptions============
+    try:
+        pass
+    except NameError as nr:
+        print(nr)
+        print(nr.args)
+    except:
+        pass
+    else: # executes when no error is raised
+        pass
+    finally: # executes regardless, good for cleanup like file closing
+        pass
+
+    raise Exception("error message")
+    raise TypeError("error message")
+
+============user input============
+    username = input("Enter username:")
+    print("Username is: " + username)
+
+============Builtin functions============
+    filter: learn it
+    map: learn it
+    zip
+        l1 = [1,2]
+        l2 = ["a","b"]
+        zip(l1, l2) --> [(1, "a"), (2, "b")]
+        very usefull when looping multiple arrays together
+
+
 ============date============
     there is no date type in python but there is a builtin module to handle dates
 
@@ -436,43 +480,23 @@ Learning python: only important stuff is mentioned
         False  --> false
         None   --> null
 
-============regex https://www.w3schools.com/python/python_regex.asp============
+============random============
+    import random
+    random.random() : random  [0, 1[
+    random.randint(start, end) : random [start, end]
+    random.randrange(start, end, step) : random [start, end[
+    random.sample(sequence, n): chose random n elements from the sequence
+    random.choice(sequence): chose a random element from the sequence
 
-============package manager============
-    pip
-    package index pypi.org
+    there is also secrets module: import secrets
+    random vs secrets
+        random: pseudo random, not actually random (good for games, simulations...etc)
+        secrets: actually random (good for password generation, tokens...etc)
 
-    pip install package_name
-    pip uninstall package_name
-    pip list
-
-============exceptions============
-    try:
-        pass
-    except NameError as nr:
-        print(nr)
-        print(nr.args)
-    except:
-        pass
-    else: # executes when no error is raised
-        pass
-    finally: # executes regardless, good for cleanup like file closing
-        pass
-
-    raise Exception("error message")
-    raise TypeError("error message")
-
-============user input============
-    username = input("Enter username:")
-    print("Username is: " + username)
-
-============Builtin functions============
-    filter
-        learn it
-    map
-        learn it
-    zip
-        l1 = [1,2]
-        l2 = ["a","b"]
-        zip(l1, l2) --> [(1, "a"), (2, "b")]
-        very usefull when looping multiple arrays together
+============string============
+    import string
+    string.ascii_letters
+    string.ascii_lowercase
+    ...etc
+    contains predefined strings containing alphabet letter, lower case only alphabet..etc
+    you can use it in combination with secrets module to generate passwords for example

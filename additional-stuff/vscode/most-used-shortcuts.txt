@@ -1,3 +1,6 @@
+Ignore these because they are just duplicates
+    Ctrl + Shift + P               Show Command Palette
+
 General Editor Shortcuts
     Ctrl + P                       Open file 
     Ctrl + P  >                    Command palette 
@@ -7,7 +10,6 @@ General Editor Shortcuts
     Ctrl + G                       Go to Line...
 
     Ctrl + E                       Go to next problem (error, warning, issue) 
-    Ctrl + Shift + P               Show Command Palette
     Ctrl + ù                       Toggle integrated terminal
     Ctrl + B                       Toggle sidebar visibility
     Ctrl + Shift + W               Close the current window/editor

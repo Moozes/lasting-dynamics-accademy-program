@@ -1,0 +1,7 @@
+Here is a complete list of vscode extensions for python development
+Python by microsoft
+    main feature: intelisense
+Pylance
+    main feature: enhanced intelisense + type checking
+ruff    
+    main feature: rust based linter
