@@ -11,12 +11,12 @@ commands
 
     pip install Django
     pip install djangorestframework
-    # add rest_framework to INSTALLED_APPS 
 
 
     django-admin startproject your_project_name
     cd your_project_name
     django-admin startapp your_app_name
+    # add rest_framework to INSTALLED_APPS 
     # add your app to INSTALLED_APPS 
 
     py manage.py makemigrations
@@ -71,7 +71,7 @@ views
                 ...etc
 
         Concrete View Classes: generics.ListAPIView, generics.CreateAPIView...etc
-            this is an abstraction of preview class
+            this is an abstraction of previews class
                 you just need to
                     define query_set
                     define serializer_class

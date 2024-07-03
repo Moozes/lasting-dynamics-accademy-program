@@ -6,7 +6,6 @@ Learning python: only important stuff is mentioned
     python references in w3schools: string/list/dict/...methods in general
     python function arguments pass by value / by reference
     strings are lists but they dont have list methods?? like append and extend...
-    you need to memorize methods signatures
 
 ============notes and gotchas============
     5 + "hello" # throws an error
@@ -237,7 +236,12 @@ Learning python: only important stuff is mentioned
     methods reference https://www.w3schools.com/python/python_strings_methods.asp
     all string methods return a new string
 
-    strings are arrays
+    strings are sort of a list
+
+    strings are non mutable sequence
+        s = "moussa"
+        s[1] = "a" # throws an error 
+        s[1:2] = "a" # throws an error 
 
     if "text" in x: 
         pass
@@ -388,6 +392,15 @@ Learning python: only important stuff is mentioned
             else:
                 raise StopIteration
 
+        myNumbers = MyNumbers()
+        myIter = iter(myNumbers)
+        print(next(myIter))
+        print(next(myIter))
+        print(next(myIter))
+        # or
+        for elm in myIter:
+            print(elm)
+
 ============modules============
     from module_name_x import foo
     import module_name_y as m_n_y
@@ -435,7 +448,6 @@ Learning python: only important stuff is mentioned
         l2 = ["a","b"]
         zip(l1, l2) --> [(1, "a"), (2, "b")]
         very usefull when looping multiple arrays together
-
 
 ============date============
     there is no date type in python but there is a builtin module to handle dates
