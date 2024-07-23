@@ -9,8 +9,8 @@ General Editor Shortcuts
     Ctrl + Shift + .               Current File Symbol navigator (symbol: class, function, constant...etc) 
     Ctrl + G                       Go to Line...
 
-    Ctrl + E                       Go to next problem (error, warning, issue) 
-    Ctrl + ù                       Toggle integrated terminal
+    Ctrl + e                       Go to next problem (error, warning, issue) 
+    Ctrl + `                       Toggle integrated terminal
     Ctrl + B                       Toggle sidebar visibility
     Ctrl + Shift + W               Close the current window/editor
     
@@ -27,15 +27,15 @@ Code Editing
     Ctrl + Shift + K               Delete line
     Ctrl + Enter                   Insert line below
     Ctrl + Shift + Enter           Insert line above
-    Ctrl + l + e                   Select to end of line
-    Ctrl + l + s                   Select to start of line
+    Ctrl + l + e                   go to end of line
+    Ctrl + l + s                   go to start of line
 
 Code Selection & Manipulation
     Ctrl + D                       Select the next match of the current selection
     Ctrl + Shift + L               Select all occurrences of the current selection
     Shift + Alt + Right            Expand selection
     Shift + Alt + Left             Shrink selection
-    Ctrl + Shift + *               Jump to enclosing brackets, (), [], or {}
+    Ctrl + Shift + \               Jump to enclosing brackets, (), [], or {}
 
 Multi-Cursor and Refactoring
     Alt + Click                    Insert cursor
