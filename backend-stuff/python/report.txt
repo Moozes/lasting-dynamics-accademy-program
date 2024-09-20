@@ -4,7 +4,7 @@ Learning python: only important stuff is mentioned
 ============Check these when you have time============
     file handling
     python references in w3schools: string/list/dict/...methods in general
-    python function arguments pass by value / by reference
+    python function arguments pass by value / by reference??
     strings are lists but they dont have list methods?? like append and extend...
 
 ============notes and gotchas============
@@ -29,7 +29,12 @@ Learning python: only important stuff is mentioned
     builtin length function: len()
     can be used on all collection types even a dict
 
-    tuple with one item: x = ("apple",)
+    tuple with one item: x = ("apple",) or "apple",
+
+    famous trick: 
+        a,b = b,a
+        it is tuple destructuring + tuple assingment
+        we are creating an ne tuple (b,a) and we are destructuring it into a,b
 
     in sets (True and 1) (False and 0) are considered the same and they cant appear in the same set
 

@@ -1,4 +1,4 @@
-Similar to js, we need a intelisense, type checker (TS), linter(Eslint), formatter(prettier) 
+Similar to js, we need a intelisense (auto complete), type checker (TS), linter(Eslint), formatter(prettier) 
 
 Here is a complete list of vscode extensions for python development
 Python by microsoft

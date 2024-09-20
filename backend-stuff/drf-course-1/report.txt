@@ -79,3 +79,5 @@ views
 serializers
     Serializer class
     ModelSerializer class
+
+there are also serializer validators, look into that
