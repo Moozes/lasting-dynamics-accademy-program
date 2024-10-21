@@ -1,0 +1,39 @@
+Leanring the C language
+
+First thing is the installation and dev environment setup, search for this online it is not very difficult
+
+Syntaxe: im not gonna write about syntaxe, check w3schools or some other resources
+
+After learning the syntaxe and core functionality like file handling, functions, structs, pointers...etc, 
+you need to concentrate on the standard library of c which has many components
+the standard library gives you basic tools to implement any program
+here is what you need to concentrate on in the standard library
+    1. <stdio.h> (Standard Input/Output)
+        Functions: printf(), scanf(), fopen(), fclose(), fgets(), etc.
+        Purpose: Used for input/output operations, including reading/writing to files and console I/O.
+        Why: It's fundamental for interacting with users or files and is used in almost every C program.
+
+    2. <stdlib.h> (Standard Library)
+        Functions: malloc(), free(), rand(), exit(), atoi(), etc.
+        Purpose: Provides functions for memory allocation, random number generation, process control, and conversion utilities.
+        Why: Memory management is a core part of C, and malloc()/free() are essential for dynamic memory allocation.
+
+    3. <string.h> (String Handling)
+        Functions: strlen(), strcpy(), strcmp(), strcat(), etc.
+        Purpose: Provides functions to manipulate strings (arrays of characters).
+        Why: String operations like copying, comparing, and concatenating are very common, and this library makes it easy.
+
+    4. <math.h> (Mathematical Functions)
+        Functions: sqrt(), pow(), sin(), cos(), etc.
+        Purpose: Provides mathematical functions for performing common mathematical operations.
+        Why: Essential for mathematical calculations, especially in more complex algorithms.
+
+    5. <ctype.h> (Character Handling)
+        Functions: isalpha(), isdigit(), tolower(), toupper(), etc.
+        Purpose: Provides functions for testing and converting characters.
+        Why: Useful for validating input, especially when dealing with characters or strings.
+
+    6. <time.h> (Time Handling)
+        Functions: time(), clock(), difftime(), strftime(), etc.
+        Purpose: Provides functions for handling time and date.
+        Why: Useful for measuring program execution time or working with time-related data.
