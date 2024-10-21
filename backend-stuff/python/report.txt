@@ -321,7 +321,7 @@ Learning python: only important stuff is mentioned
         kids is a tuple
 
     def foo(p1,p2)
-    foo(p2=1,p1="moussa") order doesnt matter when passing args as kwargs
+    foo(p2=1,p1="moussa") order doesnt matter when passing arguments as kwargs
 
     def foo(**kid)
         kid is arbitrary number of kwargs
