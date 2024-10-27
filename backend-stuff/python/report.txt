@@ -205,7 +205,7 @@ Learning python: only important stuff is mentioned
     d2 = d1.copy()
     d2 = dict(d1)
 
-    using dynamically generated key: (like js { `${x}`: value })
+    using dynamically generated key: (like js { [x]: value })
     x = "key_name"
     d.update({x: "hello"})
 

@@ -37,3 +37,6 @@ here is what you need to concentrate on in the standard library
         Functions: time(), clock(), difftime(), strftime(), etc.
         Purpose: Provides functions for handling time and date.
         Why: Useful for measuring program execution time or working with time-related data.
+        
+    7. <errno.h> (Error Handling) 
+        Macros and definitions for reporting errors (e.g., errno, perror, strerror).
