@@ -111,3 +111,9 @@ Searching Your Text
     /some_string then press ENTER
     press n to go to next occurence
     press N to go to previous occurence
+
+
+Programming stuff
+    gd: jump to definition, or show reference usage, similar to F12
+    gf: jump to file in an import (read more about this)
+    %: jumpt to matching [{()}]
