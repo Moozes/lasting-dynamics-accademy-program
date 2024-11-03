@@ -63,6 +63,8 @@ Changing Text
 
     Changing Case
         ~: either on the letter under the cursor, or on a selection
+        gu: change to lowercase
+        gU: change to uppercase
 
 Deleting text
     x: exterminate (delete) the character under the cursor
