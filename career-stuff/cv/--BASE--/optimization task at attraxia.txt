@@ -1,0 +1,32 @@
+react table v7 docs stuff
+	2cb46a51e3e04faa809a5cbe8c336345
+	v02%3Auser_token_or_cookies%3APXkrkNQK-Sd_vHdyfRyMJE75WMNth6omBwUGYuUGXVcm8WazoaHBzAfNWdCAsaZVLf0cw86I0FDYyHLvKyGzpRSHWGWEN30IimbOSNjvpHi_GYZdfIn9mGan6tjWjiuyXrr4
+
+
+react plottly 12MB ---x
+	lazy load 	
+		50.7MB/52.5MB ---> 38.9MB/40.7MB
+		Finish: 8.15s ---> Finish: 8.04s
+RAMP feature
+		23.7MB/26MB
+		Finish: 7.96s
+RULA feature
+		19.4MB/21.7MB
+		Finish: 7.21s
+delete paginated table
+		19.3MB/21.6MB
+		Finish: 6.97s
+delete old datepicker
+		no change noticable
+
+package ui index
+	when importing any thing from UI index, server send all the package
+chat bot
+	not much changed
+recaptcha
+
+Optimization task
+DEV: 51MB → 19MB / 8s → 6.5s
+PROD: 4.7MB → 1.8MB / 7.5s → 6.5s
+
+

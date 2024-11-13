@@ -1,0 +1,58 @@
+STUFF TO ADD YA MOUSSA!!!!
+
+Fix dates problem
+
+I am a problem solver my love of finding solutions was first illustrated in being good at mathematics, then when math got more abstract and detached from reality i discovered the world of computer science. After being involved in various projects i developed good communication and collaboration skills, being a team player and a fast learner i managed to lead several projects from a plan to a reality.
+
+spanning multiple branches of informatics (networks, iot, mobile dev, web dev...) 
+i found my passion in web development and especially the frontend side because on top of being a problem solver i like to visualize and see the effect of my solutions.
+
+
+
+add soft skills
+        Communication
+        creativity
+        time managment
+        leadership
+        adaptability
+        problem Solving
+        Teamwork
+        Problem Solving
+        FAST LEARNER
+
+
+
+
+        Used Agile and Scrum methodologies as a management framework for software development and implementation.
+        Designed responsive user interfaces using React js, HTML5, CSS3, JavaScript, Typescript, and Material UI.
+        Managed local components state using React hooks, and Context API.
+        Managed global application state using Redux and Redux toolkit.
+        Created SPA (single page application) using React Router.
+        Integrated REST API services using axios and Redux Thunk.
+        Used predefined hooks and custom hooks.
+        Realize customizable React components using Emotion JS.
+        Controled authentication cycle using JWT (JSON Web Tokens).
+        Build Multipe Datagrids with Filters and many options using Material UI data grid.
+        Insured a great user experience.
+        Familiarised my self with feature branch workflow using git and github. 
+        Managed bug fixes, code improvements, and code refactoring.
+        Gave great attention to folder structure and code organization for maintainability reasons.
+
+
+
+        Designed responsive frontend pages using React js, HTML5, CSS3, JavaScript, Typescript, and Material UI.
+        Manipulate simple state with native hooks, and Context API.
+        Managed global state using MobX.
+        Handled SPA routing using React Router.
+        Accomplish asynchronous API calls using axios.
+        Added hooks in the project and used custom hooks.
+        Created reusable React components using Emotion JS.
+        Implemented authentication logic using JWT.
+        Developed sound knowledge on React, Redux for frontend.
+        Create friendly user interfaces with Material UI.
+        Worked with source code version control tool GIT to manage code repository.
+        Write effective APIs With NodeJs and Express.js.
+        Addressed intercommunication between multiple restfull services.
+        Used Node js along with MongoDB as database to develop RESTFUL services.
+        Added application level schema validation using Mongoose.js ODM (Object Data Modeling).
+        Tested REST API endpoints using POSTMAN.

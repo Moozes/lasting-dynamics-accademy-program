@@ -1,0 +1,147 @@
+----------------------------------------
+Contact Information
+----------------------------------------
+    moussa khodja
+    // frontend or front end, depending on the job title
+    title: frontend developer, frontend engineer, 
+    Algeria, M'sila, 2800
+    (+213) 666618339
+    khodja.moussa.pro@gmail.com
+    https://www.linkedin.com/in/moussa-khodja-a54038235/
+    https://github.com/Moozes
+    https://www.frontendmentor.io/profile/Moozes
+
+
+
+----------------------------------------
+Summary 
+----------------------------------------
+    different for each job, this is where some key words go
+
+
+
+----------------------------------------
+Education
+----------------------------------------
+    Master of Technology (M.Tech.) - Computer Systems Engineering
+    Higher School of Computer Science
+    Sidi Bel-Abbes
+    Sep 2017 - Jul 2022
+
+
+
+----------------------------------------
+LICENSES & CERTIFICATIONS
+----------------------------------------
+    // think about adding certified keyword, good for ats, like React certified developer
+
+    Web and Mobile Front End Development with React.js and React Native
+    Lasting Dynamics
+    https://www.lastingdynamics.com/badge/?profile=moussakhodja
+    2023
+
+    Front-End development with React
+    Coursera
+    https://coursera.org/share/ac73e8e55492f535e2d6403c129d698a
+    2022
+
+
+
+----------------------------------------
+SKILLS
+----------------------------------------
+//Again, depending on job description, dont put all of these
+    HTML5
+    CSS3
+    Javascript
+    Typescript
+
+    React
+    React hooks
+    React patterns
+    React native
+
+    SCSS, CSS Preprocessors
+    Material-UI
+    Emotion js
+    Responsive, Mobile Design
+    Cross-Browser Development
+    CMS, Content Management Systems
+
+    MySQL
+    PostgreSQL
+    Node.js
+    Express.js.js
+    Postman
+    Rest API
+
+    Git, Version Control
+    Github
+
+    Agile Methodologies
+    Software Architectures
+    design patterns
+    Workflow managment software (Roundrush, trello)
+    MVP (Minimum Viable Product)
+
+    linux
+    windows
+
+    Arabic
+    English
+    French
+
+
+
+----------------------------------------
+EXPERIENCE
+----------------------------------------
+    // Again: frontend or front end depending on job discription
+    // developer or engineer, depending on job description, and i did both, developing and engineering
+    frontend developer
+    full time
+    remote
+    SoBiapi
+    Algiers
+    Aug 2022 - Oct 2022
+    • Used Agile and Scrum methodologies as a management framework for software development and implementation.
+    • Managed global application state using Redux and Redux toolkit.
+    • Created SPA (single page application) using React Router.
+    • Integrated REST API services using axios and Redux Thunk.
+    • Build Multipe Datagrids with Filters and many options using Material UI data grid.
+    • Insured a great user experience.
+    • Familiarised my self with feature branch workflow using git and github. 
+    • Managed bug fixes, code improvements, and code refactoring.
+    • Gave great attention to folder structure and code organization for maintainability reasons.
+
+
+    fullstack developer
+    intern
+    remote
+    LabRI-SBA
+    Sidi Bel-Abbes
+    Jan 2022 - Jun 2022
+    • Designed responsive and friendly user interfaces using React js, HTML5, CSS3, JavaScript, Typescript, and Material UI.
+    • Manipulate simple state with native hooks, and Context API.
+    • Managed global state using MobX.
+    • Added hooks in the project and used custom hooks.
+    • Created reusable React components using Emotion JS.
+    • Implemented authentication logic using JWT.
+    • Developed sound knowledge on React, Redux for frontend.
+    • Write effective APIs With NodeJs and Express.js.
+    • Used Node js along with MongoDB as database to develop RESTFUL services.
+    • Added application level schema validation using Mongoose.js ODM (Object Data Modeling).
+    • Tested REST API endpoints using POSTMAN.
+
+
+    CMS developer
+    intern
+    on-site
+    SARL Hodna Lait
+    M'sila
+    Nov 2020 - Jan 2021
+        Used Wordpress CMS (Content Management System) to develop a website for the company.
+        Developed sound knowledge on Wordpress and its plugins.
+
+
+
