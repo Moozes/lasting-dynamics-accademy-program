@@ -1,0 +1,51 @@
+Ignore these because they are just duplicates
+    Ctrl + Shift + P               Show Command Palette
+
+General Editor Shortcuts
+    Ctrl + P                       Open file 
+    Ctrl + P  >                    Command palette 
+    Ctrl + P  @                    Current File Symbol navigator (symbol: class, function, constant...etc) 
+    Ctrl + P  #                    Global Symbol navigator (symbol: class, function, constant...etc) 
+    Ctrl + Shift + .               Current File Symbol navigator (symbol: class, function, constant...etc) 
+    Ctrl + G                       Go to Line...
+
+    Ctrl + e                       Go to next problem (error, warning, issue) 
+    Ctrl + `                       Toggle integrated terminal
+    Ctrl + B                       Toggle sidebar visibility
+    Ctrl + Shift + W               Close the current window/editor
+    
+Navigation
+    Alt + Left / Alt + Right       Go back / forward
+    F12                            Go to definition, reference (where it is used)
+
+Code Editing
+    Ctrl + X                       Cut line (empty selection)
+    Ctrl + C                       Copy line (empty selection)
+    Ctrl + /                       Toggle line comment
+    Alt + Up/Down                  Move line up/down
+    Shift + Alt + Up/Down          Copy line up/down
+    Ctrl + Shift + K               Delete line
+    Ctrl + Enter                   Insert line below
+    Ctrl + Shift + Enter           Insert line above
+    Ctrl + l + e                   go to end of line
+    Ctrl + l + s                   go to start of line
+
+Code Selection & Manipulation
+    Ctrl + D                       Select the next match of the current selection
+    Ctrl + Shift + L               Select all occurrences of the current selection
+    Shift + Alt + Right            Expand selection
+    Shift + Alt + Left             Shrink selection
+    Ctrl + Shift + \               Jump to enclosing brackets, (), [], or {}
+
+Multi-Cursor and Refactoring
+    Alt + Click                    Insert cursor
+    Ctrl + Alt + Up/Down           Insert cursor above/below
+
+Search and Replace
+    Ctrl + F                       Find
+    Ctrl + H                       Replace
+
+File Management
+    Ctrl + N                       New File
+    Ctrl + Shift + N               New Folder
+    Ctrl + Shift + S               Save All

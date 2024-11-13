@@ -1,0 +1,125 @@
+major changes in v6.4, i 
+think they used a similar approach to angular routing, where you configure it using an array of abjects
+they also emulated old web development behaviors, navigating with forms where they prevent form defaults and capture request using route actions
+
+
+
+create router
+    const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App/>, 
+        errorElement: <ErrorPage/>, 
+        loader: rootLoader,
+        action: rootAction,
+        children: [
+            { // pathless route
+                errorElement: <GlobalErrorElement/>
+                children: [
+                    { index: true, element: <p>Please select a contact to see its details</p> },
+                    {
+                        path:"contact/:id",
+                        element: <Contact/>,
+                        loader: contactLoader
+                    }
+                ]
+            }
+        ]
+    },
+    ]);
+
+    explanation
+        element: instead of components, because easier to pass props
+        errorElement: 
+            errors are catched by the nearest errorElement up the tree, 
+            it can catch almost everything, (except errors thrown by a button click handler ???)
+            you can access error inside ErrorPage component using useRouteError hook
+        loader: 
+            a function that runs before rendering a path's element
+            it receives {request, prams}, request.url contains query params also
+            you can access returned data using useLoaderData
+            you can throw errors here
+            it can be async
+            you can return redirect("/contacts")
+        action:
+            a function that runs after a form is submitted to the path of that action using action prop and post method 
+            <Form action="path" method="post"/>, // this Form is provided by react router
+            if no action provided, it means submit to current path
+            when ever an action runs, it reruns all current page loaders to revalidate data
+            you can throw errors here
+            it can be async
+            you can return redirect("/contacts")
+            a submittion is also a navigation meaning it pushes to history, to avoid this use useFetcher.Form instead of Form
+        children: 
+            used for nested routing with <Outlet/> component to know where to render children route
+        index route
+            { index: true, element: <p>Please select a contact to see its details</p> },
+            the default child route / if no other child route is matched / when the path is exactly the parent's route
+        pathless route: 
+            a route with no path
+            you can use it to provide a global children errorElement
+            so you can show error inside of the <Outlet/> of root 
+            meaning instead of removing root and sowing an rootErrorElement you can show errors while root is still rendered
+
+
+provide it, in app or index
+    <RouterProvider router={router} />
+
+useNavigate: 
+    to navigate impiratively
+    const navigate = useNavigate()
+    navigate("/", {replace: true}): means replace current history entry, dont push another history entry
+    navigate(-1) back a step in the history of my routes (/contacts/id --> /)
+        because we defined like this
+        path: "/"
+        element: <Root/>
+            path: "contacts/:id"
+            element: <Contact/>
+    navigate("../", { relative: "path }) back a step in the history of url (/contacts/id --> /contacts)
+        this also exists in <Link to="" relative="path"/>
+
+<Navigate to="/" replace={true} />
+    to navigate declaratively when renedered
+    has same props as useNavigate
+
+<Form  /> will submit to current route as GET request
+<Form  action="path" /> will submit to path route as GET request    
+    form element will be serialized as query params using their name prop
+    rquest.url contains query params
+
+<Form method="POST" /> will submit to current route as POST request
+<Form  action="path" method="POST" /> will submit to path route as POST request
+    form element will be in POST body using there name prop
+    request contains formData
+
+useSubmit
+    The imperative version of <Form> that let's you, the programmer, submit a form instead of the user.
+
+NavLink
+    receives isActive value to customize styles
+    <NavLink 
+        className={({isActive}) => ...}
+        style={({isActive}) => ...}
+    >
+        {({isActive}) => someJSX}
+    </NavLink>
+
+    
+    If the end prop is used, it will ensure this component isn't matched as "active" when its descendant paths are matched
+
+useNavigation
+    information about navigation like state
+        idle - There is no navigation pending.
+        submitting - A route action is being called due to a form submission using POST, PUT, PATCH, or DELETE
+        loading - The loaders for the next routes are being called to render the next page
+
+useFetcher
+    used to submit without navigation, ie: you wont go to route pointed by form's action
+    const fetcher = useFetcher()
+    // you can also access formData
+    fetcher.formData
+
+    <fetcher.Form />
+
+
+

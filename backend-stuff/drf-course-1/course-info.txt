@@ -1,7 +1,0 @@
-URL: https://www.udemy.com/course/django-rest-framework/
-
-django rest framework
-
-beginner level
-
-step by step throught official drf documentation

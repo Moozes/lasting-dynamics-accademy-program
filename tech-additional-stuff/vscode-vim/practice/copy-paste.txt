@@ -1,0 +1,150 @@
+# Copy the word `world` and paste it after `hello`.
+
+console.log("hello");
+
+------------------------------
+
+# Copy the entire line containing `let x` and paste it below.
+
+let x = 10;
+
+------------------------------
+
+# Copy the `return` statement and paste it after the next `return`.
+
+function sum(a, b) {
+    return a + b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+------------------------------
+
+# Copy the function `greet` and paste it below itself.
+
+function greet() {
+    console.log("Hello");
+}
+
+------------------------------
+
+# Copy the string `"blue"` and paste it after `"yellow"` in the array.
+
+const colors = ["red", "blue", "yellow"];
+
+------------------------------
+
+# Copy the entire `if` block and paste it below itself.
+
+if (a > b) {
+    console.log("a is greater");
+}
+
+------------------------------
+
+# Copy the first `console.log` and paste it after the second one.
+
+console.log("hello world");
+console.log("hello everyone");
+
+------------------------------
+
+# Copy the last line and paste it at the top of the code.
+
+let a = 5;
+let b = 10;
+let sum = a + b;
+
+------------------------------
+
+# Copy the entire `for` loop and paste it below itself.
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+------------------------------
+
+# Copy the `console.log` line and paste it below itself.
+
+console.log("This is a message");
+
+------------------------------
+
+# Copy the first `let` declaration and paste it after the second `let`.
+
+let x = 10;
+let y = 20;
+
+------------------------------
+
+# Copy the entire object `person` and paste it below itself.
+
+const person = {
+    name: "John",
+    age: 30
+};
+
+------------------------------
+
+# Copy the method call `toUpperCase` and paste it after `toLowerCase`.
+
+let str = "hello".toUpperCase();
+
+------------------------------
+
+# Copy the string `"old"` and paste it after `"price: 100"` in the object.
+
+const item = {
+    name: "old",
+    price: 100
+};
+
+------------------------------
+
+# Copy the variable declaration `const z` and paste it at the top.
+
+const x = 5;
+const y = 10;
+const z = 15;
+
+------------------------------
+
+# Copy the condition `a > b` and paste it inside the `else` block.
+
+if (a > b) {
+    console.log("a is greater");
+} else {
+    console.log("b is greater or equal");
+}
+
+------------------------------
+
+# Copy the loop condition `i < 10` and paste it inside the loop body.
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+------------------------------
+
+# Copy the `console.warn` statement and paste it below itself.
+
+console.warn("This is a warning");
+
+------------------------------
+
+# Copy the function parameter `b` and paste it after `a`.
+
+function multiply(a, b) {
+    return a * b;
+}
+
+------------------------------
+
+# Copy the word `message` in the second `console.log` and paste it in the first `console.log`.
+
+console.log("First message");
+console.log("Second message");

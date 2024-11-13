@@ -1,0 +1,159 @@
+# Move to the word `world` using motions, then to the next occurrence.
+
+console.log("hello world");
+console.log("welcome to the world of Vim");
+console.log("world domination");
+
+------------------------------
+
+# Move to the end of the first `console.log` statement, then navigate to the next `console.log`.
+
+console.log("Message one");
+console.log("Message two");
+console.log("Message three");
+
+------------------------------
+
+# Move to the first `let` keyword, then jump to the next occurrence on each line.
+
+let x = 10;
+let y = 20;
+let z = 30;
+
+------------------------------
+
+# Move to the `if` statement, then navigate through each word inside the block.
+
+if (a > b) {
+    console.log("a is greater");
+}
+
+------------------------------
+
+# Move to the end of the second `return` statement using motions.
+
+function sum(a, b) {
+    return a + b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+------------------------------
+
+# Move to the `function` keyword, then to the beginning of the block using `{`.
+
+function greet() {
+    console.log("Hello");
+}
+
+------------------------------
+
+# Move to the word `message` using search, then to the next occurrence.
+
+console.log("First message");
+console.log("Second message");
+console.log("Another message");
+
+------------------------------
+
+# Jump to the first occurrence of the `=` sign, then navigate to the next using motions.
+
+const a = 10;
+const b = 20;
+const sum = a + b;
+
+------------------------------
+
+# Move to the `for` loop, then jump inside the loop block using motions.
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+------------------------------
+
+# Use `b` to move backward to each `let` statement in the code below.
+
+let x = 5;
+let y = 10;
+let z = 15;
+
+------------------------------
+
+# Move to the `else` block and navigate through each word using `w`.
+
+if (a > b) {
+    console.log("a is greater");
+} else {
+    console.log("b is greater or equal");
+}
+
+------------------------------
+
+# Navigate to the start of each line containing `const` using `0` and `j`.
+
+const first = "John";
+const last = "Doe";
+const age = 30;
+
+------------------------------
+
+# Jump to the last character of the file using `G` and `$`.
+
+let m = 7;
+let n = 8;
+let o = 9;
+
+------------------------------
+
+# Move to the beginning of the word `Hello` in each console statement.
+
+console.log("Hello world");
+console.log("Hello Vim");
+
+------------------------------
+
+# Jump to the `return` statement in each function block using search and motions.
+
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+------------------------------
+
+# Move to the end of the line containing `console.log` and jump to the next.
+
+console.log("This is a test");
+console.log("Another test");
+
+------------------------------
+
+# Use `e` to move to the end of each word in the first line.
+
+const name = "Alice";
+
+------------------------------
+
+# Jump to the first `(` in each line and navigate to the matching `)` using `%`.
+
+console.log("Starting");
+console.log("Middle");
+console.log("Ending");
+
+------------------------------
+
+# Use `/` to search for `return` and navigate through all occurrences.
+
+function calculate(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    return a / b;
+}

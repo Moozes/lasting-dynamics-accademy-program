@@ -1,0 +1,130 @@
+# Change the text inside the quotes of the first `console.log` using a text object.
+
+console.log("hello world");
+
+------------------------------
+
+# Delete everything inside the parentheses of the `function` using a text object.
+
+function greet(name) {
+    console.log(name);
+}
+
+------------------------------
+
+# Change the contents inside the curly braces `{}` of the `if` block.
+
+if (a > b) {
+    console.log("a is greater");
+}
+
+------------------------------
+
+# Copy everything inside the square brackets `[]` of the array.
+
+const numbers = [1, 2, 3, 4, 5];
+
+------------------------------
+
+# Delete everything inside the `console.log` quotes.
+
+console.log("This is a message");
+
+------------------------------
+
+# Change the inner text of the HTML element.
+
+<p>Hello, world!</p>
+
+------------------------------
+
+# Delete the content between the parentheses `()` in the `console.log`.
+
+console.log("hello world");
+
+------------------------------
+
+# Change the text inside the string quotes of a variable.
+
+const message = "Hello, world!";
+
+------------------------------
+
+# Copy the entire block of the function between `{}` and paste it below.
+
+function greet() {
+    console.log("Hello");
+}
+
+------------------------------
+
+# Delete the content inside the angle brackets `<>` of the JSX element.
+
+<div>Hello World</div>
+
+------------------------------
+
+# Change the text inside the double quotes `""` of a JSON key.
+
+const data = {
+    "name": "John Doe"
+};
+
+------------------------------
+
+# Delete the content inside the single quotes `''` in the SQL query.
+
+const query = "SELECT * FROM users WHERE name = 'John'";
+
+------------------------------
+
+# Copy everything inside the parentheses `()` of a function call and paste it into another function.
+
+calculate(a, b);
+
+------------------------------
+
+# Change everything inside the HTML tag `<h1>` to a new text.
+
+<h1>Welcome</h1>
+
+------------------------------
+
+# Delete the content between two slashes `//` in a comment.
+
+let x = 10; // this is a number
+
+------------------------------
+
+# Change the content inside a multi-line comment `/* */`.
+
+function example() {
+    /* This is a comment */
+}
+
+------------------------------
+
+# Copy everything inside a JSON object `{}` and paste it below.
+
+const user = {
+    name: "Alice",
+    age: 25
+};
+
+------------------------------
+
+# Delete the entire content inside the array `[]`.
+
+const items = [1, 2, 3, 4];
+
+------------------------------
+
+# Change the text between the backticks `` ` `` in a template literal.
+
+const message = `Hello, ${name}!`;
+
+------------------------------
+
+# Delete the inner text between the tags in a nested HTML element.
+
+<span><strong>Important</strong> message</span>

@@ -1,0 +1,145 @@
+# Delete the word `world` in the `console.log`.
+
+console.log("hello world");
+
+------------------------------
+
+# Delete the entire line containing `let x`.
+
+let x = 10;
+let y = 20;
+
+------------------------------
+
+# Delete the `return` statement in the function.
+
+function sum(a, b) {
+    return a + b;
+}
+
+------------------------------
+
+# Delete the function `greet`.
+
+function greet() {
+    console.log("Hello");
+}
+
+------------------------------
+
+# Delete the string `"blue"` from the array.
+
+const colors = ["red", "blue", "yellow"];
+
+------------------------------
+
+# Delete the entire `if` block.
+
+if (a > b) {
+    console.log("a is greater");
+}
+
+------------------------------
+
+# Delete the word `hello` in the first `console.log`.
+
+console.log("hello world");
+console.log("hello everyone");
+
+------------------------------
+
+# Delete the last line of the code.
+
+let a = 5;
+let b = 10;
+let sum = a + b;
+
+------------------------------
+
+# Delete the entire `for` loop.
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+------------------------------
+
+# Delete the `console.log` line.
+
+console.log("This is a message");
+
+------------------------------
+
+# Delete the first occurrence of `let`.
+
+let x = 10;
+let y = 20;
+
+------------------------------
+
+# Delete the entire object `person`.
+
+const person = {
+    name: "John",
+    age: 30
+};
+
+------------------------------
+
+# Delete the method call `toUpperCase`.
+
+let str = "hello".toUpperCase();
+
+------------------------------
+
+# Delete the string `"old"` from the object.
+
+const item = {
+    name: "old",
+    price: 100
+};
+
+------------------------------
+
+# Delete the variable declaration `const z`.
+
+const x = 5;
+const y = 10;
+const z = 15;
+
+------------------------------
+
+# Delete the condition `a > b` in the `if` statement.
+
+if (a > b) {
+    console.log("a is greater");
+}
+
+------------------------------
+
+# Delete the loop condition `i < 10`.
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+------------------------------
+
+# Delete the `console.warn` statement.
+
+console.warn("This is a warning");
+
+------------------------------
+
+# Delete the function parameter `b`.
+
+function multiply(a, b) {
+    return a * b;
+}
+
+------------------------------
+
+# Delete the word `message` in the second `console.log`.
+
+console.log("First message");
+console.log("Second message");

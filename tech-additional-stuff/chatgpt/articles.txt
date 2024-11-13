@@ -1,0 +1,8 @@
+React js
+    https://chatgptpro.dev/advanced-chat-gpt-prompts-to-write-code-in-react-js/
+    https://www.builder.io/blog/ai-prompts-for-web-developers-chatgpt
+
+Other
+    https://www.packtpub.com/article-hub/automated-diagram-creation-with-chatgpt
+    https://mattilehtinen.com/articles/how-to-automatically-create-uml-class-diagrams-from-requirements-using-chatgpt/
+    https://atharvashah.netlify.app/posts/tech/uml-diagrams-with-chatgpt/

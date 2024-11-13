@@ -1,0 +1,121 @@
+check ./report.txt for full reference
+
+Vim language
+    think in terms of language, not in terms of commands
+
+    there are verbs, nouns, and modifiers
+
+    verbs: c (change), d (delete) ...etc
+    nouns: w (word), s (sentence) ...etc
+    modifiers: i (inside), t (to), a (around) ...etc
+
+    ciw: change inside word
+    cf<: change up to <
+    di(: delete inside brackets ()
+
+
+IMPORTANCE NOTE:    
+    there are some commands that do some actions
+    and there are some commands that does some action and then put you in INSERT MODE
+
+
+Motions
+    j: move down one line
+    k: move up one line
+    h: move left one character
+    l: move right one character
+
+    Moving within the line (only inside the line you are in)
+        0: move to the beginning of the line
+        $: move to the end of the line
+        ^: move to the first non-blank character in the line
+        t": jump to right before the next quotes
+        f": jump and land on the next quotes
+
+    Moving by word (no limited to the current line)
+        w: move forward one word
+        b: move back one word
+        e: move to the end of your word
+
+        W: move forward one big word
+        B: move back one big word
+        E: move to the end of your big word
+    
+    Moving within the screen
+        gg: go to the top of the file
+        G: go to the bottom of the file
+        H: move to the top of the screen
+        M: move to the middle of the screen
+        L: move to the bottom of the screen
+
+
+Changing Text
+    i: insert before the cursor
+    I: insert at the beginning of the line
+    a: append after the cursor
+    A: append at the end of the line
+    o: open a new line below the current one
+    O: open a new line above the current one
+    cm: change whatever you define as a movement, e.g. a word, or a sentence, or a paragraph.
+    ct?: change change up to the question mark
+    s: substitute from where you are to the next command (noun)
+    S: substitute the entire current line
+
+    Changing Case
+        ~: either on the letter under the cursor, or on a selection
+        gu: change to lowercase
+        gU: change to uppercase
+
+Deleting text
+    x: exterminate (delete) the character under the cursor
+    dm: delete whatever you define as a movement, e.g. a word, or a sentence, or a paragraph.
+    dd: delete the current line
+    D: delete to the end of the line
+    dt.: delete from where you are to the period
+
+Undo and Redo
+    u: undo your last action.
+    Ctrl-r: redo the last action
+
+Repeating Actions
+    MOST POWERFUL COMMAND, the dot "." command
+
+    dw: delete a word
+    5.: delete 5 more words
+
+Copy and Paste
+    y: yank (copy) whatever’s selected
+    --or--
+    y: yank (copy) from where you are to the next command (noun)
+    yy: yank the current line
+    p: paste the copied (or deleted) text after the current cursor position
+    P: paste the copied (or deleted) text before the current cursor position
+    ddp: Switching lines of text
+
+Text Objects
+    the "i" and "a" modifiers
+    ciw: change inside word
+    caw: change around word
+
+    reference of objects
+        words: iw and aw
+        sentences: is and as
+        paragraphs: ip and ap
+        single quotes: i' and a'
+        double quotes: i" and a"
+        back ticks: i` and a`
+        parenthesis: i( and a(
+        brackets: i[ and a[
+        braces: i{ and a{
+        tags: it and at
+
+Searching Your Text
+    /some_string then press ENTER
+    press n to go to next occurence
+    press N to go to previous occurence
+
+
+Programming stuff
+    gd: jump to definition, or show reference usage, similar to F12
+    gf: jump to file in an import (read more about this)
+    %: jumpt to matching [{()}]
