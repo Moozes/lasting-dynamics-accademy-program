@@ -1,5 +1,6 @@
 This youtube video give you main books every software engineer need to read
     https://www.youtube.com/watch?v=Y2iJOPxw0JU
+    
 published under this license: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 which means anyone can share it without commercial gain
 
 
@@ -20,3 +21,5 @@ Design patterns explained
     https://books.google.dz/books?id=JPOaP7cyk6wC&printsec=frontcover&hl=fr&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false
 
     has oop introduction
+
+head first design patterns

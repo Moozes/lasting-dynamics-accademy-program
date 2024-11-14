@@ -8,16 +8,19 @@ EXPERIENCE
     Sweden
     jul 2023 - present
     • 
-    • Led the integration of a new theme across a large monorepo project, saving 2 weeks in refactoring time.
-    • Added new applications to a large monorepo project, designing and developing their architecture for scalability and seamless integration.
+    • SaaS for Workplace Ergonomics and Health Monitoring 
+    •  
     • Refactored codebase to a feature-driven folder structure, reducing new feature development time by 50% and bug resolution time by 60%.
     • Optimized initial load performance, enhancing load speed by 18% and reducing bundle size by 62%.
+    • Reduced query times by 30% through efficient server-state management and caching, boosting user experience.
+    • Led the integration of a new theme across a large monorepo project, saving 2 weeks in refactoring time.
+    • 
+    • Added new applications to a large monorepo project, designing and developing their architecture for scalability and seamless integration.
     • Implemented and managed a feature branch workflow for streamlined development.
     • Owned the release process to production and managed versioning of the web application.
     • Ensured responsive design across devices for a consistent user experience.
     • Integrated seamless authentication management with Firebase SDK, enabling secure user access.
     • Developed real-time notifications using Firebase SDK for improved user engagement.
-    • Reduced query times by 30% through efficient server-state management and caching, boosting user experience.
     • Established architecture and conventions to minimize bugs and accelerate onboarding for new developers.
     • Interviewed and onboarded new developers to align with project needs and team goals.
     • Added a PDF download feature, satisfying client requirements and enhancing user functionality.
@@ -57,6 +60,8 @@ EXPERIENCE
     Algeria, Algiers
     Aug 2022 - Oct 2022
     • 
+    • FinTech Web App
+    • 
     • Leveraged Agile and Scrum methodologies to enhance development speed and improve software implementation.
     • Managed global application state with Redux and Redux Toolkit, increasing data consistency and app responsiveness.
     • Built a single-page application (SPA) with React Router, enabling seamless user navigation.
@@ -76,6 +81,7 @@ EXPERIENCE
     LabRI-SBA
     Algeria, Sidi Bel-Abbes
     Jan 2022 - Jun 2022
+    • 
     • 
     • Designed responsive, user-friendly interfaces using React, HTML5, CSS3, JavaScript, TypeScript, and Material UI, improving usability and accessibility.
     • Managed component state with native hooks and Context API, enabling efficient state manipulation.
