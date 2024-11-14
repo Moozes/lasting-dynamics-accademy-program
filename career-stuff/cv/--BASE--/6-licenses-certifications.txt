@@ -1,0 +1,14 @@
+----------------------------------------
+LICENSES & CERTIFICATIONS
+----------------------------------------
+    // think about adding certified keyword, good for ats, like React certified developer
+
+    Web and Mobile Front End Development with React.js and React Native
+    Lasting Dynamics
+    https://www.lastingdynamics.com/badge/?profile=moussakhodja
+    2023
+
+    Front-End development with React
+    Coursera
+    https://coursera.org/share/ac73e8e55492f535e2d6403c129d698a
+    2022

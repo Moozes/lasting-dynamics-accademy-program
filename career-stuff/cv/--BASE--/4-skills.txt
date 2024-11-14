@@ -1,0 +1,45 @@
+----------------------------------------
+SKILLS
+----------------------------------------
+//Again, depending on job description, dont put all of these
+    Arabic (native)
+    English (fluent)
+    French (elementary)
+
+
+    HTML5
+    CSS3
+    Javascript
+    Typescript
+
+    React
+    React hooks
+    React patterns
+    React native
+
+    SCSS, CSS Preprocessors
+    Material-UI
+    Emotion js
+    Responsive, Mobile Design
+    Cross-Browser Development
+    CMS, Content Management Systems
+
+    MySQL
+    PostgreSQL
+    Node.js
+    Express.js.js
+    Postman
+    Rest API
+
+    Git, Version Control
+    Github
+
+    Agile Methodologies
+    Software Architectures
+    design patterns
+    Workflow managment software (Roundrush, trello)
+    MVP (Minimum Viable Product)
+
+    linux
+    windows
+

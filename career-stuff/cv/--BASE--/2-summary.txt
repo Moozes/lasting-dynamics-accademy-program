@@ -1,0 +1,6 @@
+----------------------------------------
+Summary 
+----------------------------------------
+    // different for each job, this is where some key words go
+    
+    Frontend developer with 2+ years of experience in scalable architecture, responsive UI design, and optimized performance. Proven track record in state management, API integration, and client-focused solutions. Skilled in React, TypeScript, and Firebase, with a strong commitment to quality and maintainability.

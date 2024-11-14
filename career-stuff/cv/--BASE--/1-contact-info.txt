@@ -1,0 +1,12 @@
+----------------------------------------
+Contact Information
+----------------------------------------
+    moussa khodja
+    // frontend or front end, depending on the job title
+    title: frontend developer, frontend engineer, 
+    Algeria, M'sila, 2800
+    (+213) 666618339
+    khodja.moussa.pro@gmail.com
+    https://www.linkedin.com/in/moussa-khodja-a54038235/
+    https://github.com/Moozes
+    https://www.frontendmentor.io/profile/Moozes
