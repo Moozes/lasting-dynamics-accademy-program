@@ -1,5 +1,39 @@
-show your work
+This youtube video give you main books every software engineer need to read
+    https://www.youtube.com/watch?v=Y2iJOPxw0JU
 
-the pragmatic programmer
-clean code
+License meaning
+    published under this license: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 
+    means anyone can share it without commercial gain
+
+**Design patterns books
+    Head first design patterns
+        https://books.google.dz/books?id=GGpXN9SMELMC&printsec=frontcover&hl=fr&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false
+
+    Learning javascript design patterns
+        https://books.google.dz/books?id=L46fX62D5qYC&printsec=frontcover&hl=fr&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false
+        reviews say a bit outdated 
+        a website by the same author https://www.patterns.dev/
+
+    Design patterns explained
+        https://books.google.dz/books?id=JPOaP7cyk6wC&printsec=frontcover&hl=fr&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false
+        has oop introduction
+
+    The gang of four book
+        the original design patterns book
+
+
+
+**Social books
+    show your work
+
+**Coding conventions and best practices books
+    clean code
+    clean architecture
+    the pragmatic programmer
+
+**Financial books
+    The psychology of money
+
+**Self development books
+    Deep work
 
