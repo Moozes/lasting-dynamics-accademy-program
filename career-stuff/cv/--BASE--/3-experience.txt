@@ -54,13 +54,13 @@ EXPERIENCE
     // Again: frontend or front end depending on job discription
     // developer or engineer, depending on job description, and i did both, developing and engineering
     frontend developer
-    full time
+    contract (not fulltime to justify the short period of 3 months)
     remote
     SoBiapi
     Algeria, Algiers
     Aug 2022 - Oct 2022
+    • Worked on a short-term contract to design and implement key frontend features for (FinTech Web App)
     • 
-    • FinTech Web App
     • 
     • Leveraged Agile and Scrum methodologies to enhance development speed and improve software implementation.
     • Managed global application state with Redux and Redux Toolkit, increasing data consistency and app responsiveness.
@@ -82,8 +82,11 @@ EXPERIENCE
     Algeria, Sidi Bel-Abbes
     Jan 2022 - Jun 2022
     • 
-    • Content Sharing Platform with Image Analysis Integration
+    • Developed a social platform with interactive features including posts, comments, profiles, and messaging, integrating image recognition via a CNN model while focusing on full-stack development.
     • 
+    • 
+    • Content Sharing Platform with Image Analysis Integration
+    • Integrated a web application with a Convolutional Neural Network (CNN) model to enable real-time image analysis, achieving a 95% accuracy rate in detecting and classifying visual patterns, and streamlined user interaction with advanced AI capabilities.
     • Designed responsive, user-friendly interfaces using React, HTML5, CSS3, JavaScript, TypeScript, and Material UI, improving usability and accessibility.
     • Managed component state with native hooks and Context API, enabling efficient state manipulation.
     • Controlled global state using MobX to streamline complex data handling.
