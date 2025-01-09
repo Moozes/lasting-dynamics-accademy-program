@@ -15,9 +15,28 @@ there are 5 steps to the process
         Read the resources and take the test, you need to score 70% to go to next step
     3. 1:1 Coaching
         You need to update your cv and linkedin following the stuff you learned
-        because Right after the test a coach will review your cv and linkedin 
+        because Right after the test you will book a call with a volenteer coach to give you feedback on your cv and linkedin 
     4. 360-Degree Feedback
-    5. GraduationOnline tech test which takes 15mins
+        a detailed document on the coache's feedback
+    5. Graduation 
+        you will be invited to the fellowship program, in there you will have:
+            application workshop (theory)
+                theory on when to apply
+                why not to apply to stuff
+                for example dont apply to companies that you do not agree with (banks, alchool selling, cigarette selling)
+            application tutorial (exercices)
+                choose a job description and modify you cv to match it
+            interview workshop (theory)
+            interview tutorial (exercices)
+            HR interview training
+            Tech interview training
+            final cv and linked in review
+            You get linkedin premium for 1 year
+            you get a letter of recommendation 
+                sometimes the imagine team can not recommend you, if so use the recommendation letter, you can attach it to your cv or cover letter
+            you need to enter your applications into a dashboard so the imagine team can follow your progress and help you
+
+
 
 resource center
     https://joinimagine.notion.site/Imagine-Resource-Center-Open-Source-ce18db9649d049269afa4b3421233e68
