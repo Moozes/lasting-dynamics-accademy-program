@@ -1,0 +1,25 @@
+The coach's feedback on my cv
+    in each experience section add: 
+        make the project description more clear, maybe add a title in bold PROJECT
+        add the tech stack used
+
+
+
+I asked him about this
+    most wanted jobs in germany
+        data engineer, big data, data bricks
+        certifications: azure data brick
+                        amazon data brick
+
+    Questions
+        how was your transition from egypt to germany, was it easy, did it need a lot of money to migrate?
+            sponsored 
+
+        was it easy to learn the german language, how much time did it take you, can you use english in germany at work and socialy
+            you can use english, but german is prefered
+
+        please explain the fellow ship program to me, what is it all about, and what type of coaching goes into it?
+            dont know
+
+        what do you recommend that i for my career, what are possible career developments that i could take as a web dev
+            data engineer, data bricks
