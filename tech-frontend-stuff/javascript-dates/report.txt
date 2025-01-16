@@ -1,0 +1,74 @@
+Handeling dates in javascript
+    How to handle dates in distributed systems which are used in different parts of the world, without causing timezone errors
+
+Concepts to understand
+    UTC: universal time, like the zero point for timezones in the world
+    ISO 8601: a format (a shape) for UTC "YYYY-MM-DDTHH:mm:ss.sssZ" or "YYYY-MM-DDTHH:mm:ss.sss+/-hh:mm"
+        2025-01-16T14:30:00Z --> valid
+        2025/01/16T14:30:00Z --> not valid
+        16-01-2025T14:30:00Z --> not valid
+
+Handeling dates in distributed systems  
+    what to expect from other teams (mobile/backend/frontend/external APIs)
+        they need to use exclusively "UTC + ISO 8601 formated" date strings when storing, sending, creating... dates
+        they can only format dates for display purposes
+
+Properly handeling dates using date-fns library
+    when receiving date strings from other parties like backend/mobile
+        // first of all we need to parse the string ie: make sure it is a valid ISO 8601 string
+        // and handle invalid cases by showing error message or something like that
+        import { parseISO } from 'date-fns'
+        // parseISO does 2 things, validates the string and turn it into a date object
+        // now you can use all the other functions provided by date-fns, like format, formatDistanceToNow...etc
+
+
+    when i have to create, store or send dates
+        import { formatISO } from "date-fns"
+        
+        create current date
+            // valid
+            new Date().toISOString()
+            formatISO(new Date())
+
+            // not valid
+            new Date()
+            new Date().toString()
+
+        create specific date
+            const userDate = new Date(2024, 0, 20, 15, 30)
+            const isoDate = userDate.toISOString()
+
+        working with forms
+            there is input type: date, datetime-local, and time
+            date 
+                returns 2025-01-12        
+                we cant use toISOString directly
+                we can do this: new Date(`{date}T00:00.000Z`) by concatinating the end of day hour
+                if we dont concatinate the hour, it will be automatically converted to utc and that might cause the date to change by -/+1 day
+            datetime-local 
+                returns 2025-01-12T15:00  
+                we can use new Date(datetime-local).toISOString();
+            time 
+                returns 15:00             
+                we cant use toISOString
+
+
+
+
+
+    in conclusion
+        when receiving strings use parseISO to turn them into date objects then use other date-fns utility functions for formating
+        when creating them use formatISO or dateObject.toISOString()
+
+    Common pitfalls to avoid:
+        // DON'T: Create Date objects directly from ISO strings
+        const date = new Date(isoString) // Can be inconsistent for different browsers
+
+        // DO: Use parseISO
+        const date = parseISO(isoString)
+
+        // DON'T: Manual string manipulation
+        const time = isoString.split('T')[1]
+
+        // DO: Use date-fns formatting
+        const time = format(parseISO(isoString), 'HH:mm')
