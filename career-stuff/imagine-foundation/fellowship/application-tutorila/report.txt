@@ -1,0 +1,3 @@
+use this prompt with ai to help you analyse your cv and give insights
+
+    make a match with cv and job desc add pros and cons, give me percentage for everything, check for the best 10 keywords from the job that are missing on my cv, give me the overall % what is  missing or can be improved on my cv

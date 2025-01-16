@@ -3,6 +3,9 @@ The coach's feedback on my cv
         make the project description more clear, maybe add a title in bold PROJECT
         add the tech stack used
 
+    if the job description asks for nextjs and you dont have professional experience in it, but you had a course or worked with it in personal projects
+    you can divide your skills section to professional and familliar (add nextjs in the familiar section)
+
 
 
 I asked him about this
