@@ -19,22 +19,29 @@ there are 5 steps to the process
     4. 360-Degree Feedback
         a detailed document on the coache's feedback
     5. Graduation 
-        you will be invited to the fellowship program, in there you will have:
-            application workshop (theory)
-                theory on when to apply
-                why not to apply to stuff
-                for example dont apply to companies that you do not agree with (banks, alchool selling, cigarette selling)
-            application tutorial (exercices)
-                choose a job description and modify you cv to match it
-            interview workshop (theory)
-            interview tutorial (exercices)
-            HR interview training
-            Tech interview training
-            final cv and linked in review
-            You get linkedin premium for 1 year
-            you get a letter of recommendation 
-                sometimes the imagine team can not recommend you, if so use the recommendation letter, you can attach it to your cv or cover letter
-            you need to enter your applications into a dashboard so the imagine team can follow your progress and help you
+        you will be invited to the fellowship program
+
+Fellowship program
+    1-application workshop: theory
+    2-application tutorial: exercices
+    3-interview workshop: theory
+    4-interview tutorial: exercices
+
+    5-interview training: hr 1:1 interview 
+    6-interview training: tech 1:1 interview 
+
+    7-final cv and linkedin review
+    8-linkedin premium
+
+    9-letter of recommendation: when they cannot recommend you for a company, you can use this letter, you can attach it to you cv or cover letter for example
+    10-application dashboard: this is s google spreadsheet where you and they can follow the job applications and manage recommendations
+        they have a job listing where you can search for jobs
+        and you can also search else where (linkedin, indeed...etc) and log you application in the dashboard so they can recommend you
+
+After getting a job through the program
+    they have someone to guide for visa or relocation
+    and you will pay 7% of gross annual salary for first year of work and that is it
+    and they might ask you to volenteer as a coach for some time
 
 
 

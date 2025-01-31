@@ -72,3 +72,14 @@ Properly handeling dates using date-fns library
 
         // DO: Use date-fns formatting
         const time = format(parseISO(isoString), 'HH:mm')
+
+    other info
+        some times we need to have timezone info with the iso string
+        for example 
+            {
+                date: "2025-01-16T14:30:00Z"
+                timezone: "America/new_york"
+            }
+        we dont need obj.timezone to convert the date but we need it to now the place
+        for example we have an ecommerce website, and we have the date of the order but not the timezone "ie: the place", where was the order sent from??
+        so depending on the business logic, we may need/dont-need the timezone info

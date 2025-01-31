@@ -1,0 +1,15 @@
+(before refactoring) initial load
+    dev environement
+        bundle size
+        time
+    prod environement
+        bundle size
+        time
+
+(after refactoring) initial load
+    dev environement
+        bundle size
+        time
+    prod environement
+        bundle size
+        time
