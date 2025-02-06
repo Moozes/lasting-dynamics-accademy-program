@@ -27,6 +27,7 @@ EXPERIENCE
     • Conducted client interactions and requirements gathering, reducing research time for the team by weeks.
     • Reviewed technical documentation and coordinated client meetings, reducing pressure on the project manager.
     •
+    • Worked with AI pro (claude and chatgpt) to increase development speed
     •
     •
     • tech

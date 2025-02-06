@@ -1,8 +1,3 @@
-react table v7 docs stuff
-	2cb46a51e3e04faa809a5cbe8c336345
-	v02%3Auser_token_or_cookies%3APXkrkNQK-Sd_vHdyfRyMJE75WMNth6omBwUGYuUGXVcm8WazoaHBzAfNWdCAsaZVLf0cw86I0FDYyHLvKyGzpRSHWGWEN30IimbOSNjvpHi_GYZdfIn9mGan6tjWjiuyXrr4
-
-
 react plottly 12MB ---x
 	lazy load 	
 		50.7MB/52.5MB ---> 38.9MB/40.7MB
@@ -29,4 +24,48 @@ Optimization task
 DEV: 51MB → 19MB / 8s → 6.5s
 PROD: 4.7MB → 1.8MB / 7.5s → 6.5s
 
+
+
+The second optimization
+	I changed the format of large illustrations, from svg to png
+
+	Resource size and transfer (≈51% reduction)
+	Page load speed metrics (≈51% faster)
+	(before refactoring) initial load
+		dev environement
+			2091 requests
+			67.7 MB transferred
+			67.4 MB resources
+			Finish: 8.35 s
+			DOMContentLoaded: 2.58 s
+			Load: 2.85 s
+	(after refactoring) initial load
+		dev environement
+			2072 requests
+			33.3 MB transferred
+			32.9 MB resources
+			Finish: 6.92 s
+			DOMContentLoaded: 1.22 s
+			Load: 1.41 s
+
+
+
+	Resource size (≈58% reduction)
+	Page load speed metrics (≈12% faster)
+	(before refactoring) initial load
+		prod environement
+			33 requests
+			7.5 MB transferred
+			19.3 MB resources
+			Finish: 6.05 s
+			DOMContentLoaded: 591 ms
+			Load: 614 ms
+	(after refactoring) initial load
+		prod environement
+			29 requests
+			4.1 MB transferred
+			8.2 MB resources
+			Finish: 5.92 s
+			DOMContentLoaded: 613 ms
+			Load: 636 ms
 
