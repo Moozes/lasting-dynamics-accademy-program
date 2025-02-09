@@ -11,7 +11,7 @@ Concepts to understand
 Handeling dates in distributed systems  
     what to expect from other teams (mobile/backend/frontend/external APIs)
         they need to use exclusively "UTC + ISO 8601 formated" date strings when storing, sending, creating... dates
-        they can only format dates for display purposes
+        they can only format dates (human readable, or formats other than ISO) for display purposes
 
 Properly handeling dates using date-fns library
     when receiving date strings from other parties like backend/mobile

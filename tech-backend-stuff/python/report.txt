@@ -8,6 +8,12 @@ Learning python: only important stuff is mentioned
     strings are lists but they dont have list methods?? like append and extend...
 
 ============notes and gotchas============
+    type hints cheat sheet
+        https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
+        when ever you hover a built in function or a framework function you see type definitions and hints
+        check the above link to understand them
+
+
     5 + "hello" # throws an error
 
     convert list to string
