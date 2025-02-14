@@ -26,6 +26,7 @@ EXPERIENCE
     • Added a PDF download feature, satisfying client requirements and enhancing user functionality.
     • Conducted client interactions and requirements gathering, reducing research time for the team by weeks.
     • Reviewed technical documentation and coordinated client meetings, reducing pressure on the project manager.
+    • Developed a landing page with user authentication using Next.js, delivering an intuitive signup flow while maintaining consistent branding with the main application
     •
     • Worked with AI pro (claude and chatgpt) to increase development speed
     •
