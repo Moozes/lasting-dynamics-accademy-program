@@ -14,6 +14,12 @@ Learning python: only important stuff is mentioned
         check the above link to understand them
 
 
+    making sure if something is None
+        None is a singleton object, there is only one in memeory
+        so dont use == but use identity checkers "is/is not"
+        you can use isinstance(x, type(None)), but it looks bad and isinstance is mainly to check for types/classes/inheritance
+
+
     5 + "hello" # throws an error
 
     convert list to string

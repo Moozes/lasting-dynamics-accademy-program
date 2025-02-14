@@ -1,3 +1,5 @@
+NOTE: you can use Pycharm community edition editor which is specificly for python which will include all the necessary stuff to develop in python
+
 Similar to js, we need a intelisense (auto complete), type checker (TS), linter(Eslint), formatter(prettier) 
 
 Here is a complete list of vscode extensions for python development
