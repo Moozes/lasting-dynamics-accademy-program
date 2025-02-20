@@ -1,0 +1,124 @@
+my 2 questions for the HR interviewer
+    What does the first month look like for a new frontend developer? I'm particularly interested in about the onboarding period
+
+    How do you support new frontend developers in getting familiar with your internal tools and component libraries? Is there a mentorship program or structured training process?
+
+Tell me about yourself
+    Frontend Engineer with 2+ years of experience in scalable architecture, responsive UI design, and optimized performance. Skilled in React, TypeScript, and Firebase, with a strong commitment to quality and maintainability.
+
+    In my current role at Wergonic, i have been working as a lead frontend engineer on a SaaS platform (software as a service platform) for Workplace Ergonomics and Health Monitoring, one of my major acheivements in this role was that i helped design and refactor an existing codebase to follow a suitable architecture to increase flexibility and reduce maintenance efforts, i also helped in optimizing the perfomance of the application by reducing the bundle size by 62% and initial load time by 18%, and i also owned the release process to production and managed versioning the application
+
+    prior to my current job i worked in other companies such as sobiapi where i worked on the frontend of a fintech application, which helped me gain a lot of knowledge about financial operations and the implementations of complexe data grids
+
+    and based on my experience i think im a good fit for your open position.
+
+What are you excited about
+    I'm genuinely excited about several aspects of modern frontend development, 
+    and particularly the aspect of developing big software, because of 2 reasons 
+        the first is because of  the development of ai, simple web application can be made with chatgpt or claude or something similar using english text promts only, like for example a crud application or a todo application
+
+        the second and more important reason is my personal knowledge, because in the past i really struggled in maintaining big codebases, it always started simple with few components and helper functions, but after 2 or 3 months things gets out of hand, and developing new features on top of the existing code gets more and more difficult, and it takes more and more time than usual so that is why im interested in big software, and code organization and maintainable architectures
+
+    and one other thing that im interested in is the performance of web applications, because what is more important the the user experience, and we can say that a big part of user experience is how fast and efficient our application runs
+
+    one last thing is working on challenging and innovative ideas, because there no better way to develop your self and gain more experience than engaging in challenging projects  
+
+
+What frustrates you?
+    One of the things that frustrates me is the quality of the codebase, especially when starting to work on an existing codebase or a partially finished software, i faced this issue in one of my previous jobs, where the codebase was a mess, there were no clear conventions, and the codebase was not following any particular architecure, so when i started working on it it was hard to understand, and it was also hard to add new stuff or fixing existing errors, and i overcame this frustration by talking to managers and ensisting on refactoring the codebase to follow a more cohesive architecture, i was faced with rejection at first, but i kept ensisting and reminding the managers of the necessity of my solution, and we reached a middle ground which was, applying the much needed refactoring but it was going to be applied gradually, so we dont abstruct the development of new features, and it took me about 4 to 5 months working bit by bit on enhancing the architecure and devloping some conventions that served as a guide line to my team and to new devlopers.
+
+    and if i can mention one other frustration that i have, which is the lack of communication between devlopers, designers, and the product team, i also faced this in one of my previous jobs, where the product team gives me the details of a new feature, and after some days of work on this feature i was faced with critics and rejection of my implementation, and with time i figured out the issue which was the lack of proper communication, and i overcame this issue by asking more questions and making sure i understand what the product team truly wants before starting to work on the task at hand 
+
+
+
+What was something you had to push for in your previous projects? What is something you had to persevere at for multiple months?
+    One particular issue that requried persistent effort was the quality of the codebase, especially when starting to work on an existing codebase or a partially finished software, i faced this issue in one of my previous jobs, where the codebase was a mess, there were no clear conventions, and the codebase was not following any particular architecure, so when i started working on it it was hard to understand, and it was also hard to add new stuff or fix existing errors, and i overcame this frustration by talking to managers and ensisting on refactoring the codebase to follow a more cohesive architecture, i was faced with rejection at first, but i kept ensisting and reminding the managers of the necessity of my solution, and we reached a middle ground which was, applying the much needed refactoring but it was going to be applied gradually, so we dont abstruct the development of new features, and it took me about 4 to 5 months working bit by bit on enhancing the architecure and devloping some conventions that served as a guide line to my team and to new devlopers. and the result was reducing new feature development and bug resolution time by 50%.
+
+
+
+
+Can you come up with some skills where you feel that there is room for improvement?
+    One of the skills I'm focusing on developing further is performance optimization at scale. While I'm comfortable with basic optimization techniques like memoization and api response caching, I want to deepen my understanding of more complex scenarios. For instance, I've been studying browser internals and understanding developer tools like lighhouse and the performance tab and also the network tab which tells you about possible solution to minimize bundlesize and enhance load time
+
+
+How could we support you in getting there, if you joined?
+    Hopefully i can work in your company under more experienced engineers that i can learn from.
+
+
+Where do you see yourself in the future?
+    In the next five years, I envision myself growing into a senior technical lead role where I can combine my deep frontend expertise with architectural decision-making and team leadership. Specifically, I aim to become an expert in large-scale application architecture and design systems. I've already started this journey in my current job by devloping and maintaining a large monorepo project which contains two applications and a shared ui library, but I want to deepen my expertise in creating scalable frontend architectures that can support millions of users while maintaining excellent performance metrics.
+
+
+What are you looking for in your next role?
+    In my next role, I'm looking for several key elements that I believe will contribute to both my professional growth and my ability to make meaningful contributions to the team. First, I'm seeking an environment that emphasizes technical excellence and modern development practices. I want to work with a team that values clean code, and embraces continuous improvement. Second, I'm looking for opportunities to work on challenging problems at scale. I want to be involved in projects where I can leverage my experience with performance optimization and responsive design while also pushing my boundaries to learn new approaches.
+
+If this was your first annual review with our company, what would I be telling you right now?
+    Based on what I understand about the role and company goals, I believe in my first annual review, you'd be highlighting several key achievements: First, you'd likely be discussing how I successfully integrated into the team and contributed to our frontend architecture improvements. I believe you'd also acknowledge my collaborative approach with both the design and backend teams. However, I'd also expect you to identify areas where I could grow further – maybe suggesting I take on more leadership in architectural decisions or mentor junior developers more actively. Most importantly, I believe you'd be confirming that I've demonstrated the qualities you were looking for when you hired me
+
+
+If we asked your colleagues/ teammates, what would they tell us about you?uuu
+    For this question let me give you a concrete example, in one of my previous jobs, after working there for about 6 or 7 months i received a linkedin endorsement from the ceo of the company without asking for it, that is how much he liked my efforts and he basically said the following "Moussa is one of the most intelligent and hardworking people I have ever met, he’s an incredible collaborator and team player who has continuously demonstrated great ability in FE development, communication, and ownership as his responsibilities grew. He’s an absolute asset to any team."
+
+
+
+What is the most constructive feedback you have received in your career?
+    The most constructive feedback I received was from my previous tech lead about my approach to code reviews. he pointed out that while my technical feedback was thorough, I was sometimes too focused on implementing things in what I considered the 'perfect way,' rather than considering practical trade-offs and project constraints. This feedback came after a specific incident where I had requested multiple rounds of changes on a colleague's pull request. While my suggestions would have made the code more elegant, they weren't crucial for the immediate business needs, and I was creating development bottlenecks. This feedback really made me reflect on my approach. I realized I needed to better balance technical excellence with practical considerations. This experience taught me a valuable lesson about pragmatism in software development, and it's something I carry with me in my current work.
+
+
+Imagine it is your first day here at the company. What do you want to work on? What features would you improve on
+    On my first day, i would focus on familiarizing my self with the code base, i will try to understand the architecure that you are following and maybe talk to couple of developers on the coding techineques used, to get a better insight on the coding culture inside the team
+
+
+
+If you were to join us, what are some of the things you would like to accomplish in your first, second, third month
+    I'd focus on getting deeply familiar with the codebase and team workflows. Specifically, I'd aim to:
+        * Complete my first significant feature implementation, likely starting with smaller components to understand the development patterns
+        * Set up all necessary development environments and understand the CI/CD pipeline
+        * Start contributing to code reviews to learn the team's standards and practices
+        * and with time i would like to Take ownership of a major feature implementation from design to deployment
+
+
+
+What's an example of a difficult problem you solved? Be specific about how the problem was diagnosed and your process for approaching it.
+    Let me share a specific challenging problem I encountered in my previous role. we had a critical performance issue related to initial page load, it was taking too much time for the website to load the first time, so my task was to identify the issue and optimize the initial page load, so i followed a systemic approach to resolve this, where i started with chrome devloper tools, using the performance tab to profile the page and also used the network tab to see the time and bundle size both in devlopment and production environments, and i identified 2 major issues, 
+        * the first one was that the first page was downloading uneeded code, so my solution to this was implementing some codespliting and lazy loading techniques, to only download what the first page needed
+        * the second issue was the use of large svg illustrations, we were using svgs for both icons and large illustrations, and we choose svgs because they are flexible and customisable, but after comparing 2 or 3 illustrations both in svg and png formats i noticed the big size difference, so i went on to change the format of large illustragions from svg to png
+        * and after these 2 solutions and noticed a big difference in our initilal page load, where the bundle size was enhanced by 50% and the loading time by 20%
+    and this taught me the importance of frontend application performance and helped me gain some knowldege about profiling and debugging complexe react applications
+
+
+Talk about your team/ Tell me about a time when you had to motivate your team to take a particular action.
+    When i first starting to work on a big project, the first task that was assigned to me is the implementation of a dark theme to the entire website, so i started digging into this task and investigating the implementation of the current design system in figma, and i noticed 2 major issues, the first one was the missing theme and typography in the figma design, there were no actual consistant design (the colors didnt have any name, they were hard coded) (and there was no design file that described our theme) and the second issue was in the code base, our ui was not following the figma desgin consistently and was not using the same colors always, and when it was using the figma colors it was hard coded strings, 
+    so after my investigation i had to convince both desing team and devlopers to change the approach that we are following if we ever want to implement a dark theme, 
+
+    and the solution was starting by the figma design first, where i requested the design team to create a theme file where we should put all of the information about our design system, colors, typographies, simple ui components...etc and then use that file to gradually implement the theme configuration to all other desgin files using figma variables and i specifically requested that the colors and typography should have names instead of being hardcoded strings so that the devlopers can work with names instead of hard to memorize rgb strings 
+
+    after that i came into an agreement with the devlopers, to gradually start applying the new theme, at the time we were using materia ui component library, so we updated the theme object and went throught the whole website changing stylesheets to consume the new theme, after that all i had to do was create a dark theme object in the top level and pass that to a context provider and that is it, the dark theme was implemented, and my systemic approach helped us implement this feature quickly and saved us about 2 weeks of refactoring time
+
+
+Why do you want to leave your current/last company
+    While I've had a great experience at my current company and learned a lot, I'm looking for new opportunities to grow and challenge myself professionally. Over the past few years, I've developed a strong foundation in frontend development, particularly in React and modern JavaScript frameworks.
+
+    I believe this role would provide the kind of technical challenges and growth opportunities I'm looking for in my next career step, while allowing me to make meaningful contributions to projects that have a significant impact.
+
+
+
+Why would you like to work with/ for us?
+    DIFFERENT FOR EACH COMPANY, JUST AN EXAMPLE: I've been following your company's journey closely, and there are several aspects that really stand out to me. Your recent launch of the AI-powered personalization engine for e-commerce platforms particularly caught my attention. The way your team solved the challenge of real-time recommendation updates while maintaining optimal frontend performance demonstrates the kind of innovative problem-solving I'm eager to be part of.
+
+
+
+Why should we hire you
+    I believe I would be a valuable addition to your team for several key reasons that align well with what you're looking for in a frontend engineer.
+
+    First, I bring a strong foundation in modern frontend development combined with a proven track record of optimizing application performance. In my current role, I led the implementation of code splitting and lazy loading techniques that reduced our initial bundle size by 45%
+
+    Second, I have extensive experience with React and its ecosystem, particularly in building scalable component libraries and implementing complex state management solutions. I recently architected a shared component system that's now used across multiple products in our organization, reducing development time for new features by 30% 
+
+    I'm genuinely excited about the opportunity to contribute to your team and help build the next generation of your frontend infrastructure.
+
+
+
+
+What's your favorite consumer-facing product or feature you've built or contributed to recently? Who did you work with, what impact did you have, and what did you learn? 
+    As a frontend engineer, one of my favorite features was adding the ability of downloading reports in the form of pdf to our dashboard application, because at first our app was showing reports and diagrams in the web only, but the client requested that we add the ability to download those reports in the form of pdf, so i tried multiple solutions and i unded up using a library called react-pdf and implementing custom styling to the downloaded reports, and the reason i liked this feature is because although being a simple addition to our application i got a lot of positive feedback from our client during one on one meetings with him, and he really liked the cool styles in those pdfs comparing them to traditional pdf reports where they look plain and simple and dry

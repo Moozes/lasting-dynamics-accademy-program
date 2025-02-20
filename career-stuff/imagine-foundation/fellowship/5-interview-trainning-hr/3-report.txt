@@ -1,0 +1,20 @@
+I had a one on one HR interview with Marisa, and we went through a mock interview
+
+she gave me a little bit of advice on how to answer
+
+and she gave me a review on my cv and linkedin page
+
+then after the interview she sent me a word document with common HR questions and some answers and some links to good linkedin profiles
+
+advices she gave me about linkedin
+    * add tech stack to linkedin oneliner (the phrase under the profile picture)
+    * add some of your acheivements and your tech stack in the about section
+    * in wergonic bullet points i have Frontend Lead with bullet points, and Frontend engineer with no bullet points
+        she said to add bullet points for each position
+    * in sobiapi i have the tech stack mentioned in the bullet points
+        she said to use linkedin form to add the tech stack not the bullet points
+        because it is searchable by linkedin like that and it is more obvious to recruiters
+        and bullet points should focus and tasks and acheivements
+
+advices she gave me about CV
+    Add tech stack to experience
