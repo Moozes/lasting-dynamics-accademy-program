@@ -1,0 +1,25 @@
+Some guidelines and tools to work with
+
+If you dont know what you want
+    1.claude + the research mode for new projects or big ideas
+    for example: i want to make a voice ai using aws, twilio and im open to working with openai sdk, but do suggest other stuff if it is better
+    the ai will ask you some follow up questions, 
+    it will take some time, and it will give you a report with sources
+    it a very good starting point for a new project or a new big idea
+
+Ifyou know what you want 
+    2.CLI: claude code
+    it has some good applications and bad applications
+    you need to know what you want
+    it works better if you give it a starting context or starting point
+        for example: generate test for all iterators in utilities.ts file
+
+    3.Inline: select a local piece of code and iterate on it
+        for example select a function and tell it to genrate comments for it
+        
+
+Some other ideas
+    when you ask it to do something big tell it to go step by step and ask your permission or review 
+    so you do not wait 10mins for it generate some unwanted behavior or for it to go in unwanted direction
+
+    feedback loop: they also talked about something called "good feedback loop" look that up
