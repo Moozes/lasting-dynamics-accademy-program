@@ -1,0 +1,55 @@
+Introduction
+    Sometimes you end up with a big pull request while working on a feature, which is both hard to review and takes a long time to review, and if you have other stuff that you need to build on top of this feature you find your self blocked waiting for a review. Stacking works on resolving these issues which can help you move faster.
+
+Stacking pull requests
+    Stacking pull requests is a development practice where you create multiple dependent pull requests that build on each other sequentially, rather than cramming all changes into one large PR
+    This approach makes code reviews more focused, enables parallel development of related features, and helps maintain a cleaner git history.
+
+Tools
+    There are multiple tools to manage stacking prs, because doing it manually with git is hard
+    The tool we are discussing here is Graphite, which has a CLI called gt and a web interface which will be linked to your repo and which will be used instead of the default repo web interface (github for example)
+
+The graphite workflow
+    1.Create a stack
+    2.Submit the stack
+    3.Address feedback and restack
+    4.Merge the stack
+    5.Sync from trunk & clean up your merged branches locally (meaning delete them)
+
+
+Example workflow
+    Starting New Feature Stack
+        gt trunk: go to main or the branch you stack on top of for example dev
+        gt sync: pull latest trunk changes and restack all stacks
+        gt create feat/add-header: create a new branch on top of trunk
+        // do some coding
+        gt submit: create a pr
+        gt create feat/add-login: create a new branch on top of previous one (feat/add-header)
+        // do some coding
+        gt submit: create a stacked pr
+
+    Updating Stack After Reviews
+        gt checkout feat/add-header
+        // address feedback, do some coding
+        gt modify --all: amend all changes to the last commit and restack all branches above it
+            same as 
+                git add .
+                git commit --amend --no-edit (no edit means dont change commit message)
+                gt restack
+            if you want to create a new commit instead of ammending do
+            gt modify --commit --all --message "fix: adress pr comments"
+            or
+            gt modify -cam "fix: adress pr comments"
+
+    merging the stack
+        gt top: go to top branch
+        gt pr: open pr web interface
+        click merge: the entire stack will be merged
+
+        if you want to merge just a part of the stack, go to top most pr that you want to merge and  click merge, 
+        every parrent pr will be merged, every child pr will stay unmerged
+
+    local sync and cleanup
+        gt sync 
+            will fetch latest trunk changes and prompt you to delete merged/closed brnaches
+            will also rebase any branches/stacks you have locally with latest changes
