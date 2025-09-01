@@ -46,7 +46,7 @@ Learning python: only important stuff is mentioned
     famous trick: 
         a,b = b,a
         it is tuple destructuring + tuple assingment
-        we are creating an ne tuple (b,a) and we are destructuring it into a,b
+        we are creating an new tuple (b,a) and we are destructuring it into a,b
 
     in sets (True and 1) (False and 0) are considered the same and they cant appear in the same set
 
