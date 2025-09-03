@@ -1,3 +1,3 @@
-(first, second) = (1,3)
+import random as r
 
-print(first)
+print(dir(r))

@@ -4,6 +4,7 @@ Learning python: only important stuff is mentioned
 ============Check these when you have time============
     file handling
     python references in w3schools: string/list/dict/...methods in general
+        FORGET ABOUT W3SCHOOLS MATE, HERE IS THE STANDARD LIBRARY INSTEAD https://docs.python.org/3/library/
     python function arguments pass by value / by reference??
     strings are lists but they dont have list methods?? like append and extend...
 
@@ -63,6 +64,13 @@ Learning python: only important stuff is mentioned
     foo(x = 2, 1,2) throws error
 
     dont use == to compare object references, use identity operators (is, is not)
+    lets say we have Person class
+    if we do person1 == person2 it will trigger __eq__ method which uses the is operator inside by default as inherited from Object class
+    so in this case person1 == person2 is equivelant to person1 is person2 statement
+    but as a general rule use (is, is not) to compare references
+        someone could override __eq__ method
+        you need it to compare stuff to None (sont use obj == None)
+        it is also usable with True and False because they are classes, but (if condition:) and (if not condition:) is more pythonic
 
 ============collections============
     4 types of collections: list, tuple, set, dictionary
@@ -386,8 +394,9 @@ Learning python: only important stuff is mentioned
 
     inheritance
     class Student(Person):
-        def __init__(self, fname, lname):
-            super().__init__(self, fname, lname) # you dont have to call this
+        def __init__(self, name, age, year):
+            super().__init__(name, age) # you dont have to call this
+            self.year = year
             #add properties etc.
 
 ============iterators============
@@ -396,7 +405,10 @@ Learning python: only important stuff is mentioned
 
     we can use a for loop to loop over an iterator
 
-    class MyNumbers:
+    # this is a sort of OOP interface to know the api that i need to define for MyNumbers
+    from collections.abc import Iterator 
+
+    class MyNumbers(Iterator):
         def __iter__(self):
             self.a = 1
             return self
