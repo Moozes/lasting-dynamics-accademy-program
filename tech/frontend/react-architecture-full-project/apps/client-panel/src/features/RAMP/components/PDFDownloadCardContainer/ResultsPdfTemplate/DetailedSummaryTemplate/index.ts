@@ -1,0 +1,1 @@
+export { DetailedSummaryTemplate } from "./DetailedSummaryTemplate";

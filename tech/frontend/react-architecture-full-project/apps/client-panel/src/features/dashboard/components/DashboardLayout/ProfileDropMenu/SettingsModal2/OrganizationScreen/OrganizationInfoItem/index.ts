@@ -1,0 +1,1 @@
+export { OrganizationInfoItem } from "./OrganizationInfoItem";

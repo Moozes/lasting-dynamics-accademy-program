@@ -1,0 +1,1 @@
+export { ResultsCommentTemplate } from "./ResultsCommentTemplate";

@@ -1,0 +1,6 @@
+export enum UserRoleEnum {
+    WERGONIC_ADMIN = "WERGONIC_ADMIN",
+    ORG_ADMIN = "ORG_ADMIN",
+    ERGONOMIST = "ERGONOMIST",
+    WORKER = "WORKER",
+}

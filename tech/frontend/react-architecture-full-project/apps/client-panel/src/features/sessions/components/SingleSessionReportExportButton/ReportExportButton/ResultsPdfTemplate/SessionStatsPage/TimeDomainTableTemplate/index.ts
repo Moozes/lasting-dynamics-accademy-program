@@ -1,0 +1,1 @@
+export { TimeDomainTableTemplate } from "./TimeDomainTableTemplate";

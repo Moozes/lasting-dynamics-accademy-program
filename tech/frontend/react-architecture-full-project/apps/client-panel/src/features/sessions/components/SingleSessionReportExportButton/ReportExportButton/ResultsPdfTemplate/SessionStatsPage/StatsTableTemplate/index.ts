@@ -1,0 +1,1 @@
+export { StatsTableTemplate } from "./StatsTableTemplate";

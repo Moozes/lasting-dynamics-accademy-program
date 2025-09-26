@@ -1,0 +1,1 @@
+export { AssessmentFormConfig } from "./AssessmentFormConfig";

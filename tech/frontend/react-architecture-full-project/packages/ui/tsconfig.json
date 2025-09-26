@@ -1,0 +1,14 @@
+{
+    "extends": "tsconfig/react-vite.json",
+    "include": [
+        ".",
+        ".eslintrc.cjs",
+        "src",
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/**/*.d.ts",
+        "src/assets/icons/CheckboxIcons",
+        "../../apps/client-panel/src/assets/icons/alerts/InfoIcon.tsx"
+    ],
+    "exclude": ["dist", "build", "node_modules"]
+}

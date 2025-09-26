@@ -1,0 +1,1 @@
+export { MultiREBAAssessmentsResultsTemplate } from "./MultiREBAAssessmentsResultsTemplate";

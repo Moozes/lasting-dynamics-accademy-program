@@ -1,0 +1,5 @@
+low risk:       STATIC TIME <= 4  but less than 8
+medium risk:    STATIC TIME >= 4 but less than 8
+high risk:      STATIC TIME >= 8 
+
+

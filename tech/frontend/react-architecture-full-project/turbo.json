@@ -1,0 +1,42 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "globalDependencies": ["**/.env.*local"],
+    "pipeline": {
+        "build:development": {
+            "dependsOn": ["^build:development"],
+            "outputs": ["dist/**"]
+        },
+        "build:staging": {
+            "dependsOn": ["^build:staging"],
+            "outputs": ["dist/**"]
+        },
+        "build:production": {
+            "dependsOn": ["^build:production"],
+            "outputs": ["dist/**"]
+        },
+        "lint": {
+            "outputs": []
+        },
+        "format": {
+            "outputs": []
+        },
+        "test": {
+            "outputs": []
+        },
+        "lint-fix": {
+            "outputs": []
+        },
+        "storybook": {
+            "outputs": []
+        },
+        "dev": {
+            "cache": false
+        },
+        "dev:staging": {
+            "cache": false
+        },
+        "preview": {
+            "cache": false
+        }
+    }
+}

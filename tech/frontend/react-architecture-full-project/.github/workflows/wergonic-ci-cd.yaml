@@ -1,0 +1,101 @@
+name: Build Test Deploy To Digital Ocean
+
+env:
+    DO_REGISTRY: registry.digitalocean.com/wergonic
+    CLIENT_IMAGE_NAME: wergonic-client
+    ADMIN_IMAGE_NAME: wergonic-admin
+    IMAGE_TAG: latest
+
+on:
+    pull_request:
+    push:
+        branches:
+            - "dev"
+            - "main"
+            - "staging"
+
+jobs:
+    set-envs:
+        name: Setup env vars
+        runs-on: ubuntu-latest
+        outputs:
+            mode_output: ${{ steps.set-variable.outputs.mode }}
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 2
+            - name: Set test variable
+              id: set-variable
+              run: |
+                  if [ ${{ github.ref }} == 'refs/heads/main' ]; then
+                    echo "IS master branch"
+                    echo "mode=production" >> "$GITHUB_OUTPUT"
+                  elif [ ${{ github.ref }} == 'refs/heads/staging' ]; then
+                    echo "IS staging branch"
+                    echo "mode=staging" >> "$GITHUB_OUTPUT"
+                  elif [ ${{ github.ref }} == 'refs/heads/dev' ]; then
+                    echo "IS dev branch"
+                    echo "mode=development" >> "$GITHUB_OUTPUT"
+                  else
+                    echo "IS not one of the 3 branchs"
+                    echo "mode=development" >> "$GITHUB_OUTPUT"
+                  fi
+              shell: bash
+
+    build:
+        name: Build and Test
+        runs-on: ubuntu-latest
+        needs: set-envs
+        env:
+            MODE: ${{needs.set-envs.outputs.mode_output}}
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 2
+
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  cache: "yarn"
+
+            - name: Install dependencies
+              run: yarn
+
+            - name: Build
+              run: yarn build:$MODE
+
+            - name: Test
+              run: yarn test
+
+    docker:
+        name: Build and Publish Docker image to DO
+        needs: [set-envs, build]
+        if: github.event_name != 'pull_request'
+        runs-on: ubuntu-latest
+        env:
+            MODE: ${{needs.set-envs.outputs.mode_output}}
+        steps:
+            - name: Check out code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 2
+
+            - name: Build container image using Docker compose
+              run: yarn docker:build:$MODE
+
+            - name: Install doctl
+              uses: digitalocean/action-doctl@v2
+              with:
+                  token: ${{ secrets.DO_ACCESS_TOKEN }}
+
+            - name: Log in to DigitalOcean Container Registry with short-lived credentials
+              run: doctl registry login --expiry-seconds 600
+
+            - name: Push Client Panel image to DigitalOcean Container Registry
+              run: docker push $DO_REGISTRY/$CLIENT_IMAGE_NAME-$MODE:$IMAGE_TAG
+
+            # - name: Push Wergonic Admin image to DigitalOcean Container Registry
+            #   run: docker push $DO_REGISTRY/$CLIENT_IMAGE_NAME-$MODE:$IMAGE_TAG

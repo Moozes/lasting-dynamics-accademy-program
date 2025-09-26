@@ -1,0 +1,109 @@
+{
+  "admin_management": {
+    "reset_password_instructions": "Ange e-postadressen där du vill skicka instruktioner för att återställa lösenordet. Bekräfta e-postadressen för att fortsätta."
+  },
+  "auth": {
+    "deactivated_error": "Du kan inte komma åt ditt konto eftersom det är inaktiverat",
+    "email_format_error": "Ogiltig e-postadress",
+    "email_required_error": "E-postadress krävs",
+    "only_super_admins_can_access_the_app": "Endast superadministratörer kan komma åt appen.",
+    "password_length_error": "Lösenordet måste vara minst 8 tecken långt",
+    "password_required_error": "Lösenord krävs",
+    "wrong_credentials": "Logga in inloggningsuppgifter är inte korrekta! Försök igen"
+  },
+  "devices_management": {
+    "linked_sensors": "Länkade sensorer"
+  },
+  "firmware_management": {
+    "current_version": "Aktuell version",
+    "enter_description": "Ange beskrivningen",
+    "enter_firmware_version": "Ange firmwareversionen",
+    "enter_mobile_version": "Ange mobilversionen",
+    "old_versions": "Äldre versioner",
+    "revert_to_version": "återgå till den här versionen",
+    "title": "firmware",
+    "upload": "Ladda upp",
+    "upload_file_or_drag_and_drop": "Ladda upp fil eller dra och släpp",
+    "upload_firmware": "Ladda upp firmware",
+    "you_can_upload_up_to_10_MB": "Du kan ladda upp till 10 MB"
+  },
+  "formik": {
+    "field_is_required": "{{field}}krävs",
+    "field_must_match_patter": "{{field}}måste matcha mönster:{{pattern}}",
+    "fields": {
+      "ai_engine": "AI-motor",
+      "country": "Land",
+      "email": "Email",
+      "firmware_version": "Firmware-version",
+      "industry": "Bransch",
+      "max_number_admins": "Max antal administratörer",
+      "max_number_assessments_month": "Max antal bedömningar per månad",
+      "max_number_sessions_month": "Max antal sessioner per månad",
+      "max_number_workers": "Max antal arbetare",
+      "mobile_version": "Mobilversion",
+      "name": "Name",
+      "type": "Typ"
+    },
+    "invalid_filed_format": "Ogiltigt {{field}} format",
+    "version_number_pattern": "postivie_number.postivie_number.positive_number"
+  },
+  "organization_management": {
+    "company_registration_number": "Företagsregistreringsnummer",
+    "confirm_activate_action": "Bekräfta aktiveringsåtgärd",
+    "confirm_archive_action": "Bekräfta arkiveringsåtgärd",
+    "confirm_deactivate_action": "Bekräfta inaktiveringsåtgärd",
+    "confirm_unarchive_action": "Bekräfta borttagningsåtgärd",
+    "create_a_new_organization": "Skapa en ny organisation",
+    "create_a_new_organization_description": "Registrera din organisation och kom igång med att hantera ditt team och projekt effektivt.",
+    "edit_organization_details": "Redigera organisationsinformation",
+    "edit_organization_details_description": "Uppdatera organisationens information för att säkerställa att den är korrekt och uppdaterad.",
+    "invite_admin_form_description": "Ange e-postadressen till administratören som du vill lägga till. Bekräfta e-postadressen för att fortsätta.",
+    "isic_industries": {
+      "A": "Lantbruk, skogsbruk och fiske",
+      "B": "Gruvdrift och stenbrott",
+      "C": "Tillverkning",
+      "D": "El-, gas-, ånga- och luftkonditioneringsförsörjning",
+      "E": "Vattenförsörjning; Avlopps-, avfallshantering och sanering",
+      "F": "Konstruktion",
+      "G": "Partihandel och detaljhandel; Reparation av motorfordon och motorcyklar",
+      "H": "Transport och lagring",
+      "I": "Boende- och matserviceverksamhet",
+      "J": "Information och kommunikation",
+      "K": "Finans- och försäkringsverksamhet",
+      "L": "Fastighetsverksamhet",
+      "M": "Yrkesmässig, vetenskaplig och teknisk verksamhet",
+      "N": "Administrativa tjänster och supporttjänster",
+      "O": "Offentlig förvaltning och försvar; Obligatorisk social trygghet",
+      "P": "Utbildning",
+      "Q": "Mänsklig hälsa och socialt arbete",
+      "R": "Konst, underhållning och rekreation",
+      "S": "Övriga serviceaktiviteter",
+      "T": "Hushållens verksamhet som arbetsgivare; Hushållens odifferentierade varu- och tjänsteproducerande verksamhet för eget bruk",
+      "U": "Extraterritoriella organisationers och organers verksamhet"
+    },
+    "organization_activate_description": "Är du säker på att du vill aktivera den här organisationen?",
+    "organization_archive_description": "Är du säker på att du vill arkivera det här objektet? Den här åtgärden flyttar objektet till arkivet och det kommer inte längre att synas i huvudvyn.",
+    "organization_deactivate_description": "Är du säker på att du vill inaktivera den här organisationen?",
+    "organization_unarchive_description": "Är du säker på att du vill avarkivera det här objektet? Den här åtgärden flyttar objektet till det aktuella avsnittet"
+  },
+  "queries": {
+    "action_email_sent_success": "{{action}}e-post skickades framgångsrikt",
+    "actions": {
+      "password_reset": "Återställning av lösenord"
+    },
+    "entities": {
+      "firmware": "firmware",
+      "organization": "Organisation"
+    },
+    "entity_created_successfully": "{{entity}}skapades framgångsrikt",
+    "entity_updated_successfully": "{{entity}}uppdaterades framgångsrikt",
+    "firmware_reverted_success": "Firmware återställdes framgångsrikt",
+    "something_went_wrong": "Något gick fel"
+  },
+  "settings": {
+    "ai_engine": "AI-motor",
+    "ai_engine_settings": "Ai-motorinställningar",
+    "choose_ai_engine_description": "Välj den motor som passar dina behov för optimal prestanda.",
+    "customize_ai_experience": "Anpassa din AI-upplevelse"
+  }
+}

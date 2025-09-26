@@ -1,0 +1,109 @@
+{
+  "admin_management": {
+    "reset_password_instructions": "Proporcione la dirección de correo electrónico a la que desea enviar las instrucciones para restablecer la contraseña. Confirma la dirección de correo electrónico para continuar."
+  },
+  "auth": {
+    "deactivated_error": "No puedes acceder a tu cuenta porque está desactivada",
+    "email_format_error": "Dirección de correo electrónico no válida",
+    "email_required_error": "La dirección de correo electrónico es obligatoria",
+    "only_super_admins_can_access_the_app": "Solo los superadministradores pueden acceder a la aplicación.",
+    "password_length_error": "La contraseña debe tener al menos 8 caracteres",
+    "password_required_error": "Se requiere una contraseña",
+    "wrong_credentials": "¡Las credenciales de inicio de sesión no son correctas! Vuelve a intentarlo"
+  },
+  "devices_management": {
+    "linked_sensors": "Sensores enlazados"
+  },
+  "firmware_management": {
+    "current_version": "Versión actual",
+    "enter_description": "Introduzca la descripción",
+    "enter_firmware_version": "Introduzca la versión del firmware",
+    "enter_mobile_version": "Ingresa la versión móvil",
+    "old_versions": "Versiones antiguas",
+    "revert_to_version": "volver a esta versión",
+    "title": "Firmware",
+    "upload": "Upload",
+    "upload_file_or_drag_and_drop": "Sube un archivo o arrastra y suelta",
+    "upload_firmware": "Cargar firmware",
+    "you_can_upload_up_to_10_MB": "Puedes subir hasta 10 MB"
+  },
+  "formik": {
+    "field_is_required": "{{field}}es obligatorio",
+    "field_must_match_patter": "{{field}}Debe coincidir con el patrón:{{pattern}}",
+    "fields": {
+      "ai_engine": "Motor de IA",
+      "country": "País",
+      "email": "Correo electrónico",
+      "firmware_version": "Versión del Firmware",
+      "industry": "Industria",
+      "max_number_admins": "Cantidad máxima de administradores",
+      "max_number_assessments_month": "Cantidad máxima de evaluaciones por mes",
+      "max_number_sessions_month": "Número máximo de sesiones por mes",
+      "max_number_workers": "Número máximo de trabajadores",
+      "mobile_version": "Versión móvil",
+      "name": "Name",
+      "type": "Escriba"
+    },
+    "invalid_filed_format": "{{field}}Formato no válido",
+    "version_number_pattern": "numero_posible.numero_posible.numero_positivo"
+  },
+  "organization_management": {
+    "company_registration_number": "Número de registro de la empresa",
+    "confirm_activate_action": "Confirme la acción de activación",
+    "confirm_archive_action": "Confirmar la acción de archivado",
+    "confirm_deactivate_action": "Confirme la acción de desactivación",
+    "confirm_unarchive_action": "Confirmar la acción de desarchivado",
+    "create_a_new_organization": "Crear una nueva organización",
+    "create_a_new_organization_description": "Registra tu organización y comienza a administrar tu equipo y tus proyectos de manera eficiente.",
+    "edit_organization_details": "Editar detalles de la organización",
+    "edit_organization_details_description": "Actualice la información de su organización para asegurarse de que sea precisa y esté actualizada.",
+    "invite_admin_form_description": "Proporcione la dirección de correo electrónico del administrador que desea agregar. Confirma la dirección de correo electrónico para continuar.",
+    "isic_industries": {
+      "A": "Agricultura, silvicultura y pesca",
+      "B": "Minería y canteras",
+      "C": "Fabricación",
+      "D": "Suministro de electricidad, gas, vapor y aire acondicionado",
+      "E": "Abastecimiento de agua; actividades de alcantarillado, gestión de residuos y remediación",
+      "F": "Construcción",
+      "G": "Comercio mayorista y minorista; reparación de vehículos de motor y motocicletas",
+      "H": "Transporte y almacenamiento",
+      "I": "Actividades de alojamiento y servicio de comidas",
+      "J": "Información y comunicación",
+      "K": "Actividades financieras y de seguros",
+      "L": "Actividades inmobiliarias",
+      "M": "Actividades profesionales, científicas y técnicas",
+      "N": "Actividades de servicios administrativos y de apoyo",
+      "O": "Administración pública y defensa; seguridad social obligatoria",
+      "P": "Educación",
+      "Q": "Actividades de salud humana y trabajo social",
+      "R": "Arte, entretenimiento y recreación",
+      "S": "Otras actividades de servicio",
+      "T": "Actividades de los hogares como empleadores; actividades indiferenciadas de los hogares que producen bienes y servicios para uso propio",
+      "U": "Actividades de organizaciones y organismos extraterritoriales"
+    },
+    "organization_activate_description": "¿Estás seguro de que quieres activar esta organización?",
+    "organization_archive_description": "¿Estás seguro de que quieres archivar este artículo? Esta acción moverá el elemento al archivo y ya no estará visible en la vista principal.",
+    "organization_deactivate_description": "¿Estás seguro de que quieres desactivar esta organización?",
+    "organization_unarchive_description": "¿Estás seguro de que quieres desarchivar este artículo? Esta acción moverá el elemento a la sección actual"
+  },
+  "queries": {
+    "action_email_sent_success": "{{action}}correo electrónico enviado correctamente",
+    "actions": {
+      "password_reset": "Contraseña reseteada"
+    },
+    "entities": {
+      "firmware": "Firmware",
+      "organization": "Organización"
+    },
+    "entity_created_successfully": "{{entity}}se creó correctamente",
+    "entity_updated_successfully": "{{entity}}se actualizó correctamente",
+    "firmware_reverted_success": "El firmware se revirtió correctamente",
+    "something_went_wrong": "ALGO HA SALIDO MAL"
+  },
+  "settings": {
+    "ai_engine": "Motor de IA",
+    "ai_engine_settings": "Configuración de Ai Engine",
+    "choose_ai_engine_description": "Elija el motor que se adapte a sus necesidades para un rendimiento óptimo.",
+    "customize_ai_experience": "Personalice su experiencia de IA"
+  }
+}

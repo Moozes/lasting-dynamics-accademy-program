@@ -1,0 +1,1 @@
+export { TnoTableTemplate } from "./TnoTableTemplate";

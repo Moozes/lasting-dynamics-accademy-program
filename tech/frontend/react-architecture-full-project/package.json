@@ -1,0 +1,42 @@
+
+{
+    "name": "wergonic-web-apps",
+    "version": "0.0.0",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "build:production": "export NODE_OPTIONS=--max-old-space-size=6144 && turbo run build:production",
+        "build:development": "export NODE_OPTIONS=--max-old-space-size=6144 && turbo run build:development",
+        "build:staging": "export NODE_OPTIONS=--max-old-space-size=6144 && turbo run build:staging",
+        "dev": "turbo run dev",
+        "dev:staging": "turbo run dev:staging",
+        "preview": "turbo run preview",
+        "lint": "turbo run lint",
+        "lint-fix": "turbo run lint-fix",
+        "format": "turbo run format",
+        "prepare": "husky install",
+        "test": "turbo run test",
+        "storybook": "turbo run storybook",
+        "docker:build:production": "docker compose --env-file ./apps/client-panel/.env.production build",
+        "docker:build:development": "docker compose --env-file ./apps/client-panel/.env.development build",
+        "docker:build:staging": "docker compose --env-file ./apps/client-panel/.env.staging build",
+        "docker:up:dev": "docker compose --env-file ./apps/client-panel/.env.development up",
+        "docker:up:staging": "docker compose --env-file ./apps/client-panel/.env.staging up"
+    },
+    "engines": {
+        "node": ">=16.0.0 <17.0.0 || >=18.0.0"
+    },
+    "dependencies": {
+        "@manypkg/cli": "^0.20.0",
+        "eslint-config-custom": "*",
+        "prettier": "^2.8.8",
+        "turbo": "^1.8.1"
+    },
+    "packageManager": "yarn@1.22.19",
+    "devDependencies": {
+        "husky": "^8.0.0"
+    }
+}

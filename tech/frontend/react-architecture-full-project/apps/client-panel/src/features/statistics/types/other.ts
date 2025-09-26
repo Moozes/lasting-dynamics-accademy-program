@@ -1,0 +1,32 @@
+export type Statistics = {
+    assessment_count: number;
+    assessment_percentage_change: number;
+    active_users_count: number;
+    active_users_percentage_change: number;
+    sessions_count: number;
+    ongoing_sessions_count: number;
+    interrupted_sessions_count: number;
+    sessions_count_percentage_change: number;
+    session_avg_duration: number;
+    session_avg_duration_percentage_change: number;
+    session_longest_duration: number;
+    session_longest_duration_percentage_change: number;
+    session_shortest_duration: number;
+    session_shortest_duration_percentage_change: number;
+    avg_session_per_user: number;
+    avg_session_per_user_percentage_change: number;
+    max_session_per_user: number;
+    max_session_per_user_percentage_change: number;
+    min_session_per_user: number;
+    min_session_per_user_percentage_change: number;
+    organization_number_of_users: number;
+    organization_limit_number_of_users: number;
+    organization_number_of_admins: number;
+    organization_limit_number_of_admins: number;
+    organization_number_of_sessions_per_month: number;
+    organization_limit_number_of_sessions_per_month: number;
+    organization_limit_number_of_assessment_reports_per_month: number;
+    organization_number_of_assessment_reports_per_month: number;
+};
+
+export type URLParamsToChange = "user_dates" | "session_dates" | "ramp_dates";

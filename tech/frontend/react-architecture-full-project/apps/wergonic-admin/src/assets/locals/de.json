@@ -1,0 +1,109 @@
+{
+  "admin_management": {
+    "reset_password_instructions": "Bitte geben Sie die E-Mail-Adresse an, an die Sie Anweisungen zum Zurücksetzen des Passworts senden möchten. Bestätigen Sie die E-Mail-Adresse, um fortzufahren."
+  },
+  "auth": {
+    "deactivated_error": "Du kannst nicht auf dein Konto zugreifen, weil es deaktiviert ist",
+    "email_format_error": "Ungültige E-Mail-Adresse",
+    "email_required_error": "E-Mail-Adresse ist erforderlich",
+    "only_super_admins_can_access_the_app": "Nur Superadmins können auf die App zugreifen.",
+    "password_length_error": "Das Passwort muss mindestens 8 Zeichen lang sein",
+    "password_required_error": "Password is required",
+    "wrong_credentials": "Die Anmeldeinformationen sind nicht korrekt! Versuche es erneut"
+  },
+  "devices_management": {
+    "linked_sensors": "Vernetzte Sensoren"
+  },
+  "firmware_management": {
+    "current_version": "Aktuelle Version",
+    "enter_description": "Geben Sie die Beschreibung ein",
+    "enter_firmware_version": "Geben Sie die Firmware-Version ein",
+    "enter_mobile_version": "Geben Sie die mobile Version ein",
+    "old_versions": "Alte Versionen",
+    "revert_to_version": "Zu dieser Version zurückkehren",
+    "title": "Firmware",
+    "upload": "Upload",
+    "upload_file_or_drag_and_drop": "Datei hochladen oder per Drag-and-Drop",
+    "upload_firmware": "Firmware hochladen",
+    "you_can_upload_up_to_10_MB": "Sie können bis zu 10 MB hochladen"
+  },
+  "formik": {
+    "field_is_required": "{{field}}ist erforderlich",
+    "field_must_match_patter": "{{field}}muss mit dem Muster übereinstimmen:{{pattern}}",
+    "fields": {
+      "ai_engine": "KI-Engine",
+      "country": "Land",
+      "email": "E-Mail",
+      "firmware_version": "Firmware Version",
+      "industry": "Industrie",
+      "max_number_admins": "Maximale Anzahl an Admins",
+      "max_number_assessments_month": "Maximale Anzahl von Bewertungen pro Monat",
+      "max_number_sessions_month": "Maximale Anzahl an Sitzungen pro Monat",
+      "max_number_workers": "Maximale Anzahl von Arbeitern",
+      "mobile_version": "Mobile Version",
+      "name": "Nome",
+      "type": "Art"
+    },
+    "invalid_filed_format": "Ungültiges {{field}} Format",
+    "version_number_pattern": "positive_Nummer.positive_Nummer.positive_Nummer"
+  },
+  "organization_management": {
+    "company_registration_number": "Registriernummer des Unternehmens",
+    "confirm_activate_action": "Aktion aktivieren bestätigen",
+    "confirm_archive_action": "Archivierungsaktion bestätigen",
+    "confirm_deactivate_action": "Deaktivierungsaktion bestätigen",
+    "confirm_unarchive_action": "Aktion zum Aufheben der Archivierung bestätigen",
+    "create_a_new_organization": "Neue Organisation anlegen",
+    "create_a_new_organization_description": "Registrieren Sie Ihre Organisation und beginnen Sie mit der effizienten Verwaltung Ihres Teams und Ihrer Projekte.",
+    "edit_organization_details": "Organisationsdetails bearbeiten",
+    "edit_organization_details_description": "Aktualisieren Sie die Informationen Ihrer Organisation, um sicherzustellen, dass sie korrekt und aktuell sind.",
+    "invite_admin_form_description": "Bitte geben Sie die E-Mail-Adresse des Admins an, den Sie hinzufügen möchten. Bestätigen Sie die E-Mail-Adresse, um fortzufahren.",
+    "isic_industries": {
+      "A": "Land- und Forstwirtschaft und Fischerei",
+      "B": "Bergbau und Gewinnung von Steinen und Erden",
+      "C": "Herstellung",
+      "D": "Strom-, Gas-, Dampf- und Klimaversorgung",
+      "E": "Wasserversorgung; Kanalisation, Abfallentsorgung und Sanierung",
+      "F": "Konstruktion",
+      "G": "Groß- und Einzelhandel; Reparatur von Kraftfahrzeugen und Motorrädern",
+      "H": "Transport und Lagerung",
+      "I": "Unterkunfts- und Verpflegungsaktivitäten",
+      "J": "Information und Kommunikation",
+      "K": "Finanz- und Versicherungsaktivitäten",
+      "L": "Aktivitäten im Bereich Immobilien",
+      "M": "Berufliche, wissenschaftliche und technische Tätigkeiten",
+      "N": "Administrative und unterstützende Servicetätigkeiten",
+      "O": "Öffentliche Verwaltung und Verteidigung; Sozialversicherung",
+      "P": "Bildung",
+      "Q": "Aktivitäten im Bereich der menschlichen Gesundheit und der Sozialarbeit",
+      "R": "Kunst, Unterhaltung und Erholung",
+      "S": "Andere Serviceaktivitäten",
+      "T": "Tätigkeiten der privaten Haushalte als Arbeitgeber; Undifferenzierte Tätigkeiten der Haushalte zur Herstellung von Waren und Dienstleistungen für den Eigenbedarf",
+      "U": "Aktivitäten extraterritorialer Organisationen und Körperschaften"
+    },
+    "organization_activate_description": "Möchten Sie diese Organisation wirklich aktivieren?",
+    "organization_archive_description": "Möchten Sie diesen Artikel wirklich archivieren? Durch diese Aktion wird das Objekt in das Archiv verschoben und in der Hauptansicht nicht mehr sichtbar sein.",
+    "organization_deactivate_description": "Möchten Sie diese Organisation wirklich deaktivieren?",
+    "organization_unarchive_description": "Möchten Sie die Archivierung dieses Artikels wirklich rückgängig machen? Durch diese Aktion wird das Element in den aktuellen Abschnitt verschoben"
+  },
+  "queries": {
+    "action_email_sent_success": "{{action}}E-Mail erfolgreich gesendet",
+    "actions": {
+      "password_reset": "Passwort zurücksetzen"
+    },
+    "entities": {
+      "firmware": "Firmware",
+      "organization": "Organization"
+    },
+    "entity_created_successfully": "{{entity}}wurde erfolgreich erstellt",
+    "entity_updated_successfully": "{{entity}}wurde erfolgreich aktualisiert",
+    "firmware_reverted_success": "Die Firmware wurde erfolgreich zurückgesetzt",
+    "something_went_wrong": "Etwas ist schief gelaufen"
+  },
+  "settings": {
+    "ai_engine": "KI-Engine",
+    "ai_engine_settings": "Ai Engine-Einstellungen",
+    "choose_ai_engine_description": "Wählen Sie den Motor, der Ihren Anforderungen entspricht, um eine optimale Leistung zu erzielen.",
+    "customize_ai_experience": "Passen Sie Ihr KI-Erlebnis an"
+  }
+}

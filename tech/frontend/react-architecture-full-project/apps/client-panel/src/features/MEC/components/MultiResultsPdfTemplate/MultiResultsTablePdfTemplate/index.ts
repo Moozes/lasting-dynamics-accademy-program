@@ -1,0 +1,1 @@
+export { MultiResultsTablePdfTemplate } from "./MultiResultsTablePdfTemplate";

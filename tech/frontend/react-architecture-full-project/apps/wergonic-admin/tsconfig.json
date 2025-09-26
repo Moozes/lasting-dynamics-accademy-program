@@ -1,0 +1,36 @@
+{
+    "extends": "tsconfig/react-vite",
+    "include": [
+        "vitest.config.ts",
+        "vite.config.ts",
+        ".eslintrc.cjs",
+        "src",
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/**/*.d.ts",
+        "src/**/**/**/*.d.ts"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ],
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@pages/*": ["pages/*"],
+            "@assets/*": ["assets/*"],
+            "@components/*": ["components/*"],
+            "@features/*": ["features/*"],
+            "@providers/*": ["providers/*"],
+            "@routes/*": ["routes/*"],
+            "@utils/*": ["utils/*"],
+            "@services/*": ["services/*"],
+            "@atoms/*": ["atoms/*"],
+            "@hooks/*": ["hooks/*"],
+            "@app-types/*": ["types/*"],
+            "@queries/*": ["queries/*"],
+            "@schemas/*": ["schemas/*"],
+        }
+    }
+}

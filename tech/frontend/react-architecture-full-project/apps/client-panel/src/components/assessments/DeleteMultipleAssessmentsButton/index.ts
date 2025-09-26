@@ -1,0 +1,1 @@
+export { DeleteMultipleAssessmentsButton } from "./DeleteMultipleAssessmentsButton";

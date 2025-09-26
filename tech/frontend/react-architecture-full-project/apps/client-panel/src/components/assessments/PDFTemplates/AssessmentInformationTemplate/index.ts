@@ -1,0 +1,1 @@
+export { AssessmentInformationTemplate } from "./AssessmentInformationTemplate";

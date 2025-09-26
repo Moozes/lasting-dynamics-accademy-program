@@ -1,0 +1,1 @@
+export { TemperatureTableTemplate } from "./TemperatureTableTemplate";

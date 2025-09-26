@@ -1,0 +1,109 @@
+{
+  "admin_management": {
+    "reset_password_instructions": "Geef het e-mailadres op waarnaar u instructies voor het opnieuw instellen van het wachtwoord wilt sturen. Bevestig het e-mailadres om verder te gaan."
+  },
+  "auth": {
+    "deactivated_error": "Je hebt geen toegang tot je account omdat het gedeactiveerd is",
+    "email_format_error": "Ongeldig e-mailadres",
+    "email_required_error": "E-mailadres is vereist",
+    "only_super_admins_can_access_the_app": "Alleen superbeheerders hebben toegang tot de app.",
+    "password_length_error": "Het wachtwoord moet minimaal 8 tekens lang zijn",
+    "password_required_error": "Wachtwoord is vereist",
+    "wrong_credentials": "De inloggegevens zijn niet correct! Probeer het opnieuw"
+  },
+  "devices_management": {
+    "linked_sensors": "Gekoppelde sensoren"
+  },
+  "firmware_management": {
+    "current_version": "Actuele versie",
+    "enter_description": "Voer de beschrijving in",
+    "enter_firmware_version": "Voer de firmwareversie in",
+    "enter_mobile_version": "Voer de mobiele versie in",
+    "old_versions": "Oude versies",
+    "revert_to_version": "keer terug naar deze versie",
+    "title": "Firmware",
+    "upload": "Uploaden",
+    "upload_file_or_drag_and_drop": "Bestand uploaden of slepen en neerzetten",
+    "upload_firmware": "Firmware uploaden",
+    "you_can_upload_up_to_10_MB": "Je kunt maximaal 10 MB uploaden"
+  },
+  "formik": {
+    "field_is_required": "{{field}}is verplicht",
+    "field_must_match_patter": "{{field}}moet overeenkomen met patroon:{{pattern}}",
+    "fields": {
+      "ai_engine": "AI-motor",
+      "country": "Land",
+      "email": "E-mail",
+      "firmware_version": "Firmwareversie",
+      "industry": "Industrie",
+      "max_number_admins": "Maximaal aantal beheerders",
+      "max_number_assessments_month": "Maximaal aantal beoordelingen per maand",
+      "max_number_sessions_month": "Maximaal aantal sessies per maand",
+      "max_number_workers": "Maximaal aantal werknemers",
+      "mobile_version": "Mobiele versie",
+      "name": "Name",
+      "type": "Soort"
+    },
+    "invalid_filed_format": "Ongeldig {{field}} formaat",
+    "version_number_pattern": "positief_getal.positief_getal.positief_getal"
+  },
+  "organization_management": {
+    "company_registration_number": "Registratienummer van het bedrijf",
+    "confirm_activate_action": "Bevestig de activeringsactie",
+    "confirm_archive_action": "Archiveringsactie bevestigen",
+    "confirm_deactivate_action": "Bevestig de deactiveringsactie",
+    "confirm_unarchive_action": "De actie voor het dearchiveren bevestigen",
+    "create_a_new_organization": "Creëer een nieuwe organisatie",
+    "create_a_new_organization_description": "Registreer je organisatie en ga aan de slag met het efficiënt beheren van je team en projecten.",
+    "edit_organization_details": "Organisatiegegevens bewerken",
+    "edit_organization_details_description": "Werk de informatie van je organisatie bij om ervoor te zorgen dat deze nauwkeurig en up-to-date is.",
+    "invite_admin_form_description": "Geef het e-mailadres op van de beheerder die je wilt toevoegen. Bevestig het e-mailadres om verder te gaan.",
+    "isic_industries": {
+      "A": "Landbouw, bosbouw en visserij",
+      "B": "Mijnbouw en steengroeven",
+      "C": "Fabricage",
+      "D": "Levering van elektriciteit, gas, stoom en airconditioning",
+      "E": "Watervoorziening; riolering, afvalbeheer en saneringsactiviteiten",
+      "F": "BOUW",
+      "G": "Groot- en detailhandel; Reparatie van motorvoertuigen en motorfietsen",
+      "H": "Transport en opslag",
+      "I": "Activiteiten op het gebied van accommodatie en catering",
+      "J": "Informatie en communicatie",
+      "K": "Financiële en verzekeringsactiviteiten",
+      "L": "Activiteiten op het gebied van onroerend goed",
+      "M": "Professionele, wetenschappelijke en technische activiteiten",
+      "N": "Activiteiten op het gebied van administratieve en ondersteunende diensten",
+      "O": "Openbaar bestuur en defensie; verplichte sociale zekerheid",
+      "P": "Onderwijs",
+      "Q": "Activiteiten op het gebied van menselijke gezondheid en maatschappelijk werk",
+      "R": "Kunst, amusement en recreatie",
+      "S": "Andere serviceactiviteiten",
+      "T": "Activiteiten van huishoudens als werkgevers; ongedifferentieerde goederen- en dienstenproducerende activiteiten van huishoudens voor eigen gebruik",
+      "U": "Activiteiten van extraterritoriale organisaties en organen"
+    },
+    "organization_activate_description": "Weet je zeker dat je deze organisatie wilt activeren?",
+    "organization_archive_description": "Weet je zeker dat je dit item wilt archiveren? Met deze actie wordt het item naar het archief verplaatst en is het niet langer zichtbaar in de hoofdweergave.",
+    "organization_deactivate_description": "Weet je zeker dat je deze organisatie wilt deactiveren?",
+    "organization_unarchive_description": "Weet je zeker dat je dit item wilt dearchiveren? Met deze actie wordt het item naar de huidige sectie verplaatst"
+  },
+  "queries": {
+    "action_email_sent_success": "{{action}}e-mail is succesvol verzonden",
+    "actions": {
+      "password_reset": "Wachtwoord opnieuw instellen"
+    },
+    "entities": {
+      "firmware": "Firmware",
+      "organization": "Organisatie"
+    },
+    "entity_created_successfully": "{{entity}}is succesvol aangemaakt",
+    "entity_updated_successfully": "{{entity}}is succesvol bijgewerkt",
+    "firmware_reverted_success": "Firmware is succesvol teruggezet",
+    "something_went_wrong": "Er ging iets mis"
+  },
+  "settings": {
+    "ai_engine": "AI-motor",
+    "ai_engine_settings": "Ai Engine-instellingen",
+    "choose_ai_engine_description": "Kies de motor die aan uw behoeften voldoet voor optimale prestaties.",
+    "customize_ai_experience": "Pas je AI-ervaring aan"
+  }
+}

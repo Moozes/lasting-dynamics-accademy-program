@@ -1,0 +1,109 @@
+{
+  "admin_management": {
+    "reset_password_instructions": "Please provide the email address where you would like to send instructions for resetting the password. Confirm the email address to proceed."
+  },
+  "auth": {
+    "deactivated_error": "You can't access your account because it's deactivated",
+    "email_format_error": "Invalid e-mail address",
+    "email_required_error": "E-mail address is required",
+    "only_super_admins_can_access_the_app": "Only super admins can access the app.",
+    "password_length_error": "Password must be at least 8 characters long",
+    "password_required_error": "Password is required",
+    "wrong_credentials": "Sign in credentials are not correct! Try again"
+  },
+  "devices_management": {
+    "linked_sensors": "Linked sensors"
+  },
+  "firmware_management": {
+    "current_version": "Current version",
+    "enter_description": "Enter the description",
+    "enter_firmware_version": "Enter the firmware version",
+    "enter_mobile_version": "Enter the mobile version",
+    "old_versions": "Old versions",
+    "revert_to_version": "revert to this version",
+    "title": "Firmware",
+    "upload": "Upload",
+    "upload_file_or_drag_and_drop": "Upload file or drag and drop",
+    "upload_firmware": "Upload Firmware",
+    "you_can_upload_up_to_10_MB": "You can upload up to 10 MB"
+  },
+  "formik": {
+    "field_is_required": "{{field}} is required",
+    "field_must_match_patter": "{{field}} must match pattern: {{pattern}}",
+    "fields": {
+      "ai_engine": "Ai Engine",
+      "country": "Country",
+      "email": "Email",
+      "firmware_version": "Firmware Version",
+      "industry": "Industry",
+      "max_number_admins": "Max number of admins",
+      "max_number_assessments_month": "Max number of assessments per month",
+      "max_number_sessions_month": "Max number of sessions per month",
+      "max_number_workers": "Max number of workers",
+      "mobile_version": "Mobile Version",
+      "name": "Name",
+      "type": "Type"
+    },
+    "invalid_filed_format": "Invalid {{field}} format",
+    "version_number_pattern": "postivie_number.postivie_number.positive_number"
+  },
+  "organization_management": {
+    "company_registration_number": "company registration number",
+    "confirm_activate_action": "Confirm activate action",
+    "confirm_archive_action": "Confirm archive action",
+    "confirm_deactivate_action": "Confirm deactivate action",
+    "confirm_unarchive_action": "Confirm unarchive action",
+    "create_a_new_organization": "Create a New Organization",
+    "create_a_new_organization_description": "Register your organization and get started with managing your team and projects efficiently.",
+    "edit_organization_details": "Edit Organization Details",
+    "edit_organization_details_description": "Update your organization’s information to ensure it’s accurate and up-to-date.",
+    "invite_admin_form_description": "Please provide the email address for the admin that you want to add. Confirm the email address to proceed.",
+    "isic_industries": {
+      "A": "Agriculture, Forestry and Fishing",
+      "B": "Mining and Quarrying",
+      "C": "Manufacturing",
+      "D": "Electricity, Gas, Steam and Air Conditioning Supply",
+      "E": "Water Supply; Sewerage, Waste Management and Remediation Activities",
+      "F": "Construction",
+      "G": "Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles",
+      "H": "Transportation and Storage",
+      "I": "Accommodation and Food Service Activities",
+      "J": "Information and Communication",
+      "K": "Financial and Insurance Activities",
+      "L": "Real Estate Activities",
+      "M": "Professional, Scientific and Technical Activities",
+      "N": "Administrative and Support Service Activities",
+      "O": "Public Administration and Defence; Compulsory Social Security",
+      "P": "Education",
+      "Q": "Human Health and Social Work Activities",
+      "R": "Arts, Entertainment and Recreation",
+      "S": "Other Service Activities",
+      "T": "Activities of Households as Employers; Undifferentiated Goods- and Services-Producing Activities of Households for Own Use",
+      "U": "Activities of Extraterritorial Organizations and Bodies"
+    },
+    "organization_activate_description": "Are you sure you want to activate this organization?",
+    "organization_archive_description": "Are you sure you want to archive this item? This action will move the item to the archive and it will no longer be visible in the main view.",
+    "organization_deactivate_description": "Are you sure you want to deactivate this organization?",
+    "organization_unarchive_description": "Are you sure you want to unarchive this item? This action will move the item to the current section"
+  },
+  "queries": {
+    "action_email_sent_success": "{{action}} email sent successfully",
+    "actions": {
+      "password_reset": "Password reset"
+    },
+    "entities": {
+      "firmware": "Firmware",
+      "organization": "Organization"
+    },
+    "entity_created_successfully": "{{entity}} was created successfully",
+    "entity_updated_successfully": "{{entity}} was updated successfully",
+    "firmware_reverted_success": "Firmware reverted successfully",
+    "something_went_wrong": "Something went wrong"
+  },
+  "settings": {
+    "ai_engine": "Ai Engine",
+    "ai_engine_settings": "Ai Engine Settings",
+    "choose_ai_engine_description": "Choose the engine that fits your needs for optimal performance.",
+    "customize_ai_experience": "Customize Your AI Experience"
+  }
+}

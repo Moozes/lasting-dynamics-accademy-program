@@ -1,0 +1,29 @@
+import { styled } from "@mui/material/styles";
+
+import { REBADetailPage } from "./REBADetailPage";
+
+export const StyledREBADetailPage = styled(REBADetailPage)(({ theme }) => ({
+    "& > .goback-button": {
+        marginLeft: 34,
+    },
+    "& > .page-title": {
+        color: theme.color_system.text.primary,
+        marginBottom: 20,
+        paddingLeft: 34,
+        fontFamily: "Manrope",
+        fontSize: 24,
+        fontWeight: 700,
+    },
+    "& > .assessmen-information": {
+        marginBottom: 33,
+    },
+    "& > .form-navbar": {
+        marginBottom: 13,
+    },
+    "& > .assessment-form": {
+        padding: "0 34px",
+        "& > .alert-card": {
+            marginBottom: 12,
+        },
+    },
+}));

@@ -1,0 +1,14 @@
+export const MULTI_ASSESSMENT_BIG_COLUMN_WIDTH = "300px";
+export const MULTI_ASSESSMENT_SMALL_COLUMN_WIDTH = "163px";
+
+export const MULTI_ASSESSMENT_PDF_SMALL_COLUMN_WIDTH = 12.5;
+
+export const ASSESSMENT_DETAIL_PAGE_BREAK_POINT_1 = "1000px";
+
+export const MIN_SCREEN_WIDTH_FOR_PERMANENT_DRAWER = 1190;
+
+export const URL_CODE_KEY = "idToken";
+export const ROLE = "role";
+
+export const TABLE_SETTINGS_MENU_ITEM_PADDING = "15px 12px";
+export const TABLE_SETTINGS_MENU_ITEM_TEXT_ML = "14px";

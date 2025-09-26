@@ -1,0 +1,1 @@
+export { AIReportPage } from "./AIReportPage";

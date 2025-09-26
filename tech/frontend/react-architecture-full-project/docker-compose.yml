@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+    client-panel:
+        container_name: wergonic-client-${MODE}
+        image: "${DO_REGISTRY}/wergonic-client-${MODE}:latest"
+        build:
+            context: .
+            dockerfile: ./apps/client-panel/Dockerfile
+            args:
+                - MODE=${MODE}
+        ports:
+            - 443:443
+            - 8443:8443
+
+    wergonic-admin:
+        container_name: wergonic-admin-${MODE}
+        image: "${DO_REGISTRY}/wergonic-admin-${MODE}:latest"
+        build:
+            context: .
+            dockerfile: ./apps/wergonic-admin/Dockerfile
+            args:
+                - MODE=${MODE}
+        ports:
+            - 443:443
+            - 8443:8443
