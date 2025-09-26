@@ -1,1 +1,3 @@
 playgrounds
+**/env
+*.sqlite3

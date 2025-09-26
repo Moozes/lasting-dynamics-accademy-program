@@ -1,0 +1,145 @@
+questions
+    not null on foreign key (do foreign keys have special constaints)
+    constraints
+    talk about database design patterns (star, inheritance...etc)
+    talk about how to design a database staarting from information gathering
+
+
+
+
+
+
+
+
+Check these links for a refresher on relational databases
+    relational databases    https://dev.to/louaiboumediene/mastering-relational-database-design-a-comprehensive-guide-3jh8
+    relational databases    https://hackernoon.com/the-system-design-cheat-sheet-relational-databases-part-1
+    database design         https://support.microsoft.com/en-us/office/database-design-basics-eb2159cf-1e30-401a-8084-bd4f9c9ca1f5
+        information gathering
+        deside on tables
+        deside on columns
+        deside on relations
+        fill with mock data and test and  refine
+        the last step applying the normal forms (1,2,3,4,5)
+        1NF, 2NF, 3NF are good enough for most databases
+        normal forms help you test and validate if the structure of the dabase is good
+    system design           https://www.designgurus.io/blog/system-design-cheat-sheet
+        data
+        storage
+        distributed systems
+        networking and communications
+        ...etc
+
+Postgresql reference links
+    I mention these links because the docs are a bit messy and not easy to browse
+    SQL language https://www.postgresql.org/docs/current/sql.html
+        definitions, types, function & operators...etc
+    SQL commands api refernece  https://www.postgresql.org/docs/current/sql-commands.html
+        CREATE TABLE
+        DROP TABLE
+        ALTER
+        ...etc
+
+Database
+    A database is a structured collection of data that is organized and stored in a way that facilitates efficient retrieval, manipulation, and management
+Relational database 
+    A relational database is a type of database that organizes data into tables (relations) with rows (records) and columns (fields). These tables are interconnected through relationships, allowing data to be accessed and combined in various ways.
+RDBMS
+    MySQL, PostgreSQL, Oracle, and Microsoft SQL Server...etc
+SQL (Structured Query Language)
+    the standard language used to interact with relational dabases
+    this is the base syntaxe that exists on all RDBMS's but each RDBMS may add additional stuff, like complexe types, other querying methods, statistical methods...etc
+
+Terms
+    Table: A collection of related data organized in rows and columns.
+    Row: A single instance or entry in a table (also known as a record or tuple).
+    Column: A specific characteristic or property of the data in a table (also known as a field or attribute).
+    Primary Key: A column or combination of columns that uniquely identifies each row in a table.
+    Foreign Key: A column or combination of columns that references the primary key of another table, establishing a relationship between the two tables.
+    Join: An operation that combines rows from two or more tables based on a related column.
+    Index: A data structure that improves the performance of data retrieval operations by creating a sorted representation of the data in a table.
+    View: A virtual table that is dynamically generated from one or more underlying tables.
+    Stored Procedure: A pre-compiled collection of SQL statements that can be executed as a single unit.
+    Trigger: A special type of stored procedure that is automatically executed when a specific event occurs in a table, such as an INSERT, UPDATE, or DELETE statement.
+
+Primary keys are usually indexed by default
+Look up Table
+    A lookup table, also known as a reference table or a code table, is a table that contains predefined sets of values that can be used to populate columns in other tables
+    just like an Enum in programming
+Superkey and Candidate Key
+    A superkey is a set of one or more columns in a table that uniquely identifies each record. A candidate key is a minimal superkey, meaning it contains no unnecessary columns. In other words, a candidate key is a superkey with the minimal number of columns required to uniquely identify each record.
+Primary Key and Alternate Key
+    A primary key is a candidate key chosen as the main unique identifier for a table. An alternate key, also known as a unique key, is any other candidate key that could have been chosen as the primary key but was not.
+Surrogate Key and Natural Key
+    A surrogate key is an artificial key (often a sequential number or a GUID) that is used as the primary key in a table. It has no inherent meaning or relationship to the data itself. A natural key, on the other hand, is a key derived from the data itself, such as an employee ID or a product code.
+    Surrogate Key is mostly used.
+Simple Key, Composite Key, Compound Key
+    A simple key is a single column used as a primary key or a foreign key.
+    A composite key is a combination of two or more columns used as a primary key or a foreign key.
+    A compound key is a combination of two or more simple keys used as a 
+    
+Relationsships
+    one-to-one: the foreign key can be in either the tables
+    one-to-many: the foreign key must be in the many side
+    many-to-many: we will need an assiciative/junction talbe to hold both primary keys
+
+Parent Tables and Child Tables
+    the table on the many side is called child
+    the table on the one side is called the parent
+    the child holds the foreign key
+
+Entity Relationship Modeling
+    diagram conventions to designing and drawing databases
+
+Normalization
+    First normal form 1NF
+        rule: each cell in the table should contain a single value, not a set of values
+        example: 
+            (first_name, last_name) instead of (full_name)
+            (phone, email) instead of (contact_info)
+        purpose: 
+            1NF exists to make databases actually workable with standard database operations. Without it, you can't use SQL properly
+            Can't Query Properly
+            Can't Sort/Group Reliably
+            Can't Enforce Data Integrity
+            Indexing Problems Database can't create efficient indexes on multi-value fields.
+    Second normal form 2NF
+        rule: requires that each non-key column be fully dependent on the entire primary key, not on just part of the key. This rule applies when you have a primary key that consists of more than one column.
+        explanation: 
+                   /---primary key---\
+            Table (order_id, product_id, product_name)
+            if i give you product_id only will you be able to determin product_name. Yes, so this is a violation of the rule
+        purpose: 
+            Storage Waste (Redundancy)
+            Update Anomalies
+            Insert Anomalies
+            Delete Anomalies
+    Third normal form 3NF
+        rule: requires that not only every non-key column be dependent on the entire primary key, but that non-key columns be independent of each other
+        explanation
+                    /-PK-\
+            Table (order_id, product_id, product_name)
+            if i give you product_id only will you be able to determin product_name. Yes, so this is a violation of the rule, a non primary key field determins another non primary key field
+        purpose: 
+            3NF exists to eliminate the same problems as 2NF, but for a different type of dependency - when non-key columns depend on each other instead of the primary key.
+
+Joins
+    Table students
+    Table departments
+    Table professors
+
+    Relation students many-to-one departments
+    Relation professors many-to-many departments
+
+    INNER JOIN
+        only returns rows with matching values from both tables
+        example query: give me all students and their departments
+    LEFT JOIN
+        returns all rows of the left table plus matching rows from the right table
+        example query: give me all students and their departments, even students without departments
+    RIGHT JOIN
+        returns all rows of the right table plus matching rows from the left table
+        rarely used, because you can just make switch between right and left table and use LEFT JOIN instead
+    FULL JOIN
+        returns all rows of both tables
+        example query: give me all students and departments, even students without departments and departments without students
