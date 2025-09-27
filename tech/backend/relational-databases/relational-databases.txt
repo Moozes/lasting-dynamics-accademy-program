@@ -1,16 +1,3 @@
-questions
-    not null on foreign key (do foreign keys have special constaints)
-    constraints
-    talk about database design patterns (star, inheritance...etc)
-    talk about how to design a database staarting from information gathering
-
-
-
-
-
-
-
-
 Check these links for a refresher on relational databases
     relational databases    https://dev.to/louaiboumediene/mastering-relational-database-design-a-comprehensive-guide-3jh8
     relational databases    https://hackernoon.com/the-system-design-cheat-sheet-relational-databases-part-1
@@ -143,3 +130,104 @@ Joins
     FULL JOIN
         returns all rows of both tables
         example query: give me all students and departments, even students without departments and departments without students
+
+Constraints 
+    There are multiple constraints but not that much
+    - Check Constraints
+    - Not-Null Constraints
+    - Unique Constraints 
+        note unique allows for one NULL value :)
+    - Primary Keys
+    - Foreign Keys 
+        You cant create an employee with organization_id that does not exist on the Organization table
+        you can add also ON DELETE and ON UPDATE with these actions (NO ACTION, RESTRICT, CASCADE, SET NULL , SET DEFAULT)
+    - Exclusion Constraints 
+        kind of not intuitive
+
+Relational database design patterns
+    Techniques used in designing relational databases that solves specific problems and chieve specific goals, each one with its pros and cons
+    Normalization 
+        we already talked about this above
+    Denormalization 
+        is adding redundant data to a normalized database to improve query performance, simplify the database structure, or address issues with read-heavy database applications requiring fast data access.
+    Entity-Attribute-Value (EAV)
+        for flexible attributes without modifying schema, similar to NoSQL but using relational databases
+    Master-Detail
+        for example Employee one-to-one EmployeeDetails 
+    Table Inheritance
+                 -- TemporaryEmployee
+        Employee |
+                 -- PermanentEmployee
+    Star
+        We have a central facts table that contains quantitative metrics, used for analytics
+    Snowflake
+        Similar to start but surrounding tables are normalized
+    Audit logging
+        We have log tables that stores information about data updates or actions performed in the application (emplyee updated, deleted...etc)
+    Versioning
+        storing different versions of the data, 
+        for example if employee was updated we dont update its record directly 
+        we create a new record with the new data and mark it as version 2
+        this was just an example and there are multiple ways to implement versioning
+
+
+Scaling and Fault Tolerance
+    scaling
+        Vertical Scaling (Scaling Up): Add more resources (e.g., CPU, RAM)
+        Horizontal Scaling (Scaling Out): Entails distributing the database load across multiple servers
+
+    Fault tolerance in case of hardware/software failure
+        Replication
+        Clustering
+        Backup and Recovery
+
+    strategies for scaling and fault tolrance
+        Master-Slave (Primary-Secondary) replication
+        Multi-Master (Master-Master, Primary-Primary ) replication
+        Sharding
+        Federation
+
+
+Designing a relational database
+    What is good database design?
+        There are 2 principles
+        1- duplicate information (also called redundant data) is bad, because it wastes space and increases the likelihood of errors and inconsistencies
+        2- The second principle is that the correctness and completeness of information is important. incorrect info => incorrect reports => incorrect decisions
+
+    1-Determining the purpose of your database
+        example: The customer database keeps a list of customer information for the purpose of producing mailings and reports.
+    2-Finding and organizing the required information 
+        seperate information into major subjects
+        students (name, age, sex...)
+        departments (speciality, modules...)
+        professors(...)
+        administration workers(...)
+    3-Dividing the information into tables
+        students table, departments table, professors table
+        NOTE: This might seem intuitive to translate major subjects into tables, but suppose we are building an app that only manages study program, we do not care about administration workers for example, in this case we will not create a table for administration workers and we might add some information about them in the departments table only 
+    4-Turning information items into columns
+        students(first_name, last_name, age, sex...)
+        departments (speciality, module name, module coefficient...)
+        professors(...)
+        NOTE: this also might seem easy, but we need to think about this, im i going to query students by their full name only, im i going to order professors by their last name, we need to devide information into its smallest form so it is easy to query, update, delete, or else we will be performing some tricky string operations, another good example storing the address as single string or deviding it into (country, region, city, street) columns
+    5-Specifying primary keys
+        a single column or multiple columns
+        surrogate key or natural key
+        usually surrogate key (a serial number with no meaning or relation to the data it self)
+    6-Creating the table relationships
+        students many-to-one departments
+        professors many-to-many departments
+        ...etc
+        NOTE: ask your self, im i going to need data about students and their departments, when i delete a department what will happen to students belonging to it, can i create a department without students...etc
+    7-Refining the design
+        Create a mock database with your current desing
+        fill it with data
+        test it, query stuff, update stuff, delete stuff
+        you will discover 
+            some missing columns
+            duplicate information, that can be calculated instead of stored as a seperate column
+            some columns might need to be devided into more atomic values for querying purposes
+            ...etc
+    8-Applying the normalization rules
+        Normalization does not tell you what you need need in your database, but lets you know if your design is correct and coherent
+        you can apply the level that you need, because the more you normalize the more complexe the schema will be, and the more complexe the querying will be
