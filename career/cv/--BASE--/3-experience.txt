@@ -6,7 +6,7 @@ EXPERIENCE
     remote
     Mateo
     Germany
-    jul 2025 - present
+    Apr 2025 - present
     • 
     • project: Omni-channel SaaS platform for customer lifecycle management, enabling local businesses to acquire, convert, and retain customers through integrated digital touchpoints
     • 
@@ -67,7 +67,7 @@ EXPERIENCE
     Sweden
     jul 2023 - july 2025
     • 
-    • SaaS for Workplace Ergonomics and Health Monitoring 
+    • project: SaaS for Workplace Ergonomics and Health Monitoring 
     •  
     • Refactored codebase to a feature-driven folder structure, reducing new feature development time by 50% and bug resolution time by 60%.
     • Optimized initial load performance, enhancing load speed by 18% and reducing bundle size by 62%.
@@ -120,7 +120,7 @@ EXPERIENCE
     SoBiapi
     Algeria, Algiers
     Aug 2022 - Oct 2022
-    • Worked on a short-term contract to design and implement key frontend features for (FinTech Web App)
+    • project: Worked on a short-term contract to design and implement key frontend features for (FinTech Web App)
     • 
     • 
     • Leveraged Agile and Scrum methodologies to enhance development speed and improve software implementation.
@@ -143,7 +143,7 @@ EXPERIENCE
     Algeria, Sidi Bel-Abbes
     Jan 2022 - Jun 2022
     • 
-    • Developed a social platform with interactive features including posts, comments, profiles, and messaging, integrating image recognition via a CNN model while focusing on full-stack development.
+    • project: Developed a social platform with interactive features including posts, comments, profiles, and messaging, integrating image recognition via a CNN model while focusing on full-stack development.
     • 
     • 
     • Content Sharing Platform with Image Analysis Integration
