@@ -11,22 +11,28 @@ EXPERIENCE
     • project: Omni-channel SaaS platform for customer lifecycle management, enabling local businesses to acquire, convert, and retain customers through integrated digital touchpoints
     • 
     • Delivered an embeddable version of one of our biggest features, "Inbox" within 1 week to meet urgent client deadlines, developing both full Inbox and single-chat embed variants that secured some important ERP clients and increased revenue 
+    • Delivered an embeddable version of one of our biggest features, within 1 week that secured some important ERP clients and increased revenue 
 
     • Led frontend implementation of company-wide web app redesign in collaboration with design team, delivering enhanced UX across all interfaces in 30 days with 100% bug-free release
+    • Led frontend implementation of web app redesign in collaboration with design team, delivering enhanced UX across all interfaces in 30 days
 
     • Architected scalable, feature-driven codebase structure for Next.js application, establishing migration roadmap and development guidelines to reduce feature delivery time and bug resolution by 50%
+    • Architected scalable, feature-driven codebase structure for Next.js application, which reduced feature delivery time and bug resolution by 50%
 
     • Researched and established Shadcn Figma integration guidelines for the cross-functional team, reducing design-to-development cycle time by 30%
-
-    • Quickly onboarded into diverse, multicultural engineering team (German, Egyptian, Brazilian, Turkish, Pakistani), building working relationships and adapting communication styles to drive productivity
+    • Researched and established Shadcn Figma integration guidelines for my team, reducing design-to-development cycle time by 30%
 
     • Rapidly onboarded to complex monorepo codebase, quickly navigating multi-package architecture to begin delivering features and fixes within the first week
+    • Rapidly onboarded to complex monorepo codebase, to begin delivering features and fixes within the first week
 
     • Migrated key application production features from Pages Router to App Router in 2 weeks, eliminating dependency conflicts and establishing a cleaner architecture that enhanced team development speed
+    • Migrated key application production features from Pages Router to App Router in 2 weeks, eliminating dependency conflicts and enhancing development speed
 
     • Engineered cross-compatible components using an adapter context, enabling proper functionality across Pages and App Router environments and reducing migration effort by 30 days
+    • Engineered cross-compatible components across Pages/App Router, reducing migration effort by 30 days
 
     • Collaborated with the design team to fix the old theme and integrate a new design system synchronized with Figma, eliminating design-code inconsistencies and saving months of refactoring effort
+    • Collaborated with the design team to fix the old theme, eliminating design-code inconsistencies and saving months of refactoring effort
 
     • properly manage migrating i18n to lingui
 
@@ -36,6 +42,9 @@ EXPERIENCE
     Leveraged PostHog feature flags for incremental feature releases, enhancing UX quality and preventing bug exposure across the entire user base
 
     • helped the mobile team with some small bugs and features
+
+    • Quickly onboarded into diverse, multicultural engineering team (German, Egyptian, Brazilian, Turkish, Pakistani), building working relationships and adapting communication styles to drive productivity
+    • Quickly onboarded into multicultural engineering team building working relationships and adapting communication styles to drive productivity
 
     • tech  
         supabase

@@ -1,0 +1,21 @@
+They were validated by Marisa 
+
+but she gave me some feed back also
+
+	resume
+		Add motivation
+		Add future stuff
+		Add open to relocation
+
+		for older experience (if you dont want to add bullet points add a small description, what is the project, your contribution and tech stack)
+
+		You can have 2 pages if you have > 3 years experience
+
+		she also noted that the font syles are differrent in multiple sections, maybe find another template
+
+	linkedin: 
+		Remove projects from experience
+		Add projects section (should be a paragraph not bullet points)
+		7 points max for each experience
+		less text in each bullet point
+		split promotions in the same company (add bullet points for each position)
