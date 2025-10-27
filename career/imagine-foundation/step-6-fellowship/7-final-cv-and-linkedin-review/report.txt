@@ -16,6 +16,7 @@ but she gave me some feed back also
 	linkedin: 
 		Remove projects from experience
 		Add projects section (should be a paragraph not bullet points)
+		
 		7 points max for each experience
 		less text in each bullet point
 		split promotions in the same company (add bullet points for each position)

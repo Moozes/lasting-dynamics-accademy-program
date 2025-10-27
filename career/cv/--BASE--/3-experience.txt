@@ -82,7 +82,9 @@ EXPERIENCE
     • Optimized initial load performance, enhancing load speed by 18% and reducing bundle size by 62%.
     • Reduced query times by 30% through efficient server-state management and caching, boosting user experience.
     • Led the integration of a new theme across a large monorepo project, saving 2 weeks in refactoring time.
-    • 
+
+    • Implemented data downsampling for interactive graph visualization, resolving a longstanding performance issue in 2 weeks.
+    
     • Added new applications to a large monorepo project, designing and developing their architecture for scalability and seamless integration.
     • Implemented and managed a feature branch workflow for streamlined development.
     • Owned the release process to production and managed versioning of the web application.
@@ -92,6 +94,7 @@ EXPERIENCE
     • Established architecture and conventions to minimize bugs and accelerate onboarding for new developers.
     • Interviewed and onboarded new developers to align with project needs and team goals.
     • Added a PDF download feature, satisfying client requirements and enhancing user functionality.
+    • Built PDF download functionality for all reports, delivering print-compatible exports, securing important clients.
     • Conducted client interactions and requirements gathering, reducing research time for the team by weeks.
     • Reviewed technical documentation and coordinated client meetings, reducing pressure on the project manager.
     • Developed a landing page with user authentication using Next.js, delivering an intuitive signup flow while maintaining consistent branding with the main application
