@@ -1,0 +1,31 @@
+I NEED COMPANY LETTERHEAD ALSO
+
+Your full name
+	Khodja Moussa
+Your job title/position
+	Employed for Wergonic as a Frontend engineer then promoted to Frontend Lead
+	Employed for Mateo as a Frontend Engineer
+Exact employment dates (start date and end date with the outsourcing company)
+	Wergonic jul 2023 - jan 2024 frontend engineer
+	Wergonic feb 2023 - jul 2025 frontend lead
+	Mateo	 apr 2025 - oct 2025
+	There are some overlaping dates because i started working for meteo as part time while i was finishing some work with wergonic
+Outsourcing company name and location
+	Attraxia OÜ
+	Registry code: 16795800
+	VAT-ID: EE102652864
+	Kesklinna linnaosa,
+	Ahtri tn 12
+	Harju maakond, Tallinn,
+	Estonia
+	10151
+Sweden client company name (if it can be mentioned) and dates of that assignment
+	Wergonic
+German client company name (if it can be mentioned) and dates of that assignment
+	Mateo
+Your main responsibilities/duties (brief description of what you did)
+	I worked as a frontend engineer focusing on frontend tasks with multiple acheivements through the years
+Technical skills or technologies you worked with (if relevant)
+	dont want to restrict the reference letter to a certain tech
+Your employer's name and title (the person who will sign it)
+	Ramy Abadlia CEO of Attraxia 
