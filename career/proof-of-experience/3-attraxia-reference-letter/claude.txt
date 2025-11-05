@@ -1,6 +1,6 @@
 https://claude.ai/chat/d35fe938-ae58-4bc0-91ca-309e230ee10f
 
-EMPLOYMENT REFERENCE LETTER
+WORK CERTIFICATE
 Attraxia OÜ
 Registry code: 16795800
 VAT-ID: EE102652864
@@ -37,5 +37,7 @@ Attraxia OÜ
 Contact Information:
 Email: [Insert Email]
 Phone: [Insert Phone Number]
+[signature]
+[stamp or seal]
 
 This document is issued upon request for employment verification purposes.
