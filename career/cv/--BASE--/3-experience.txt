@@ -13,6 +13,8 @@ EXPERIENCE
     • Delivered an embeddable version of one of our biggest features, "Inbox" within 1 week to meet urgent client deadlines, developing both full Inbox and single-chat embed variants that secured some important ERP clients and increased revenue 
     • Delivered an embeddable version of one of our biggest features, within 1 week that secured some important ERP clients and increased revenue 
 
+    • MENTION THE USE OF GRAPHITE OF GRAPHITE TO MANAGE STACKING PRS
+
     • Led frontend implementation of company-wide web app redesign in collaboration with design team, delivering enhanced UX across all interfaces in 30 days with 100% bug-free release
     • Led frontend implementation of web app redesign in collaboration with design team, delivering enhanced UX across all interfaces in 30 days
 
@@ -63,6 +65,7 @@ EXPERIENCE
         docker
         just command runner
         react native
+        graphite
 
 
 

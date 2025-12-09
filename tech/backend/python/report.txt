@@ -1,6 +1,10 @@
 Learning python: only important stuff is mentioned
 
 
+Check this Python roadmap for a COMPREHENSIVE infromation source
+    https://roadmap.sh/python
+
+
 ============Check these when you have time============
     file handling
     python references in w3schools: string/list/dict/...methods in general
