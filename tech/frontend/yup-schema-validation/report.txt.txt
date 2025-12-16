@@ -118,43 +118,45 @@ array
 
 
 object
-  object: 
-    defined an object schema 
-    object({
-      name: string(),
-      age: number()
+  validation
+    object: 
+      defined an object schema 
+      object({
+        name: string(),
+        age: number()
+        })
+      or object().shape({
+        name: string(),
+        age: number()
       })
-    or object().shape({
-      name: string(),
-      age: number()
-    })
 
-    objects come defined with default values "undefined" (use schema.getDefault() to see the default values), this is used to build the entire object
-    so unlike other schemas the final value you get after validation is a skeleton
-    string() => undefined
-    but object above will give {name: undefined, age: undefined}
+      objects come defined with default values "undefined" (use schema.getDefault() to see the default values), this is used to build the entire object
+      so unlike other schemas the final value you get after validation is a skeleton
+      if you validate undefined using a string() schema it will return undefined
+      but if you validate undefined using the object schema above above it will return {name: undefined, age: undefined}
 
-    const schema = object({
-      name: string(),
-      car: object({
-        num: number().required(),
-      }),
-    });
-    this will give us by default {name: undefined, car: {num: undefined}}
+      const schema = object({
+        name: string(),
+        car: object({
+          num: number().required(),
+        }),
+      });
+      this will give us by default {name: undefined, car: {num: undefined}}
 
-    Gotcha: 
-      nested optional object() schema like car above, will fails validation when passing {name: "moussa"} although car is optional but it has a required field inside of it "num"
-      be aware of this unexpected behavior
-      you can avoid this by providing a default value car: object(...).default(undefined) or car: object(...).nullable().default(null)
-  shape: 
-    we already talked about this, but it can be chained .shape(...).shape(...) which will work as object extends
-  pick: create a subschema from an existing schema
-  omit: create a subschema from an existing schema
-  from: 
-    transform an object, by changing key names, check docs for more info
-    object({
-      name2: mixed(),
-      AGE: mixed()
-    }).from("name", "name2").from("age", "AGE", true)
-    {name: "moussa", age: 1} => {name2: "moussa", AGE: 1, age: 1}
-  noUnknown: supposedly validate that that object only has known fields that we defined in the schema, but it did not work for me, check docs again
+      Gotcha: 
+        nested optional object() schema like car above, will fails validation when passing {name: "moussa"} although car is optional but it has a required field inside of it "num"
+        be aware of this unexpected behavior
+        you can avoid this by providing a default value car: object(...).default(undefined) or car: object(...).nullable().default(null)
+    shape: 
+      we already talked about this, but moreover it can be chained .shape(...).shape(...) which will work as object extends
+    pick: create a schema from an existing schema by selecting certain fields only
+    omit: create a schema from an existing schema
+    noUnknown: supposedly validate that that object only has known fields that we defined in the schema, but it did not work for me, check docs again
+  transformation
+    from: 
+      transform an object, by changing key names, check docs for more info
+      object({
+        name2: mixed(),
+        AGE: mixed()
+      }).from("name", "name2").from("age", "AGE", true)
+      {name: "moussa", age: 1} => {name2: "moussa", AGE: 1, age: 1}
