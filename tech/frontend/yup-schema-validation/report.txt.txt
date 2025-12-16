@@ -1,0 +1,160 @@
+Definition: 
+  Schema libraries like Yup define, validate, and transform the structure and rules of data (schemas), ensuring inputs match expected shapes, types, and constraints before being used in an application.
+
+After defining a schema you can use it like this 
+  schema.isValid(...some data...) checks if the data is valid depending on the schema
+  schema.cast(...some data...) returns the transformed data
+
+NOTES: 
+  "mixed" is the base schema that all other schemas inherit from like "string", "number"...etc
+  "mixed" provides some base and shared functionality like mixed().required() and mixed().nullable()
+
+  All schemas are not required by default, so they all accept "undefined"
+  but they do not accept null unless schema.nullable() is used
+
+  Remember that when validating a data using a shcema, that data will be casted to the desired type
+  so if you use yup schemas with react-hook-form for example, the values you will get after data is validated will be the casted data, not the data that the user inputed 
+  ex: if we have an input of type number, the value will be a string but the final value after  validation will be a number if we use number() shcema
+
+  I am testing some string schemas
+    and i see different results regarding the acceptance of empty string (matches, email, uuid depending on the implementation of their regexp) 
+    so my advice is to test that for each one when you want to use it
+
+    const schema = string().uuid()
+    console.log(schema.isValidSync(""))
+
+  In the shcemas below 
+    you will find some of them that only transforms, but do not validate
+    like string().ensure() this transforms 
+    undefined => ""
+    null => ""
+
+
+
+
+mixed
+  required: does not accept undefined
+  nullable: accepts null, no schema will accept null unless we use this
+  optional: accepts undefined/empty string (when used with string schema)
+  defined: does not accept undefined but passes empty string (when used with string schema)
+  default: provides a default value when undefined but does not replace null
+  oneOf: whitelist a set of values
+  notOneOf: blacklist a set of values
+  when: used to adjust the schema based on a sibling/siblings values
+
+
+string
+  validation
+    string(): accepts string
+    required: same as mixed + does not accept empty string
+    length: accepts string with exact length
+    min: accepts string >= min
+    max: accepts string <= max
+    match: accepts string that matches regexp, you can configure an options object to accept empty string
+    email: validate string with a email regexp, accepts email string and empty string
+    url: same as email
+    uuid: same as email, but does not accept empty string
+  transformation
+    trim: transforms input by removing leading and trailing spaces, if strict() is used it will only validate if string is trimed it will not trim it on its own
+    ensure: transform undefined and null to empty strings, also makes default value empty string
+    lowercase: transforms to lowercase, if strict() is used, it will only validate if it is lowercase
+    uppercase: same as lowercase 
+
+
+number
+  validation
+    number: accepts number and Infinity or what can be casted to a number (empty string cannot be casted to a number)
+    min: forces a minimum
+    max: forces a maximum
+    moreThan: forces a munimum non inclusive
+    lessThan: forces a maximum non inclusive
+    positive: strict positive > 0
+    negative: strict negative < 0
+    integer: no decimals
+    round: 
+      1st argument: round, ceil, floor, or trunc (same as truncate()) 
+      but the 1st 3 do not accept null and other strings or objects
+  transformation
+    truncate: transformation that removes decimal, accepts all:  null (returns 0), any string (returns 0), object (returns 0) 
+
+
+boolean
+  boolean: accepts true, false, "true", "false", 0, 1, "0", "1", but remember the casted value will either be true or false
+
+
+date
+  date: 
+    it casts using new Date(), so it casts to an object not iso string
+    it accepts new Date(), or "2024-04-12", 2, or "2" what ever you can pass to new Date(...)
+    if value passed to new Date() fails, it will attempt to parse the value as ISOString, otherwise will throw error
+  min: it will cast the limit string provided to a Date object then use that to compare, or you can pass date object directly
+  max: it will cast the limit string provided to a Date object then use that to compare, or you can pass date object directly
+  NOTE: 
+    in js you can compare date objects directly using comparison operators <, <=, >, >= 
+    but for equality you will need to compare timestamsp because === compares object references
+
+
+array
+  validation
+    array: 
+      accepts empty array, does not accept empty string
+      arrays can be typed or non typed, if typed cast() and isValid() will apply to each element also
+      you can do array().of(yup.number())
+      or array(yup.number())
+    of: same as array(yup.number())
+    length: sets exact length
+    min: sets min length
+    max: sets max length
+  transformation
+    ensure: 
+      will transform any value to an empty array, and non-empty, non-array value to an array with that value
+      null => []
+      undefined => []
+      1 => [1]
+      NaN => [NaN]
+    compact: 
+      transforms the array by removing falsy values, 
+      and if a rejector function is provided it will use that to determine what to remove 
+
+
+object
+  object: 
+    defined an object schema 
+    object({
+      name: string(),
+      age: number()
+      })
+    or object().shape({
+      name: string(),
+      age: number()
+    })
+
+    objects come defined with default values "undefined" (use schema.getDefault() to see the default values), this is used to build the entire object
+    so unlike other schemas the final value you get after validation is a skeleton
+    string() => undefined
+    but object above will give {name: undefined, age: undefined}
+
+    const schema = object({
+      name: string(),
+      car: object({
+        num: number().required(),
+      }),
+    });
+    this will give us by default {name: undefined, car: {num: undefined}}
+
+    Gotcha: 
+      nested optional object() schema like car above, will fails validation when passing {name: "moussa"} although car is optional but it has a required field inside of it "num"
+      be aware of this unexpected behavior
+      you can avoid this by providing a default value car: object(...).default(undefined) or car: object(...).nullable().default(null)
+  shape: 
+    we already talked about this, but it can be chained .shape(...).shape(...) which will work as object extends
+  pick: create a subschema from an existing schema
+  omit: create a subschema from an existing schema
+  from: 
+    transform an object, by changing key names, check docs for more info
+    object({
+      name2: mixed(),
+      AGE: mixed()
+    }).from("name", "name2").from("age", "AGE", true)
+    {name: "moussa", age: 1} => {name2: "moussa", AGE: 1, age: 1}
+  noUnknown: supposedly validate that that object only has known fields that we defined in the schema, but it did not work for me, check docs again

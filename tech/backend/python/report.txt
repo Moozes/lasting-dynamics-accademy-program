@@ -9,8 +9,10 @@ Check this Python roadmap for a COMPREHENSIVE infromation source
     file handling
     python references in w3schools: string/list/dict/...methods in general
         FORGET ABOUT W3SCHOOLS MATE, HERE IS THE STANDARD LIBRARY INSTEAD https://docs.python.org/3/library/
+
     python function arguments pass by value / by reference??
     strings are lists but they dont have list methods?? like append and extend...
+    regex https://www.w3schools.com/python/python_regex.asp
 
 ============notes and gotchas============
     type hints cheat sheet
@@ -443,7 +445,7 @@ Check this Python roadmap for a COMPREHENSIVE infromation source
 
     dir(m_n_y) # returns a dict of all module functions and variables
 
-============regex https://www.w3schools.com/python/python_regex.asp============
+
 
 ============package manager============
     pip
@@ -474,6 +476,7 @@ Check this Python roadmap for a COMPREHENSIVE infromation source
     print("Username is: " + username)
 
 ============Builtin functions============
+    There are only a handful of builtin functions https://docs.python.org/3/library/functions.html
     filter: learn it
     map: learn it
     zip
