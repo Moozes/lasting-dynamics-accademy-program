@@ -1,9 +1,13 @@
+DOCS: https://github.com/jquense/yup/tree/v0.32.11.
+
 Definition: 
   Schema libraries like Yup define, validate, and transform the structure and rules of data (schemas), ensuring inputs match expected shapes, types, and constraints before being used in an application.
 
-After defining a schema you can use it like this 
-  schema.isValid(...some data...) checks if the data is valid depending on the schema
-  schema.cast(...some data...) returns the transformed data
+After defining a schema you can generaly use it in 2 ways 
+  validation 
+    example: schema.isValid(...some data...) checks if the data is valid depending on the schema
+  casting (transforming it to the desired type and shape)
+    example: schema.cast(...some data...) returns the transformed data
 
 NOTES: 
   "mixed" is the base schema that all other schemas inherit from like "string", "number"...etc
@@ -33,10 +37,14 @@ NOTES:
 
 
 mixed
-  required: does not accept undefined
+  required: does not accept undefined/empty string (when used with string schema)
   nullable: accepts null, no schema will accept null unless we use this
   optional: accepts undefined/empty string (when used with string schema)
-  defined: does not accept undefined but passes empty string (when used with string schema)
+    since all schemas are optional by default what is the purpose of optional()?
+    express intent or serve as documentation
+    change a schema from required to optional like when using .when()
+    or when a schema is based of another schema secondSchema = firstSchema.optional()
+  defined: does not accept undefined, but passes empty string (when used with string schema)
   default: provides a default value when undefined but does not replace null
   oneOf: whitelist a set of values
   notOneOf: blacklist a set of values
@@ -45,11 +53,11 @@ mixed
 
 string
   validation
-    string(): accepts string
+    string: accepts string
     required: same as mixed + does not accept empty string
     length: accepts string with exact length
-    min: accepts string >= min
-    max: accepts string <= max
+    min: accepts string >= min length
+    max: accepts string <= max length
     match: accepts string that matches regexp, you can configure an options object to accept empty string
     email: validate string with a email regexp, accepts email string and empty string
     url: same as email
@@ -70,12 +78,12 @@ number
     lessThan: forces a maximum non inclusive
     positive: strict positive > 0
     negative: strict negative < 0
-    integer: no decimals
+    integer: accepts integers only
+  transformation
+    truncate: transformation that removes decimal, accepts all:  null (returns 0), any string (returns 0), object (returns 0) 
     round: 
       1st argument: round, ceil, floor, or trunc (same as truncate()) 
       but the 1st 3 do not accept null and other strings or objects
-  transformation
-    truncate: transformation that removes decimal, accepts all:  null (returns 0), any string (returns 0), object (returns 0) 
 
 
 boolean
@@ -102,9 +110,9 @@ array
       you can do array().of(yup.number())
       or array(yup.number())
     of: same as array(yup.number())
-    length: sets exact length
-    min: sets min length
-    max: sets max length
+    length: accepts exact length
+    min: accepts min length
+    max: accepts max length
   transformation
     ensure: 
       will transform any value to an empty array, and non-empty, non-array value to an array with that value
@@ -146,7 +154,7 @@ object
       Gotcha: 
         nested optional object() schema like car above, will fails validation when passing {name: "moussa"} although car is optional but it has a required field inside of it "num"
         be aware of this unexpected behavior
-        you can avoid this by providing a default value car: object(...).default(undefined) or car: object(...).nullable().default(null)
+        you can avoid this by providing a default value {car: object(...).default(undefined)} or car: object(...).nullable().default(null)
     shape: 
       we already talked about this, but moreover it can be chained .shape(...).shape(...) which will work as object extends
     pick: create a schema from an existing schema by selecting certain fields only
