@@ -1,0 +1,92 @@
+react-hook-form v7
+
+there are 2 main apis in react-hook-form
+    register: 
+        registers an input into the hook
+        the hook now tracks the input, but the input is not controlled (we are no using value and onChange)
+        the registration happends using the ref of the input
+        this means that the component will not rerender on each key stroke
+
+    control/Controller (can be used with multiple inputs) or control/useController (can be used with a single input)
+        on the other hand if you want to work with controlled inputs you will need to use this.
+        another reason for why to use the controller api is if the UI library you are working with does not expose its components ref, or maybe it is not exposed correctly
+
+        <Contrloller /> does cause rerenders on the render prop level only!!
+        useController does cause rerenders at the hook level (ie: where it is called)
+
+NOTE: 
+    the main focus of react-hook-form is to optimize renders 
+    so as a general note, use the register whenever possible because it does not create controlled inputs
+
+other apis
+    There is alot of functionality provided by the library, check docs for more info
+    but it is worth mentioning these
+
+    <Form />: used to automatically send api requests when submitting, "POST", "PUT"...etc
+    watch: 
+        subscribe to the changes of an input or all inputs, 
+        this will cause a rerender whenever that state changes, 
+        but still you cannot consider the input to be controlled when used with register, because the library is just listening for dom events.
+    useWatch:
+        similar to watch api, but will isolate render at hook call level
+        needs form control as argument
+        Note: hooks call order matters
+            setValue("fullname", "moussa")
+            useWatch({control, name: "fullname"}) // ❌ subscription is happened after value update, no update received
+    getValues: 
+        gets the currect value without subscribing unlike watch api
+        which means this will not cause rerenders
+    formState.errors
+        subscribe to form errors, you can even subscribe to certain field error, 
+        so the component will rerender whenever that field's error was changed
+    useFormState:
+        subscribes to form state and isolate rerenders at hook call level
+        needs form control as argument
+    handleSubmit: 
+        this executes call back functions passed to it
+        it executes the first if validation was successfull (onSubmit)
+        it executes the second if the validation was not successfull (onSubmitError)
+    FormProvider/useFormContext:
+        all you need to do is wrap your form or component that needs context with <FormProvider />
+        and spread useForm value in the provider as such <FormProvider {...form}> 
+        then you can utilise useFormContext<TValues>() inside those components
+    useFieldArray: 
+        use to workd with fields that are arrays like {hobbies: ["climbing", "swimming", ...]}
+        in terms of form ui, this will need to translate to multiple inputs (1 input for each array value)
+        we can have 1, 2, 3, 4...etc values so we can have 1,2,3,4...etc inputs
+        we can add or remove values/inputs, so this is s dynamic form
+
+        this hooks provides us with utilities to facilitate the management of fields that are arrays (append, prepend, swap, remove...etc)
+
+        one thing to note is that the array values are objects by default with an id provided by the hook, 
+        if you dont define them as objects typescript will complain and you will have some unexpected behaviors
+        instead of hobbies = ["climbing"...etc], do this hobbies = [{ value: "climbing" }, { value: "swimming" }, ...etc]
+
+    useLens
+        Type-safe functional lenses for React Hook Form, check docs for more info
+
+        In programming, lenses are an abstraction used to focus on a part of a larger data structure in a safe, composable, and immutable way
+
+    createFormControl
+        this function is completely optional, you will rarely (or hardly never!) need this
+
+        creates an entire form with subscription capabilities outside of a react component
+
+        you can either use this function or the react context api (FormProvider) you cant use both
+        meaning dont do this 
+            const form = createFormControl()
+            <FormProvider {...form} />
+
+        I think this is a way to create and subscribe to a form outside of the react eco system (outside of components)        
+        this is also used to subscribe to a form state without causing rerenders
+        check docs for more info
+
+validation
+    you can either use native html validation, which is exposed via a simple api register("firstName", {required: true})
+    or you can use schema validation like yup, zod...etc
+
+general notes
+    when using controlled inputs it is always recommended to pass defaul values to useForm, and do not use undefined for field default values 
+    because react will complain about an uncontrolled input changing to be controlled: this is a react behavior not react-hook-form
+
+    you can use controlled / uncontrolled inputs together in the same form

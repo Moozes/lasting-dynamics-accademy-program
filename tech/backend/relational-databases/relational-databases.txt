@@ -9,7 +9,7 @@ Check these links for a refresher on relational databases
         fill with mock data and test and  refine
         the last step applying the normal forms (1,2,3,4,5)
         1NF, 2NF, 3NF are good enough for most databases
-        normal forms help you test and validate if the structure of the dabase is good
+        normal forms help you test and validate if the structure of the dabase is good, but they do not tell you how to design, they only validate it after you have designed it
     system design           https://www.designgurus.io/blog/system-design-cheat-sheet
         data
         storage
