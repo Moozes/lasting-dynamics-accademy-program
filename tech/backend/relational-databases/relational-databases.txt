@@ -9,7 +9,7 @@ Check these links for a refresher on relational databases
         fill with mock data and test and  refine
         the last step applying the normal forms (1,2,3,4,5)
         1NF, 2NF, 3NF are good enough for most databases
-        normal forms help you test and validate if the structure of the dabase is good, but they do not tell you how to design, they only validate it after you have designed it
+        normal forms help you test and validate if the structure of the database is good, but they do not tell you how to design, they only validate it after you have designed it
     system design           https://www.designgurus.io/blog/system-design-cheat-sheet
         data
         storage
@@ -63,7 +63,7 @@ Surrogate Key and Natural Key
 Simple Key, Composite Key, Compound Key
     A simple key is a single column used as a primary key or a foreign key.
     A composite key is a combination of two or more columns used as a primary key or a foreign key.
-    A compound key is a combination of two or more simple keys used as a 
+    A compound key is a combination of two or more simple keys used as a primary key or a foreign key.
     
 Relationsships
     one-to-one: the foreign key can be in either the tables
@@ -120,7 +120,10 @@ Joins
 
     INNER JOIN
         only returns rows with matching values from both tables
-        example query: give me all students and their departments
+        example query: 
+            give me all students and their departments
+            if there is a student without a department it will not be returned
+            if there is a department without a student it will not be returned
     LEFT JOIN
         returns all rows of the left table plus matching rows from the right table
         example query: give me all students and their departments, even students without departments
@@ -131,21 +134,29 @@ Joins
         returns all rows of both tables
         example query: give me all students and departments, even students without departments and departments without students
 
-Constraints 
+Constraints: 
+    Constraints are rules applied to columns or tables that enforce data integrity. They ensure your data stays valid, consistent, and follows business logic.
     There are multiple constraints but not that much
     - Check Constraints
+        age INT CHECK (age >= 18)
     - Not-Null Constraints
-    - Unique Constraints 
+        employee_id INT NOT NULL
+    - Unique Constraints
+        email VARCHAR(100) UNIQUE
         note unique allows for one NULL value :)
     - Primary Keys
-    - Foreign Keys 
-        You cant create an employee with organization_id that does not exist on the Organization table
-        you can add also ON DELETE and ON UPDATE with these actions (NO ACTION, RESTRICT, CASCADE, SET NULL , SET DEFAULT)
+        product_id INT PRIMARY KEY
+    - Foreign Keys
+        FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+        You can not create an employee with organization_id that does not exist on the Organization table
+        you can add also ON DELETE and ON UPDATE using one of these actions (NO ACTION, RESTRICT, CASCADE, SET NULL , SET DEFAULT)
+    - Default
+        status VARCHAR(20) DEFAULT 'pending'
     - Exclusion Constraints 
-        kind of not intuitive
+        kind of not intuitive, research this
 
 Relational database design patterns
-    Techniques used in designing relational databases that solves specific problems and chieve specific goals, each one with its pros and cons
+    Techniques used in designing relational databases that solves specific problems and achieve specific goals, each one with its pros and cons
     Normalization 
         we already talked about this above
     Denormalization 
@@ -191,7 +202,7 @@ Scaling and Fault Tolerance
 Designing a relational database
     What is good database design?
         There are 2 principles
-        1- duplicate information (also called redundant data) is bad, because it wastes space and increases the likelihood of errors and inconsistencies
+        1- duplicate information (also called redundant data) is bad, because it wastes space and increases the likelihood of errors and inconsistencies (when updating, deleting, inserting)
         2- The second principle is that the correctness and completeness of information is important. incorrect info => incorrect reports => incorrect decisions
 
     1-Determining the purpose of your database
