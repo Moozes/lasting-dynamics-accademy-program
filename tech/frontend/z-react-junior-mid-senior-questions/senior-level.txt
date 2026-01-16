@@ -1,0 +1,82 @@
+1. Explain React Fiber architecture and how it improves rendering.
+    it is a complete rewrite of the react reconciliation algorithm, 
+    designed to enable asynchronous rendering, 
+    prioritize updates and provides over all responsive ui
+
+    principles
+    incremental rendering: 
+        divide rendering in to small units called fibers
+        this prevents large updates from blocking the main thread
+    prioritization (time slicing): 
+        prioritize user input over background data fetch for example
+    pausing and resuming work
+    data structure: 
+        fiber is a js object that represents a unit of work, these fibers form a tree (singly linked list)
+
+    devloper benefits
+        concurent mode: fiber is what enables react 18+ concurrent features "stuff that run simultanously without blocking the main thread (useTransition, useDefferedValue, suspense, automatic batching: group multiple state updates in a single rerender)
+        suspense: suspende rendering until code or data load
+        error boundaries    
+
+2. How would you implement an efficient infinite scroll in React?
+    using the intersection objserver api to detect when an element has intered the viewport 
+    combined with throttling and caching and virtualization
+    a good practise is to use query libraries like react query or swr
+
+3. Explain the differences between server-side rendering (SSR), static site generation (SSG), and client-side rendering (CSR). When would you use each?
+    ssr: the server renders the page and sends html to the client on each request
+        better initial load and SEO
+    ssg: the page is rendered at build time and cached
+        fastest performance and SEO but requires rebuild for content changes
+    csr: the browser renders the page, classic rendering of SPAs
+        fast subsequent navigation but slow initial load and SEO challenges
+
+4. How would you architect a React application for maximum scalability and maintainability?
+    feature based folder structure not type based (hooks, helpers, ...etc)
+    state management: server state, client state (local useState and global jotai or similar)
+    api layer abstraction
+    error handling using error boundries
+    typescript
+    design system (figma+code) and component library
+    linting and formatting
+    monorepo structure for large projects
+
+5. Explain React's concurrent features and how they improve user experience.
+    conccurent features lets react work on multiple state update simultanously and interrupt current work for urgent updates (interrupt background fetching for user inputing a text)
+    these features include: 
+        useTransition: marking non urgent updates
+        useDefferedValue: deffering expensive calculations
+        Suspense,
+        automatic batching
+
+6. How do you handle complex state management across a large application? Compare different approaches.
+    context api: can cause rerender issues
+    redux: boiler plate heavy
+    jotai: good
+    server state: react query, swr
+
+7. Explain error boundaries and implement a comprehensive error handling strategy.
+    they catch errors in child component trees, log errors and display fallback UI
+    a comprehensive strategy include 
+        a Global error boundry and route level error boundry
+        error reporting service like sentry
+        user friendly error messages
+        distinguish between production/development errors messages
+
+9. Describe your approach to testing React applications at different levels.
+    Unit tests 
+        (Jest + React Testing Library) for individual components and hooks testing behavior not implementation
+    integration tests 
+        for component interactions and data flow (fill email, fill password, click submit, expect string "login success")
+    E2E tests 
+        (Playwright/Cypress) for critical user journeys like (choose cart items, go to checkout, fill form, press buy)
+
+    integration vs e2e
+        in integration we are testing a feature in isolation of external dependencies (mocking api calls, backend), runs in a special env node/jsdom
+        e2e we are testing whole journeys (multiple features) using real external dependencies not MOCK stuff, this is slow and runs in browser
+
+10. How do you approach performance profiling and optimization in a React application experiencing performance issues?
+    devtools profiler for slow renders and unnecessary rerenders
+    performance tab for js execution
+    network tab: analyze bundle size, and initial load 
+    and we already talked about optimization techniques 

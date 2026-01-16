@@ -1,0 +1,90 @@
+1. Explain the useCallback and useMemo hooks. When would you use each?
+    they are both used for memoization, 
+    useMemo memoizes expensive calculations so they are not recalculated unless the dependency array changes 
+    useCallback memoizes function references so they are not recreated unless the dependency array changes
+        useMemo benefit is obvious, better performance
+        useCallback benefit is also obvious for performance and memory consumption, 
+        but it has another benefit which is when a function is passed to a child as a prop and the child is using React.memo, for React.memo to work as intended we need to memoize the function definition
+
+2. What is the Context API and how does it solve prop drilling?
+    it is a way to share data across the component tree without manually passing props, createContext, Provider, useContext
+    it helps avoid prop drilling
+    cons: it makes the component that uses it less reusable, because that component depends on an external data (context) that might not be available at every call point
+
+    context vs redux vs jotai
+        lets say we have this data {name, age}
+        component A consumes name and component B consumes age
+        when name changes
+            context: A will rerender, B will rerender (every component that consumes the context will rerender even if the partial data consumed is not changed)
+            redux: A will rerender, B will not rerender (a component will rerender when the specific used data has changed)
+            jotai: same as context, one solution would be to split state into 2 atoms nameAtom and ageAtom instead of {name, age} object
+
+3. Explain the component lifecycle in React hooks (useEffect dependencies).
+    No dependency array: runs after every render (componentDidUpdate)
+    Empty array []: runs once after initial mount (componentDidMount)
+    With dependencies [dep1, dep2]: runs when those values change
+    Return function in useEffect: cleanup function (componentWillUnmount) or when the useEffect is about to run again, the cleanup return will run before that
+
+4. What are custom hooks and why are they useful?
+    they are function that start with "use" they allow us to extract component logic to reusable funtions
+    props: 
+        seperation of concerns
+        code reuse
+    example useIsAuthenticated handles checking if current token is valid
+
+5. How does React's reconciliation algorithm work?
+    it uses a heurstic diffing algorithm, comparing old VDOM with new VDOM to determin which actual DOM nodes need to be updated
+    it is O(n) algorithm, instead of O(n3) if it was not heurstic
+    it also uses the key prop to know if an element need to be updated
+
+6. What are React portals and when would you use them?
+    it is a way to render child component outside of the parent component DOM hierarchy
+    reason to use it: modals, tooltip that are limited by parents styles like overflow hidden or z-index for example
+    Event delegation still works but through the component tree not DOM tree because portals are rendreder outside of the root DOM node
+    Event delegation: you provide a common parent with and event handler that handles all children events, ex: a single parent onClick handles all children onClicks
+
+7. Explain the useReducer hook and when you'd use it over useState.
+    use it when you have complex state with multiple sub values, it takes a reducer function and initial state and returns state and a dispatch function
+    one other benefit is that dispatch has a stable identity so it will not cause children to rerender when they use React.memo
+
+8. What is lazy loading in React and how do you implement it?
+    lazy loading allows you split your code into multiple chunks that are only loaded when needed, which reduces the initial bundle size
+    and it is implemented using React.lazy() in conjuction with dynamic imports and a suspence boundry for fallback ui
+
+9. How do you optimize React application performance?
+    code splitting and lazy loading and dynamic imports for smaller initial bundles 
+        they all mean the same thing
+        the js mechanism for this is: import()
+        Reactjs lazy function is a way to hooks import() into reacts compoennt and suspense ecosystem
+    tree shaking to eliminate dead code
+    debouncing and throttling for event handlers
+    lasrge lists virtualization: only render stuff that are in the view port
+    memoization for expensive calculations and function references
+    avoiding unecessary rerenders using proper state management and React.memo
+    using browser caching: often guided by http headers
+    use chrome dev tools to identify bottlenecks
+    appropriate data structures
+    minimize DOM manipulations
+    SSR or SSG
+    image optimization
+
+10. What are Higher-Order Components (HOCs) and what problems do they solve?
+    they are function that take a component and return an enhanced version of it
+    for example: withLoading, withAuth, withForwardRef...etc
+    they are largly replaced by hooks
+        HOCs
+            warpper hell withAuth(withLoggin(withLoading(component)))
+            they are statically composed, meaning you cant apply them conditionaly like hooks
+            props name colisions
+
+        hooks
+            hooks are inline, no wrapper hell
+                const auth = useAuth()
+                const loading = useLoading()
+            they can be applied conditionaly
+            no namig colisions because you control variable names
+
+    are they still usefull?, yes
+        enhance third party library components
+        legacy code maintenance (class components)
+        

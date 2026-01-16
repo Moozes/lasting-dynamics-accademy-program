@@ -1,0 +1,53 @@
+1. Explain the event loop in JavaScript.
+    event loop is how javascript manage the execution of tasks
+    first of all javascript is single threaded, but with the event loop it mangage i/o operations without blocking the execution
+
+    3 places: 
+        execution stack: works as last in first out LIFO
+        microtasks queue: promises
+        macrotasks queue: setTimeout callback, setinterval callback, onclick callback...etc
+
+        priority: execution stack -> microtasks -> macrotasks
+
+
+2. What is prototypal inheritance?
+    it is the ability of objects to inherit other objects properties and methods
+    and that object can use those properties directly without chaining
+    there is also the static method Object.hasOwn() to now if the property is auto defined or inherited
+    there is a builtin Object prototype that all objects inherit from
+    but we can set the inheritance manually, Object.setPrototypeOf, Object.create
+    and there is an inheritance chain, called prototype chain and the we reach a null prototype 
+
+3. What are Promises and how do they work?
+    they are async operation that might complete or fail
+    we can handle the result with .then .catch syntaxe or async await syntaxe
+
+4. What is the difference between call, apply, and bind?
+    call and apply invoke a function with a specific "this" context, they differ in arguments passing
+        call: comma seperated arguments
+        apply: array like arguments
+
+5. Explain debouncing and throttling.
+    debounce waits for a pause in events to fire a function once like search input
+    throttle executes a function at fixed intervals, limits calls during rapid events like scrolling (does not wait for a pause)
+
+6. What is the spread operator and rest parameters?
+    rest: function foo(...args) {} 
+    rest: {a, ...props} = obj
+
+    spread: foo(...arr1) <=> foo(1, 2)
+    spread: const arr2 = [...arr1]
+
+8. Explain async/await.
+    syntactic sugar to write async code as a sync code
+    function marked with async returns a promise
+    when ever it reachs an await it pauses execution, untill that promise is settled
+    errors managed with try catch block
+
+9. What are higher-order functions?
+    they are functions that take other functions as arguments or returns functions as a result
+    functions in js are first class objects, meaning they can be handled like normal objects: passed to funtions, returned from functions ...etc
+
+10. What is event delegation?
+    it is event bubbling/traveling up the dom tree
+    one event handler in the parent call handle or child events

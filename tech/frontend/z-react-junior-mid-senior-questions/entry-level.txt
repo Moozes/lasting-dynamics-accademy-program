@@ -1,0 +1,76 @@
+1. What is JSX and why do we use it in React?
+    javascript xml, it is an syntax extension to javascript, that allows us to write html like syntaxe inside a js file
+    it gets compiled to regular js function calls (React.createElement)
+    we use it because it is more readable and declarative
+
+2. What's the difference between state and props in React?
+    props are read-only data passed from parent component to a child component, unidirectional flow
+    state is a data manged by the components that can change over time, each change causes a rerender
+
+    note
+        props changing does not cause a rerender on its own, it is usually the parent rerender that causes the child rerender
+        think of it this way: if you pass ref.current to a child as a prop and that value changes at some point, the parent is not rerendered
+        so the child is not called again with the new value of the ref.current so the child is not rerendered
+
+        3 cases when rerender happens: parent rerender, own state changes, consumed context changes
+        parent rerender will cause all children to rerender, we can optimize by using React.memo to prevent children with unchanged props from rerendering
+
+3. What does the key prop do in React lists, and why is it important?
+    keys help react know which elements have changed in a list (added, removed, reordered...etc), so it can avoid unecessary DOM manipulations by reusing existing DOM elements instead of recreating them 
+
+    that is why using array index as key is not recommended, you will have weird behaviors
+
+5. What is the useEffect hook used for?
+    it is a special hook used for side effect like: fetching, subscription, timers, DOM manipulations
+    it receives a callback and a dependency array, that call back runs every time the dependencies change
+    special cases
+        empty array: only run on first render
+        no array: run on every rerender
+        the call back can return an optional cleanup function that will run when the useEffect is about to run a second time or when a component is about to unmount
+
+6. What is the virtual DOM and how does React use it?
+    it is a lightweight javascript representaion of the actual DOM, used to avoid heavy DOM manipulations
+    it is used in the reconciliation phase when state changes  where a new VDOM is created and compared "using a diff algorithm" with the old VDOM to determin which actual DOM nodes need to be updated
+
+7. How do you handle events in React?
+    we use camelCase "onClick instead of onclick" and we pass function references intead of strings
+    those functions receive a synthetic event object, which is a wrapper for the browser event object
+
+    synthetic event: is a wrapper for native browser events for cross browser compatibility and consistent api/behavior, you can access native event via event.nativeEvent
+
+8. What's the difference between controlled and uncontrolled components?
+    controlled components mean that their form data is controled via react state through input props (value and onChange)
+    uncontrolled mean that the inputs state is managed by the browser and that state is accessed via refs
+
+9. What are React fragments and why would you use them?
+    lets you group multiple children elements without adding a node to the DOM, it is usefull when a Component needs to return multiple elements or a jsx expression containing multiple elements but you dont want to add a wrapping div that could effect styling or layout
+
+    jsx rule: 
+        each jsx elements need to have one parent node
+        because each node is equivelant to a function call <div>hello</div> => createElement('div', null, 'hello')
+        and if you do this const exp = (
+            <div>hello1</div>
+            <div>hello2</div>
+        )
+        which is equivelant to const exp = (
+            createElement('div', null, 'hello1')
+            createElement('div', null, 'hello2')
+        )
+        which is not a valid javascript code, so you will need a wrapper
+        const exp = (
+            <div>
+                <div>hello1</div>
+                <div>hello2</div>
+            </div>
+        )
+        => which is equivelant to const exp = createElement(
+            'div',
+            null,
+            createElement('div', null, 'hello1'),
+            createElement('div', null, 'hello2')
+        )
+
+10. What is prop drilling and why can it be problematic?
+    it is the process of passing props down the tree to a deeply nested child that needs the data
+    intermediate components will receive and pass down props that it does not need, making code harder to maintain and refactor and understand
+    solutions: context api, state management libraries like redux, jotai

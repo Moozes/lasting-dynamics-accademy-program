@@ -1,0 +1,129 @@
+1. Explain JavaScript's execution context and scope chain.
+    context or container in which javascript code runs
+    it manages variables, functions, scope and the value of this
+    these execution contexts are created and pushed the the EXECUTION STACK in the even loop
+
+    3 types
+        global exectution context
+            there is only one for each program
+        function execution context
+            each call creates and execution context even for the same function
+        eval exectution context
+            rarely used in modern js
+    
+    there are 2 phases for execution context
+        creation (memory allocation)
+            here hoisting happens
+            here a scope chain is established which is a reference to the outer scope, variable accessed are searched starting from current context and into outer contexts until it is found or we reach global scope
+        execution (code execution)
+            here function calls result in a push of a new execution context
+
+
+2. What is the difference between microtasks and macrotasks in the event loop?
+    microtasks: promise, queueMicroTask
+        these are high priority compared to macro, these are handled first before any macro
+    macrotasks: setTimeout, setInterval, I/O operations like onClick
+        lower priority handled when the microtask queue is empty
+
+3. How does JavaScript's garbage collection work?
+    garbage collection is the concept of automatic memory management
+    memeory management in lower level languages like c is done manually, meaning you manually allocate the needed memory and you manually free that memory when you dont need it anymore
+    memory management is done automatically in higher level languages like java or javascript, there is a garbadge collector that uses mark-and-sweep (mark in-use, sweep the non marked references) algorithm to determin objects or memory that is no longer reachable from root references or current execution context and frees that memory
+
+    although memory management is done automatically using  the garbage collector, memory leaks can still happen
+        forgetting to call clearTimeout or clearInterval
+        forgotten even listeners that are no longer needed
+        closures: inner functions holding up big variables from outer functions
+        detached dom: keeping a reference to a dom node that is removed from document tree
+
+4. Explain the Module Pattern and its benefits.
+    uses closures to create private variables and expose a public api
+    it encapsulate implementation details, and prevent global namespace pollution
+    we can acheive Module pattern using IIFE (immediately invoked function expression) or using es6 native support (export/import syntax) which allow for static analysis (analysing code wihtoug running it) and tree shaking (removing dead code)
+
+5. What are Generators and when would you use them?
+    generators are functions that can pause and resume execution using function* and yield syntax
+    they return and iterator object, they are used to lazy evaluation, infinite sequence generation
+    pros: memory efficient
+
+6. Explain the concept of immutability and its importance.
+    immutability is if data cannot be changed after creationg, instead new copies are created (immutable.js, immer)
+    primitive types in js are immutable, objects are mutable
+
+    immutablity is good for easy debugging, state management, and preventing unentended side effects
+    if a mutable variable (like and object in js) is passed to 3 functions and one of them changes it,
+        we dont know who changed it
+        we lost initial data
+        could cause unwanted behavior
+    cons of immutability is memory concumptions because every thing is copied 
+    languages that are use immutability (rust, haskal, ocaml...etc)
+
+7. What are Web Workers and when should you use them?
+    web workers run js in background threads, seperate from the main thread, they dont have access to dom but can run cpu intensive calculations
+    use them for expensive calculations: image processing, cryptographic operations, data processing
+    communations with main thread happens via postMessage and message event listeners
+
+9. What are Symbols and what problems do they solve?
+    symbols represent a unique value that can never collide with another value: Symbol() !== Symbol()
+    they are a primitive type is js
+    created like this: const a = Symbol("description"), with an optional human readable description string that does not effect the uniqueness of the symbol created
+
+    3 types of symbols
+        ones created with Symbol()
+        shared ones on the global symbol registry: retrieved using Symbol.for()
+            this method looks of the symbol using the string provided in the global run time
+            if it does not find it, it creates a new one and adds it to the registery
+            NOTE: 
+                Symbol.for("moussa") === Symbol.for("moussa") is true
+                Symbol("moussa") === Symbol("moussa") is false
+        "well known symbols" defined as static properties on the Symbol object
+            used to access and modify js builtin methods while preventing core behavior from being unintentionally overwritten
+            meaning you cannot access those builtin methods unless you intentionally use those well known symbols
+    
+    you cant do: new Sybmol()
+
+    Symbols are not enumerable, you need to run getOwnPropertySymbols() to iterate over and object's symbols
+
+    use cases
+        Unique Object Property Keys, define unique object keys that can never collide with another use defined key
+        "Pseudo-Private" Properties, they are none enumerable
+        Defining Constants (Enums)
+        hook into core language features. symbols are es6 feature, used by developers as an extension to js behavior without introducing backward-compatibility issues
+
+10. Explain how you would optimize JavaScript performance in a large-scale application.
+    code splitting and lazy loading and dynamic imports for smaller initial bundles 
+        they all mean the same thing
+        the js mechanism for this is: import()
+        Reactjs lazy function is a way to hooks import() into reacts compoennt and suspense ecosystem
+    tree shaking to eliminate dead code
+    debouncing and throttling for event handlers
+    lasrge lists virtualization: only render stuff that are in the view port
+    memoization for expensive calculations
+    avoiding unecessary rerenders using proper state management
+    using browser caching: often guided by http headers
+    use chrome dev tools to identify bottlenecks
+    appropriate data structures
+    minimize DOM manipulations
+    SSR or SSG
+
+
+CommonJS require vs ES import/export
+    require: 
+        old system, synchronous
+        can be called anywhere
+        loads entire module
+        node.js default, but not native for browsers
+    import: 
+        new asynchronous
+        static, need to be called at the top
+        selective loading (partial loading)
+        standard for browsers and modern node.js
+
+currying
+    transorming a function with multiple arguments to a series of functions with single arguments
+    // normal
+    function add(a, b) { return a+b}
+    // curried
+    function add(a) { return function (b) { return a+b }}
+
+    currying is possible because of closures

@@ -1,0 +1,57 @@
+concepts
+    variadic function: a function that can take a variable number of arguments
+    arguments object: 
+        non-arrow functions have array-like zero-indexed object called arguments which contains the values passed to that function 
+        even if its declarations did not specify any paramaters
+
+1. What is the difference between var, let, and const?
+    function and global -vs- block scoped
+    all hoisted
+    var: init with undefined, can be redeclared
+    let, const hoisted but no init, temporal dead zone
+
+2. What are the different data types in JavaScript?
+    7 primitive 1 non primitive
+    7 are: number, string, boolean, null, undefined, symbol, bigint
+    althrough an old js error typeof null is object
+    1 is object which can be an array, and object or a function
+
+3. What is the difference between == and ===?
+    == loose equality, does type coercion (automatic type casting)
+    === strict equality, it compares both value and type, does not cast automatically
+
+4. What is a closure in JavaScript?
+    every time a function is created a closure  for that function is created
+    closure can be exaplained as being a context, or a state or an environment that the function has access to
+    another example is when an parent function is done executing, its inner function still have and maintain a live binding to its closure (state, variables...etc)
+
+5. What is the difference between null and undefined?
+    they are both primitive types althought typeof null is object (old js mistake that cannot be fixed for reverse compatibility issues)
+    null can be understood as a missing value, missing reference
+    undefined can be understood as a variable being defined but not assigned a value or a function that does not return a value
+
+7. What is hoisting in JavaScript?
+    the process of lifting the declaration of functions and variables to the top of there scope at compilation time
+    var: function / global scope, init with undefined
+    let and const: block scope, reference error
+    function: function / global scope,  can be used before declaration
+
+8. What are arrow functions and how do they differ from regular functions?
+    shorter syntaxe for declaring functions, but with limitations
+    they dont have their own binding to this
+    they cant be used as constructors or generator functions
+    they dont have arguments object
+
+9. What is the DOM?
+    programming interface for html and xml, 
+    the page is represented as a tree of nodes (objects)
+    each element is a node
+    each object can be manipulated with javascript
+
+What is NaN
+    acronym for not a number, result of invalid numeric operations: string cast to number, adding undefined with a number...etc
+    it is of type number similart to Infinity
+
+Sync vs Async code
+    sync blocks execution
+    async non blocking
