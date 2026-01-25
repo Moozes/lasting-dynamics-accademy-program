@@ -1,0 +1,21 @@
+| Area                       | What You MUST Learn                      | Keywords / Concepts                                              |
+| -------------------------- | ---------------------------------------- | ---------------------------------------------------------------- |
+| **Car Basics**             | What the main parts are and what they do | Engine, gearbox, clutch, brakes, suspension, battery, radiator   |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Dashboard**              | Know when to stop vs ignore              | Check engine, oil light, battery light, temperature light        |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Engine Basics**          | Enough to choose & talk confidently      | 1.2 vs 1.6, petrol vs diesel, cylinders, turbo vs non-turbo      |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Transmission**           | How power reaches the wheels             | Manual vs automatic, clutch wear, gear behavior                  |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Fuel & Range**           | Daily cost & planning                    | L/100km, city vs highway consumption, tank capacity              |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Maintenance (Critical)** | Things you *must* do on time             | Oil change, oil type, filters, timing belt vs chain              |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Wear Parts**             | Things that regularly need replacing     | Brake pads, tires, clutch, shock absorbers                       |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Red Flags**              | Signs of serious problems                | Overheating, smoke colors, warning lights, leaks                 |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Buying Used**            | Avoid bad cars & scams                   | Mileage vs condition, service history, repaint signs, test drive |
+|----------------------------|------------------------------------------|------------------------------------------------------------------|
+| **Ownership Reality**      | Money & reliability                      | Maintenance cost, spare parts availability, resale value         |
